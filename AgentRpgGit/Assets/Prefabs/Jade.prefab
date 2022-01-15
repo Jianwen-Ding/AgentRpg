@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bfd82b3e9bb3973479e6da6372476a90, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,7 +97,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterRender: {fileID: 0}
   TimeLeftTillDissapear: 0
-  currentFunction: 0
   timed: 0
   anim: {fileID: 0}
 --- !u!95 &5023550561912289467
