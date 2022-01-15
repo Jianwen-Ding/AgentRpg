@@ -1,0 +1,830 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3642210072915571999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4805752970455306309}
+  - component: {fileID: 3888476116195208256}
+  - component: {fileID: 4479229981969859095}
+  - component: {fileID: 6121867395428745347}
+  - component: {fileID: 4986341376781014896}
+  - component: {fileID: 3760838664247069330}
+  - component: {fileID: 5214002114556946569}
+  - component: {fileID: 4807684066924125001}
+  - component: {fileID: 4033266658929873805}
+  - component: {fileID: 2880131657889639293}
+  - component: {fileID: 7269944299937114212}
+  - component: {fileID: 466320178284045481}
+  m_Layer: 0
+  m_Name: Generic Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4805752970455306309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4842565, y: -1.5498853, z: -17.109251}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &3888476116195208256
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1780708063
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: bfd82b3e9bb3973479e6da6372476a90, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &4479229981969859095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c496756887fed4c99d01c2383c1cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveLeftOver: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+    type: 3}
+  DamageShakeRatio: 0.003
+  CharacterSChanger: {fileID: 0}
+  HasDied: 0
+  PreviousHealth: 0
+  IsEnemy: 1
+  Health: 70
+  MaxHealth: 70
+  IsDead: 0
+  LocationAction: {x: 0, y: 0}
+  action: 
+  IsCharging: 0
+  Events: {fileID: 0}
+  lookingLeft: 0
+  NormalMove: 0
+  CharacterLocationIndex: {x: 0, y: 0}
+  Speed: 2
+  SpeedPriority: 0
+  SpeedMultiplier: 1
+  ExpressedSpeed: 0
+  Damage: 5
+  DamageMultiplier: 1
+  ExpressedDamage: 0
+  Defense: 50
+  DefenseMultiplier: 1
+  ExpressedDefense: 0
+  MovesAllowed:
+  - {fileID: 6121867395428745347}
+  - {fileID: 4986341376781014896}
+  - {fileID: 3760838664247069330}
+  - {fileID: 5214002114556946569}
+  GridSquare: {fileID: 0}
+  GridData: {fileID: 0}
+  GameObjectSpriteRenderer: {fileID: 0}
+  IsActive: 0
+  StatusEffects: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  DistanceTillAtLocation: 0
+  AnimationMoveSpeed: 0
+  DistanceUp: 0.8
+  AboutToShoot: 0
+  TimeUntilShoot: 0.5
+  TimeUntilShootLeft: 0
+  AboutToUseMove: 0
+  MoveOn: 0
+  TimeUseMove: 0
+  TimeUntilUseMoveLeft: 0
+--- !u!114 &6121867395428745347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc18e93b5c66d3649b68c829193a9381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseFollowingUI: {fileID: 0}
+  MoveSprite: {fileID: 0}
+  MoveSpriteSecondary: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+    type: 3}
+  AdjustSprite: {x: 0, y: 0}
+  Gridinfo: {fileID: 0}
+  Character_Info: {fileID: 0}
+  HitUiSprite: {fileID: 0}
+  EffectAmount: 0
+  WillBeUsedForCharging: 0
+  MoveDecison: {fileID: 0}
+  BotAiCheckIfApply: {fileID: 0}
+  PriorityAdd: -5
+  IsForOpponent: 0
+  AreaSelection: 00000000000000000000000000000000
+  AreaSelectionSquareX0: 0
+  AreaSelectionSquareY0: 0
+  AreaSelectionSquareWidth0: 0
+  AreaSelectionSquareHeight0: 0
+  AreaSelectionSquareX1: -69
+  AreaSelectionSquareY1: -69
+  AreaSelectionSquareWidth1: -69
+  AreaSelectionSquareHeight1: -69
+  AreaSelectionSquareX2: -69
+  AreaSelectionSquareY2: -69
+  AreaSelectionSquareWidth2: -69
+  AreaSelectionSquareHeight2: -69
+  AreaSelectionSquareX3: -69
+  AreaSelectionSquareY3: -69
+  AreaSelectionSquareWidth3: -69
+  AreaSelectionSquareHeight3: -69
+  AreaSelectionSquareX4: -69
+  AreaSelectionSquareY4: -69
+  AreaSelectionSquareWidth4: -69
+  AreaSelectionSquareHeight4: -69
+  UsesBulletFunction: 0
+  willUseForMove: 0
+  AreaSelectMoveSquareX0: -69
+  AreaSelectMoveSquareY0: -69
+  AreaSelectMoveSquareWidth0: -69
+  AreaSelectMoveSquareHeight0: -69
+  AreaSelectMoveSquareX1: -69
+  AreaSelectMoveSquareY1: -69
+  AreaSelectMoveSquareWidth1: -69
+  AreaSelectMoveSquareHeight1: -69
+  AreaSelectMoveSquareX2: -69
+  AreaSelectMoveSquareY2: -69
+  AreaSelectMoveSquareWidth2: -69
+  AreaSelectMoveSquareHeight2: -69
+  AreaSelectMoveSquareX3: -69
+  AreaSelectMoveSquareY3: -69
+  AreaSelectMoveSquareWidth3: -69
+  AreaSelectMoveSquareHeight3: -69
+  AreaSelectMoveSquareX4: -69
+  AreaSelectMoveSquareY4: -69
+  AreaSelectMoveSquareWidth4: -69
+  AreaSelectMoveSquareHeight4: -69
+  willUseForGridEffect: 0
+  WillUseForSquareX0: -69
+  WillUseForSquareY0: -69
+  WillUseForSquareWidth0: -69
+  WillUseForSquareHeight0: -69
+  WillUseForSquareX1: -69
+  WillUseForSquareY1: -69
+  WillUseForSquareWidth1: -69
+  WillUseForSquareHeight1: -69
+  WillUseForSquareX2: -69
+  WillUseForSquareY2: -69
+  WillUseForSquareWidth2: -69
+  WillUseForSquareHeight2: -69
+  WillUseForSquareX3: -69
+  WillUseForSquareY3: -69
+  WillUseForSquareWidth3: -69
+  WillUseForSquareHeight3: -69
+  WillUseForSquareX4: -69
+  WillUseForSquareY4: -69
+  WillUseForSquareWidth4: -69
+  WillUseForSquareHeight4: -69
+  willUseForEnemyMove: 0
+  EnemyMoveSquareX0: 0
+  EnemyMoveSquareY0: 0
+  EnemyMoveSquareWidth0: 0
+  EnemyMoveSquareHeight0: 0
+  EnemyMoveSquareX1: -69
+  EnemyMoveSquareY1: -69
+  EnemyMoveSquareWidth1: -69
+  EnemyMoveSquareHeight1: -69
+  EnemyMoveSquareX2: -69
+  EnemyMoveSquareY2: -69
+  EnemyMoveSquareWidth2: -69
+  EnemyMoveSquareHeight2: -69
+  EnemyMoveSquareX3: -69
+  EnemyMoveSquareY3: -69
+  EnemyMoveSquareWidth3: -69
+  EnemyMoveSquareHeight3: -69
+  EnemyMoveSquareX4: -69
+  EnemyMoveSquareY4: -69
+  EnemyMoveSquareWidth4: -69
+  EnemyMoveSquareHeight4: -69
+  willUseForAllyMove: 0
+  AllyMoveSquareX0: 0
+  AllyMoveSquareY0: 0
+  AllyMoveSquareWidth0: 0
+  AllyMoveSquareHeight0: 0
+  AllyMoveSquareX1: -69
+  AllyMoveSquareY1: -69
+  AllyMoveSquareWidth1: -69
+  AllyMoveSquareHeight1: -69
+  AllyMoveSquareX2: -69
+  AllyMoveSquareY2: -69
+  AllyMoveSquareWidth2: -69
+  AllyMoveSquareHeight2: -69
+  AllyMoveSquareX3: -69
+  AllyMoveSquareY3: -69
+  AllyMoveSquareWidth3: -69
+  AllyMoveSquareHeight3: -69
+  AllyMoveSquareX4: -69
+  AllyMoveSquareY4: -69
+  AllyMoveSquareWidth4: -69
+  AllyMoveSquareHeight4: -69
+--- !u!114 &4986341376781014896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875e2e10102a4754e965f68a2120e70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseFollowingUI: {fileID: 0}
+  MoveSprite: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+    type: 3}
+  MoveSpriteSecondary: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+    type: 3}
+  AdjustSprite: {x: 0, y: 0}
+  Gridinfo: {fileID: 0}
+  Character_Info: {fileID: 0}
+  HitUiSprite: {fileID: 3508090468383675265, guid: 98de24ec3510deb4f997f291cc1a5c80,
+    type: 3}
+  EffectAmount: 0
+  WillBeUsedForCharging: 1
+  MoveDecison: {fileID: 0}
+  BotAiCheckIfApply: {fileID: 0}
+  PriorityAdd: 15
+  IsForOpponent: 0
+  AreaSelection: 00000000000000000000000000000000
+  AreaSelectionSquareX0: 0
+  AreaSelectionSquareY0: 0
+  AreaSelectionSquareWidth0: 0
+  AreaSelectionSquareHeight0: 0
+  AreaSelectionSquareX1: -69
+  AreaSelectionSquareY1: -69
+  AreaSelectionSquareWidth1: -69
+  AreaSelectionSquareHeight1: -69
+  AreaSelectionSquareX2: -69
+  AreaSelectionSquareY2: -69
+  AreaSelectionSquareWidth2: -69
+  AreaSelectionSquareHeight2: -69
+  AreaSelectionSquareX3: -69
+  AreaSelectionSquareY3: -69
+  AreaSelectionSquareWidth3: -69
+  AreaSelectionSquareHeight3: -69
+  AreaSelectionSquareX4: -69
+  AreaSelectionSquareY4: -69
+  AreaSelectionSquareWidth4: -69
+  AreaSelectionSquareHeight4: -69
+  UsesBulletFunction: 0
+  willUseForMove: 0
+  AreaSelectMoveSquareX0: -69
+  AreaSelectMoveSquareY0: -69
+  AreaSelectMoveSquareWidth0: -69
+  AreaSelectMoveSquareHeight0: -69
+  AreaSelectMoveSquareX1: -69
+  AreaSelectMoveSquareY1: -69
+  AreaSelectMoveSquareWidth1: -69
+  AreaSelectMoveSquareHeight1: -69
+  AreaSelectMoveSquareX2: -69
+  AreaSelectMoveSquareY2: -69
+  AreaSelectMoveSquareWidth2: -69
+  AreaSelectMoveSquareHeight2: -69
+  AreaSelectMoveSquareX3: -69
+  AreaSelectMoveSquareY3: -69
+  AreaSelectMoveSquareWidth3: -69
+  AreaSelectMoveSquareHeight3: -69
+  AreaSelectMoveSquareX4: -69
+  AreaSelectMoveSquareY4: -69
+  AreaSelectMoveSquareWidth4: -69
+  AreaSelectMoveSquareHeight4: -69
+  willUseForGridEffect: 1
+  WillUseForSquareX0: -69
+  WillUseForSquareY0: -69
+  WillUseForSquareWidth0: -69
+  WillUseForSquareHeight0: -69
+  WillUseForSquareX1: -69
+  WillUseForSquareY1: -69
+  WillUseForSquareWidth1: -69
+  WillUseForSquareHeight1: -69
+  WillUseForSquareX2: -69
+  WillUseForSquareY2: -69
+  WillUseForSquareWidth2: -69
+  WillUseForSquareHeight2: -69
+  WillUseForSquareX3: -69
+  WillUseForSquareY3: -69
+  WillUseForSquareWidth3: -69
+  WillUseForSquareHeight3: -69
+  WillUseForSquareX4: -69
+  WillUseForSquareY4: -69
+  WillUseForSquareWidth4: -69
+  WillUseForSquareHeight4: -69
+  willUseForEnemyMove: 0
+  EnemyMoveSquareX0: 0
+  EnemyMoveSquareY0: 0
+  EnemyMoveSquareWidth0: 0
+  EnemyMoveSquareHeight0: 0
+  EnemyMoveSquareX1: -69
+  EnemyMoveSquareY1: -69
+  EnemyMoveSquareWidth1: -69
+  EnemyMoveSquareHeight1: -69
+  EnemyMoveSquareX2: -69
+  EnemyMoveSquareY2: -69
+  EnemyMoveSquareWidth2: -69
+  EnemyMoveSquareHeight2: -69
+  EnemyMoveSquareX3: -69
+  EnemyMoveSquareY3: -69
+  EnemyMoveSquareWidth3: -69
+  EnemyMoveSquareHeight3: -69
+  EnemyMoveSquareX4: -69
+  EnemyMoveSquareY4: -69
+  EnemyMoveSquareWidth4: -69
+  EnemyMoveSquareHeight4: -69
+  willUseForAllyMove: 0
+  AllyMoveSquareX0: 0
+  AllyMoveSquareY0: 0
+  AllyMoveSquareWidth0: 0
+  AllyMoveSquareHeight0: 0
+  AllyMoveSquareX1: -69
+  AllyMoveSquareY1: -69
+  AllyMoveSquareWidth1: -69
+  AllyMoveSquareHeight1: -69
+  AllyMoveSquareX2: -69
+  AllyMoveSquareY2: -69
+  AllyMoveSquareWidth2: -69
+  AllyMoveSquareHeight2: -69
+  AllyMoveSquareX3: -69
+  AllyMoveSquareY3: -69
+  AllyMoveSquareWidth3: -69
+  AllyMoveSquareHeight3: -69
+  AllyMoveSquareX4: -69
+  AllyMoveSquareY4: -69
+  AllyMoveSquareWidth4: -69
+  AllyMoveSquareHeight4: -69
+  HasUsedCharge: 0
+--- !u!114 &3760838664247069330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6277febd1349184f9bbe44155710f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseFollowingUI: {fileID: 0}
+  MoveSprite: {fileID: 0}
+  MoveSpriteSecondary: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+    type: 3}
+  AdjustSprite: {x: 0, y: 0}
+  Gridinfo: {fileID: 0}
+  Character_Info: {fileID: 0}
+  HitUiSprite: {fileID: 0}
+  EffectAmount: 0
+  WillBeUsedForCharging: 0
+  MoveDecison: {fileID: 0}
+  BotAiCheckIfApply: {fileID: 0}
+  PriorityAdd: 0
+  IsForOpponent: 0
+  AreaSelection: 00000000000000000000000000000000
+  AreaSelectionSquareX0: 0
+  AreaSelectionSquareY0: 0
+  AreaSelectionSquareWidth0: 0
+  AreaSelectionSquareHeight0: 0
+  AreaSelectionSquareX1: -69
+  AreaSelectionSquareY1: -69
+  AreaSelectionSquareWidth1: -69
+  AreaSelectionSquareHeight1: -69
+  AreaSelectionSquareX2: -69
+  AreaSelectionSquareY2: -69
+  AreaSelectionSquareWidth2: -69
+  AreaSelectionSquareHeight2: -69
+  AreaSelectionSquareX3: -69
+  AreaSelectionSquareY3: -69
+  AreaSelectionSquareWidth3: -69
+  AreaSelectionSquareHeight3: -69
+  AreaSelectionSquareX4: -69
+  AreaSelectionSquareY4: -69
+  AreaSelectionSquareWidth4: -69
+  AreaSelectionSquareHeight4: -69
+  UsesBulletFunction: 0
+  willUseForMove: 0
+  AreaSelectMoveSquareX0: -69
+  AreaSelectMoveSquareY0: -69
+  AreaSelectMoveSquareWidth0: -69
+  AreaSelectMoveSquareHeight0: -69
+  AreaSelectMoveSquareX1: -69
+  AreaSelectMoveSquareY1: -69
+  AreaSelectMoveSquareWidth1: -69
+  AreaSelectMoveSquareHeight1: -69
+  AreaSelectMoveSquareX2: -69
+  AreaSelectMoveSquareY2: -69
+  AreaSelectMoveSquareWidth2: -69
+  AreaSelectMoveSquareHeight2: -69
+  AreaSelectMoveSquareX3: -69
+  AreaSelectMoveSquareY3: -69
+  AreaSelectMoveSquareWidth3: -69
+  AreaSelectMoveSquareHeight3: -69
+  AreaSelectMoveSquareX4: -69
+  AreaSelectMoveSquareY4: -69
+  AreaSelectMoveSquareWidth4: -69
+  AreaSelectMoveSquareHeight4: -69
+  willUseForGridEffect: 0
+  WillUseForSquareX0: -69
+  WillUseForSquareY0: -69
+  WillUseForSquareWidth0: -69
+  WillUseForSquareHeight0: -69
+  WillUseForSquareX1: -69
+  WillUseForSquareY1: -69
+  WillUseForSquareWidth1: -69
+  WillUseForSquareHeight1: -69
+  WillUseForSquareX2: -69
+  WillUseForSquareY2: -69
+  WillUseForSquareWidth2: -69
+  WillUseForSquareHeight2: -69
+  WillUseForSquareX3: -69
+  WillUseForSquareY3: -69
+  WillUseForSquareWidth3: -69
+  WillUseForSquareHeight3: -69
+  WillUseForSquareX4: -69
+  WillUseForSquareY4: -69
+  WillUseForSquareWidth4: -69
+  WillUseForSquareHeight4: -69
+  willUseForEnemyMove: 0
+  EnemyMoveSquareX0: 0
+  EnemyMoveSquareY0: 0
+  EnemyMoveSquareWidth0: 0
+  EnemyMoveSquareHeight0: 0
+  EnemyMoveSquareX1: -69
+  EnemyMoveSquareY1: -69
+  EnemyMoveSquareWidth1: -69
+  EnemyMoveSquareHeight1: -69
+  EnemyMoveSquareX2: -69
+  EnemyMoveSquareY2: -69
+  EnemyMoveSquareWidth2: -69
+  EnemyMoveSquareHeight2: -69
+  EnemyMoveSquareX3: -69
+  EnemyMoveSquareY3: -69
+  EnemyMoveSquareWidth3: -69
+  EnemyMoveSquareHeight3: -69
+  EnemyMoveSquareX4: -69
+  EnemyMoveSquareY4: -69
+  EnemyMoveSquareWidth4: -69
+  EnemyMoveSquareHeight4: -69
+  willUseForAllyMove: 0
+  AllyMoveSquareX0: 0
+  AllyMoveSquareY0: 0
+  AllyMoveSquareWidth0: 0
+  AllyMoveSquareHeight0: 0
+  AllyMoveSquareX1: -69
+  AllyMoveSquareY1: -69
+  AllyMoveSquareWidth1: -69
+  AllyMoveSquareHeight1: -69
+  AllyMoveSquareX2: -69
+  AllyMoveSquareY2: -69
+  AllyMoveSquareWidth2: -69
+  AllyMoveSquareHeight2: -69
+  AllyMoveSquareX3: -69
+  AllyMoveSquareY3: -69
+  AllyMoveSquareWidth3: -69
+  AllyMoveSquareHeight3: -69
+  AllyMoveSquareX4: -69
+  AllyMoveSquareY4: -69
+  AllyMoveSquareWidth4: -69
+  AllyMoveSquareHeight4: -69
+--- !u!114 &5214002114556946569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd81fe73ad7a1a45b8d558dcefdfe61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseFollowingUI: {fileID: 0}
+  MoveSprite: {fileID: 0}
+  MoveSpriteSecondary: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+    type: 3}
+  AdjustSprite: {x: 0, y: 0}
+  Gridinfo: {fileID: 0}
+  Character_Info: {fileID: 0}
+  HitUiSprite: {fileID: 0}
+  EffectAmount: 0
+  WillBeUsedForCharging: 0
+  MoveDecison: {fileID: 0}
+  BotAiCheckIfApply: {fileID: 0}
+  PriorityAdd: 0
+  IsForOpponent: 0
+  AreaSelection: 00000000000000000000000000000000
+  AreaSelectionSquareX0: 0
+  AreaSelectionSquareY0: 0
+  AreaSelectionSquareWidth0: 0
+  AreaSelectionSquareHeight0: 0
+  AreaSelectionSquareX1: -69
+  AreaSelectionSquareY1: -69
+  AreaSelectionSquareWidth1: -69
+  AreaSelectionSquareHeight1: -69
+  AreaSelectionSquareX2: -69
+  AreaSelectionSquareY2: -69
+  AreaSelectionSquareWidth2: -69
+  AreaSelectionSquareHeight2: -69
+  AreaSelectionSquareX3: -69
+  AreaSelectionSquareY3: -69
+  AreaSelectionSquareWidth3: -69
+  AreaSelectionSquareHeight3: -69
+  AreaSelectionSquareX4: -69
+  AreaSelectionSquareY4: -69
+  AreaSelectionSquareWidth4: -69
+  AreaSelectionSquareHeight4: -69
+  UsesBulletFunction: 0
+  willUseForMove: 0
+  AreaSelectMoveSquareX0: -69
+  AreaSelectMoveSquareY0: -69
+  AreaSelectMoveSquareWidth0: -69
+  AreaSelectMoveSquareHeight0: -69
+  AreaSelectMoveSquareX1: -69
+  AreaSelectMoveSquareY1: -69
+  AreaSelectMoveSquareWidth1: -69
+  AreaSelectMoveSquareHeight1: -69
+  AreaSelectMoveSquareX2: -69
+  AreaSelectMoveSquareY2: -69
+  AreaSelectMoveSquareWidth2: -69
+  AreaSelectMoveSquareHeight2: -69
+  AreaSelectMoveSquareX3: -69
+  AreaSelectMoveSquareY3: -69
+  AreaSelectMoveSquareWidth3: -69
+  AreaSelectMoveSquareHeight3: -69
+  AreaSelectMoveSquareX4: -69
+  AreaSelectMoveSquareY4: -69
+  AreaSelectMoveSquareWidth4: -69
+  AreaSelectMoveSquareHeight4: -69
+  willUseForGridEffect: 0
+  WillUseForSquareX0: -69
+  WillUseForSquareY0: -69
+  WillUseForSquareWidth0: -69
+  WillUseForSquareHeight0: -69
+  WillUseForSquareX1: -69
+  WillUseForSquareY1: -69
+  WillUseForSquareWidth1: -69
+  WillUseForSquareHeight1: -69
+  WillUseForSquareX2: -69
+  WillUseForSquareY2: -69
+  WillUseForSquareWidth2: -69
+  WillUseForSquareHeight2: -69
+  WillUseForSquareX3: -69
+  WillUseForSquareY3: -69
+  WillUseForSquareWidth3: -69
+  WillUseForSquareHeight3: -69
+  WillUseForSquareX4: -69
+  WillUseForSquareY4: -69
+  WillUseForSquareWidth4: -69
+  WillUseForSquareHeight4: -69
+  willUseForEnemyMove: 0
+  EnemyMoveSquareX0: 0
+  EnemyMoveSquareY0: 0
+  EnemyMoveSquareWidth0: 0
+  EnemyMoveSquareHeight0: 0
+  EnemyMoveSquareX1: -69
+  EnemyMoveSquareY1: -69
+  EnemyMoveSquareWidth1: -69
+  EnemyMoveSquareHeight1: -69
+  EnemyMoveSquareX2: -69
+  EnemyMoveSquareY2: -69
+  EnemyMoveSquareWidth2: -69
+  EnemyMoveSquareHeight2: -69
+  EnemyMoveSquareX3: -69
+  EnemyMoveSquareY3: -69
+  EnemyMoveSquareWidth3: -69
+  EnemyMoveSquareHeight3: -69
+  EnemyMoveSquareX4: -69
+  EnemyMoveSquareY4: -69
+  EnemyMoveSquareWidth4: -69
+  EnemyMoveSquareHeight4: -69
+  willUseForAllyMove: 0
+  AllyMoveSquareX0: 0
+  AllyMoveSquareY0: 0
+  AllyMoveSquareWidth0: 0
+  AllyMoveSquareHeight0: 0
+  AllyMoveSquareX1: -69
+  AllyMoveSquareY1: -69
+  AllyMoveSquareWidth1: -69
+  AllyMoveSquareHeight1: -69
+  AllyMoveSquareX2: -69
+  AllyMoveSquareY2: -69
+  AllyMoveSquareWidth2: -69
+  AllyMoveSquareHeight2: -69
+  AllyMoveSquareX3: -69
+  AllyMoveSquareY3: -69
+  AllyMoveSquareWidth3: -69
+  AllyMoveSquareHeight3: -69
+  AllyMoveSquareX4: -69
+  AllyMoveSquareY4: -69
+  AllyMoveSquareWidth4: -69
+  AllyMoveSquareHeight4: -69
+--- !u!114 &4807684066924125001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319fb93b7f028e8459eb9e7df3a5a10a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RangeOfRandomness: 02000000050000000a00000014000000
+  CurrentPriorityQue: 0
+  IsMakingDecison: 0
+  HasStartedMakingDecison: 0
+  InitiateMoveGridCreation: 0
+  CurrentMoveGridCreation: 0
+  CurrentMoveGridDecronstruction: 0
+  DeconstrucionMoveLocation: {x: 0, y: 0}
+  OldActionPriority: 0
+  InitiateMoveMentDecison: 0
+  IdealDistanceCloseToOpponents: 5
+  IdealDistanceAwayFromOpponents: 1
+  SuggestedAction: []
+  SuggestedActionPriority: 
+  SuggestedActionLocation:
+  - {x: 2.1863634e+23, y: 8.265255e+20}
+  - {x: 0.000000010267789, y: 0.00000017173159}
+  WillMoveTo: 
+  SuggestedActionFinal: 
+  SuggestedActionPriorityFinal: 0
+  SuggestedActionLocationFinal: {x: 0, y: 0}
+  WillMoveToFinal: 0
+  MovementPriorityDown: 1
+  TooCloseToPriorityDedeuct: 15
+  TooFarToPriorityDedeuct: 15
+  DeductPerBulletDmg: 2
+  ChargeMoveDedeuct: 10
+  MovePriorityAdd: 0
+  ShootAdd: 15
+  Priorities:
+  - AdjustLocation
+  - Shoot
+  - SpecialMove
+  CharacterInfo: {fileID: 0}
+  GridInfo: {fileID: 0}
+  SpecialMoves: []
+  MoveSystemInfo: {fileID: 0}
+  Opponents:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Allys:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  AmountOfAllysAdded: 0
+  AmountOfOpponentsAdded: 0
+  RangeIn: 
+  InHitDistance: 0
+  ThresholdPriorty: 10
+--- !u!114 &4033266658929873805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275240ca7e861b149843b6367f38e9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectTrial: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+    type: 3}
+  EffectTrialAdjust: {x: 0, y: 0}
+  EffectHit: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+    type: 3}
+  EffectHitAdjust: {x: 0, y: 0}
+  Name: 
+  XChangePerSquare: 0
+  YChangePerSquare: 0
+  CanPenentrateObstacle: 0
+  CanPenentrateCharacters: 0
+  bulletAddition: 1
+  DistanceSquaresAllowed: 7
+  ShootForEnemy: 0
+  Text: {fileID: 3508090468383675265, guid: 98de24ec3510deb4f997f291cc1a5c80, type: 3}
+  InWorldText: {fileID: 0}
+  DamageRatio: 1.5
+  DamageFallOff: 1
+  CharacterCode: {fileID: 0}
+  Effect: {fileID: 0}
+--- !u!114 &2880131657889639293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aeba8a33fca24f4697c9fdf1c54dc89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterRender: {fileID: 0}
+  TimeLeftTillDissapear: 0
+  currentFunction: 0
+  timed: 0
+  anim: {fileID: 0}
+--- !u!95 &7269944299937114212
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96816f2028d0726419ccb7cee49f0581, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &466320178284045481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5441dae46a976f14c9ea30b7c8bf3f0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OriginalPosition: {x: 0, y: 0, z: 0}
+  OriginalShakePosition: {x: 0, y: 0, z: 0}
+  ShakeStart: 0
+  ShakeIntensity: 0
+  ShakeTimeLeft: 0
