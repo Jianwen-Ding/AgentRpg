@@ -71,6 +71,7 @@ public class CharacterBase : MonoBehaviour
     //Apearence
     public float DistanceUp;
     //Shoot 
+    public float TimeUntilShootEnd;
     public bool AboutToShoot;
     public float TimeUntilShoot;
     public float TimeUntilShootLeft;
@@ -370,7 +371,7 @@ public class CharacterBase : MonoBehaviour
                 {
                     AboutToShoot = true;
                     TimeUntilShootLeft = TimeUntilShoot;
-                    CharacterSChanger.SetSprite(2, 3);
+                    CharacterSChanger.SetSprite(TimeUntilShootEnd, 3);
                 }
                 for (int x = 0; x < 4; x++)
                 {

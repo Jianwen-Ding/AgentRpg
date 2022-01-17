@@ -12,6 +12,7 @@ public class MovementUIReturnButton : MonoBehaviour
         if (ButtonBaseThing.ButtonActivate && ButtonBaseThing.UIBase.GetComponent<MovementUI>().CurrentCharacterInPlay != 0)
         {
             MovementUI MovementInfo = ButtonBaseThing.UIBase.GetComponent<MovementUI>();
+            MovementInfo.CurrentCharactersInPlay[MovementInfo.CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterSChanger.SetSprite(-69, 0);
             MovementInfo.Scenes = "main";
             MovementInfo.HasEstablishedScene = false;
             MovementInfo.CurrentCharacterInPlay--;

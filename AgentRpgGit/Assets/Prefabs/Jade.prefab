@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterRender: {fileID: 0}
   TimeLeftTillDissapear: 0
+  currentFunction: 0
   timed: 0
   anim: {fileID: 0}
 --- !u!95 &5023550561912289467

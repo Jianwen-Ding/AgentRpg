@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpriteChange : MonoBehaviour
 {
     public SpriteRenderer CharacterRender;
-    //-69 = nothing
+    //69 = nothing
     //0 = idle
     //1 = move
     //2 = special move default
@@ -20,6 +20,7 @@ public class SpriteChange : MonoBehaviour
     //6 = base highlight
     //7 = ChargeMove
     public double TimeLeftTillDissapear;
+    [SerializeField]
     private int currentFunction = 0;
     public bool timed;
     bool hasSet = true;
@@ -33,7 +34,7 @@ public class SpriteChange : MonoBehaviour
     //Write in -69 in the time section in order to trigger 
     public void SetSprite(double time, int functionChangeTo)
     {
-        if(anim.GetInteger("CurrentState") != functionChangeTo && currentFunction != functionChangeTo)
+        if(currentFunction != functionChangeTo)
         {
             currentFunction = functionChangeTo;
             if (time != -69)
@@ -45,7 +46,7 @@ public class SpriteChange : MonoBehaviour
             {
                 timed = false;
             }
-            anim.SetInteger("CurrentState", currentFunction);
+            anim.SetInteger("CurrentState", functionChangeTo);
             hasSet = false;
         }
         if(time != TimeLeftTillDissapear)
@@ -58,14 +59,14 @@ public class SpriteChange : MonoBehaviour
     {
         if (hasSet == true)
         {
-            anim.SetInteger("CurrentState", -69);
+            anim.SetInteger("CurrentState", 69);
         }
         hasSet = true;
         if (timed)
         {
             if (TimeLeftTillDissapear <= 0)
             {
-                currentFunction = 0;
+                SetSprite(-69,0);
             }
             else
             {
