@@ -71,7 +71,7 @@ public class Deathray : GenericMove
         }
     }
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
         if (Character_Info.IsCharging == true && BotAiCheckIfApply == null && MoveDecison.IsDisplayingHappening == false)
         {

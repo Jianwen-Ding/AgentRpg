@@ -75,11 +75,14 @@ public class CharacterBase : MonoBehaviour
     public bool AboutToShoot;
     public float TimeUntilShoot;
     public float TimeUntilShootLeft;
-    //Shoot 
+    //Move
     public bool AboutToUseMove;
     public int MoveOn;
     public float TimeUseMove;
     public float TimeUntilUseMoveLeft;
+    public float TimeUntilMoveEnd;
+    public float TimeUntilChargeMoveEnd;
+    public float TimeUseChargeMoveEnd;
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -377,10 +380,20 @@ public class CharacterBase : MonoBehaviour
                 {
                     if (action == "SPMove" + x && Events.CheckQue(gameObject, 1) && AboutToUseMove == false || action == "SPMoveCharge" + x && Events.CheckQue(gameObject, 1) && AboutToUseMove == false)
                     {
-                        AboutToUseMove = true;
-                        MoveOn = x;
-                        MovesAllowed[x].ChangeAnim();
-                        TimeUntilUseMoveLeft = TimeUseMove;
+                        if (MovesAllowed[x].WillBeUsedForCharging || IsCharging && MovesAllowed[x].HasUsedCharge)
+                        {
+                            AboutToUseMove = true;
+                            MoveOn = x;
+                            MovesAllowed[x].ChangeAnim(TimeUntilMoveEnd);
+                            TimeUntilUseMoveLeft = TimeUseMove;
+                        }
+                        else if (IsCharging == false && MovesAllowed[x].HasUsedCharge == false)
+                        {
+                            AboutToUseMove = true;
+                            MoveOn = x;
+                            MovesAllowed[x].ChangeAnim(TimeUntilChargeMoveEnd);
+                            TimeUntilUseMoveLeft = TimeUseChargeMoveEnd;
+                        }
                     }
                 }
             }

@@ -59,10 +59,6 @@ public class GunFunction : MonoBehaviour
                     {
                         Effect = Instantiate(EffectHit, new Vector3(GridData.AllGrids[(int)CurrentSquare.y][(int)CurrentSquare.x].gameObject.transform.position.x + EffectTrialAdjust.x, GridData.AllGrids[(int)CurrentSquare.y][(int)CurrentSquare.x].gameObject.transform.position.y + EffectTrialAdjust.y), Quaternion.identity.normalized);
                     }
-                    if(Effect != null && Effect.GetComponent<EffectsLifeTime>() != null)
-                    {
-                        Effect.GetComponent<EffectsLifeTime>().TimeTillSelfDestruct = (float)0.25;
-                    }
                     return CurrentSquare;
                 }
             }
@@ -90,10 +86,6 @@ public class GunFunction : MonoBehaviour
                         {
                             Effect = Instantiate(EffectHit, new Vector3(GridData.AllGrids[(int)CurrentSquare.y][(int)CurrentSquare.x].gameObject.transform.position.x + EffectTrialAdjust.x, GridData.AllGrids[(int)CurrentSquare.y][(int)CurrentSquare.x].gameObject.transform.position.y + EffectTrialAdjust.y), Quaternion.identity.normalized);
                         }
-                        if (Effect != null && Effect.GetComponent<EffectsLifeTime>() != null)
-                        {
-                            Effect.GetComponent<EffectsLifeTime>().TimeTillSelfDestruct = (float)0.25;
-                        }
                         return CurrentSquare;
                     }
                 }
@@ -108,10 +100,6 @@ public class GunFunction : MonoBehaviour
                 CurrentSquare.y += YVelocity;
             }
             DamageOnHit *= DamageFallOffSet;
-            if(Effect != null && Effect.GetComponent<EffectsLifeTime>() != null)
-            {
-                Effect.GetComponent<EffectsLifeTime>().TimeTillSelfDestruct = (float)0.25;
-            }
             if(WillShowEffect != true)
             {
                 Destroy(Effect);
@@ -149,10 +137,6 @@ public class GunFunction : MonoBehaviour
                         {
                             Effect = Instantiate(EffectHitPrefab, new Vector3(GridData.AllGrids[(int)CurrentSquare.y][(int)CurrentSquare.x].gameObject.transform.position.x + EffectTrialAdjust.x, GridData.AllGrids[(int)CurrentSquare.y][(int)CurrentSquare.x].gameObject.transform.position.y + EffectTrialAdjust.y), Quaternion.identity.normalized);
                         }
-                        if (Effect != null && Effect.GetComponent<EffectsLifeTime>() != null)
-                        {
-                            Effect.GetComponent<EffectsLifeTime>().TimeTillSelfDestruct = (float)0.25;
-                        }
                         return CheckArea;
                     }
                 }
@@ -180,10 +164,6 @@ public class GunFunction : MonoBehaviour
                             {
                                 Effect = Instantiate(EffectHitPrefab, new Vector3(GridData.AllGrids[(int)CurrentSquare.y][(int)CurrentSquare.x].gameObject.transform.position.x + EffectTrialAdjust.x, GridData.AllGrids[(int)CurrentSquare.y][(int)CurrentSquare.x].gameObject.transform.position.y + EffectTrialAdjust.y), Quaternion.identity.normalized);
                             }
-                            if (Effect != null && Effect.GetComponent<EffectsLifeTime>() != null)
-                            {
-                                Effect.GetComponent<EffectsLifeTime>().TimeTillSelfDestruct = (float)0.25;
-                            }
                             return CheckArea;
                         }
                     }
@@ -198,10 +178,6 @@ public class GunFunction : MonoBehaviour
                     CurrentSquare.y += YVelocity;
                 }
                 DamageOnHit *= DamageFallOffSet;
-                if (Effect != null && Effect.GetComponent<EffectsLifeTime>() != null)
-                {
-                    Effect.GetComponent<EffectsLifeTime>().TimeTillSelfDestruct = (float)0.25;
-                }
                 if (WillShowEffect != true)
                 {
                     Destroy(Effect);

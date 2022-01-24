@@ -66,8 +66,11 @@ public class CharacterSpawner : MonoBehaviour
         SandmanCharacterBase.GetComponent<GunFunction>().Text = floatingTextPrefab;
         SandmanCharacterBase.TimeUntilShoot = (float)0.53333333333;
         SandmanCharacterBase.TimeUntilShootEnd = (float)1.4;
-        SandmanCharacterBase.TimeUseMove = (float)0.5;
-        SandmanCharacterBase.GetComponent<GunFunction>().EstablishGun(CharacterSave.GunRange[CharacterSave.GunFunctionIndex3[0]], CharacterSave.CanPierceObstacle[CharacterSave.GunFunctionIndex3[0]], CharacterSave.CanPierceCharacter[CharacterSave.GunFunctionIndex3[0]], CharacterSave.GunClassDamagePercentage[CharacterSave.GunFunctionIndex3[0]], CharacterSave.DamageFallOff[CharacterSave.GunFunctionIndex3[0]], CharacterSave.BulletsAdded[CharacterSave.GunFunctionIndex3[0]], CharacterSave.GunEffectTrial[CharacterSave.GunFunctionIndex3[0]], CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[0]], CharacterSave.GunEffectHit[CharacterSave.GunFunctionIndex3[0]],CharacterSave.GunEffectHitAdjust[CharacterSave.GunFunctionIndex3[0]]);
+        SandmanCharacterBase.TimeUseMove = (float)1.53333333333;
+        SandmanCharacterBase.TimeUntilMoveEnd = (float)0.8;
+        Vector2 SandmanAdjustTrial = new Vector2(CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[0]].x, CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[0]].y);
+        Vector2 SandmanAdjustHit = new Vector2(CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[0]].x, CharacterSave.GunEffectHitAdjust[CharacterSave.GunFunctionIndex3[0]].y);
+        SandmanCharacterBase.GetComponent<GunFunction>().EstablishGun(CharacterSave.GunRange[CharacterSave.GunFunctionIndex3[0]], CharacterSave.CanPierceObstacle[CharacterSave.GunFunctionIndex3[0]], CharacterSave.CanPierceCharacter[CharacterSave.GunFunctionIndex3[0]], CharacterSave.GunClassDamagePercentage[CharacterSave.GunFunctionIndex3[0]], CharacterSave.DamageFallOff[CharacterSave.GunFunctionIndex3[0]], CharacterSave.BulletsAdded[CharacterSave.GunFunctionIndex3[0]], CharacterSave.GunEffectTrial[CharacterSave.GunFunctionIndex3[0]], SandmanAdjustTrial, CharacterSave.GunEffectHit[CharacterSave.GunFunctionIndex3[0]], SandmanAdjustHit);
         //Jade
         JadePrefab = Instantiate(JadePrefab, new Vector3(0, 0, 0), Quaternion.identity);
         CharacterPassiveInsert.InsertCharacterPassive(CharacterSave.PassiveIndex[CharacterSave.GunFunctionIndex3[0]], JadePrefab);
@@ -88,9 +91,14 @@ public class CharacterSpawner : MonoBehaviour
         JadeCharacterBase.gameObject.AddComponent(typeof(ShakeObject));
         JadeCharacterBase.GetComponent<GunFunction>().Text = floatingTextPrefab;
         JadeCharacterBase.TimeUntilShoot = (float)0.4;
-        JadeCharacterBase.TimeUntilShootEnd = (float)1;
-        JadeCharacterBase.TimeUseMove = (float)0.5;
-        JadeCharacterBase.GetComponent<GunFunction>().EstablishGun(CharacterSave.GunRange[CharacterSave.GunFunctionIndex3[1]], CharacterSave.CanPierceObstacle[CharacterSave.GunFunctionIndex3[1]], CharacterSave.CanPierceCharacter[CharacterSave.GunFunctionIndex3[1]], CharacterSave.GunClassDamagePercentage[CharacterSave.GunFunctionIndex3[1]], CharacterSave.DamageFallOff[CharacterSave.GunFunctionIndex3[1]], CharacterSave.BulletsAdded[CharacterSave.GunFunctionIndex3[1]], CharacterSave.GunEffectTrial[CharacterSave.GunFunctionIndex3[1]], CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[1]], CharacterSave.GunEffectHit[CharacterSave.GunFunctionIndex3[1]], CharacterSave.GunEffectHitAdjust[CharacterSave.GunFunctionIndex3[1]]);
+        JadeCharacterBase.TimeUntilShootEnd = (float)0.73333333333;
+        JadeCharacterBase.TimeUseMove = (float)1.6;
+        JadeCharacterBase.TimeUntilMoveEnd = (float)2.13333333333;
+        JadeCharacterBase.TimeUntilChargeMoveEnd = (float)2.13333333333;
+        JadeCharacterBase.TimeUseChargeMoveEnd = (float)0;
+        Vector2 JadeAdjustTrial = new Vector2(CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[1]].x, CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[1]].y + (float)0.65);
+        Vector2 JadeAdjustHit = new Vector2(CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[1]].x, CharacterSave.GunEffectHitAdjust[CharacterSave.GunFunctionIndex3[1]].y);
+        JadeCharacterBase.GetComponent<GunFunction>().EstablishGun(CharacterSave.GunRange[CharacterSave.GunFunctionIndex3[1]], CharacterSave.CanPierceObstacle[CharacterSave.GunFunctionIndex3[1]], CharacterSave.CanPierceCharacter[CharacterSave.GunFunctionIndex3[1]], CharacterSave.GunClassDamagePercentage[CharacterSave.GunFunctionIndex3[1]], CharacterSave.DamageFallOff[CharacterSave.GunFunctionIndex3[1]], CharacterSave.BulletsAdded[CharacterSave.GunFunctionIndex3[1]], CharacterSave.GunEffectTrial[CharacterSave.GunFunctionIndex3[1]], JadeAdjustTrial, CharacterSave.GunEffectHit[CharacterSave.GunFunctionIndex3[1]], JadeAdjustHit);
         //Aurthur
         AurthurPrefab = Instantiate(AurthurPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         CharacterPassiveInsert.InsertCharacterPassive(CharacterSave.PassiveIndex[CharacterSave.GunFunctionIndex3[0]], AurthurPrefab);
@@ -111,9 +119,14 @@ public class CharacterSpawner : MonoBehaviour
         AurthurCharacterBase.gameObject.AddComponent(typeof(ShakeObject));
         AurthurCharacterBase.GetComponent<GunFunction>().Text = floatingTextPrefab;
         AurthurCharacterBase.TimeUntilShoot = (float)0.73333333333;
-        AurthurCharacterBase.TimeUntilShootEnd = (float)1.8;
-        AurthurCharacterBase.TimeUseMove = (float)0.5;
-        AurthurCharacterBase.GetComponent<GunFunction>().EstablishGun(CharacterSave.GunRange[CharacterSave.GunFunctionIndex3[2]], CharacterSave.CanPierceObstacle[CharacterSave.GunFunctionIndex3[2]], CharacterSave.CanPierceCharacter[CharacterSave.GunFunctionIndex3[2]], CharacterSave.GunClassDamagePercentage[CharacterSave.GunFunctionIndex3[2]], CharacterSave.DamageFallOff[CharacterSave.GunFunctionIndex3[2]], CharacterSave.BulletsAdded[CharacterSave.GunFunctionIndex3[2]], CharacterSave.GunEffectTrial[CharacterSave.GunFunctionIndex3[2]], CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[2]], CharacterSave.GunEffectHit[CharacterSave.GunFunctionIndex3[2]], CharacterSave.GunEffectHitAdjust[CharacterSave.GunFunctionIndex3[2]]);
+        AurthurCharacterBase.TimeUntilShootEnd = (float)1.53333333333;
+        AurthurCharacterBase.TimeUseMove = (float)0.6;
+        AurthurCharacterBase.TimeUntilMoveEnd = (float)1.13333333333;
+        AurthurCharacterBase.TimeUntilChargeMoveEnd = (float)1.4;
+        AurthurCharacterBase.TimeUseChargeMoveEnd = (float)1.73333333333;
+        Vector2 AurthurAdjustTrial = new Vector2(CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[2]].x, CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[2]].y + (float)0.35);
+        Vector2 AurthurAdjustHit = new Vector2(CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[2]].x, CharacterSave.GunEffectHitAdjust[CharacterSave.GunFunctionIndex3[2]].y);
+        AurthurCharacterBase.GetComponent<GunFunction>().EstablishGun(CharacterSave.GunRange[CharacterSave.GunFunctionIndex3[2]], CharacterSave.CanPierceObstacle[CharacterSave.GunFunctionIndex3[2]], CharacterSave.CanPierceCharacter[CharacterSave.GunFunctionIndex3[2]], CharacterSave.GunClassDamagePercentage[CharacterSave.GunFunctionIndex3[2]], CharacterSave.DamageFallOff[CharacterSave.GunFunctionIndex3[2]], CharacterSave.BulletsAdded[CharacterSave.GunFunctionIndex3[2]], CharacterSave.GunEffectTrial[CharacterSave.GunFunctionIndex3[2]], AurthurAdjustTrial, CharacterSave.GunEffectHit[CharacterSave.GunFunctionIndex3[2]], AurthurAdjustHit);
         //Enemy
         Enemy1 = Instantiate(CharacterSave.Enemies[0], new Vector3(0, 0, 0), Quaternion.identity);
         Enemy1.gameObject.GetComponent<CharacterBase>().CharacterLocationIndex = new Vector2(GridData.XWidthPublic-1,0);

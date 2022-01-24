@@ -41,7 +41,6 @@ public class Cripple : GenericMove
     // Update is called once per frame
     public override void ActivateMove()
     {
-        Character_Info.CharacterSChanger.SetSprite(1, 2);
         EffectAmount = 0;
         AreaEffect((int)Character_Info.CharacterLocationIndex.x-1, (int)Character_Info.CharacterLocationIndex.y-1, 3, 3);
         gameObject.GetComponent<CharacterBase>().action = "inactive";

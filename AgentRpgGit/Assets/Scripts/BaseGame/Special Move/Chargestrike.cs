@@ -131,15 +131,15 @@ public class Chargestrike : GenericMove
             AllyMoveSpacesAllowed = NewAreaEffectAdjust(AreaCanSelect, AllyMoveAllowedAdjust);
         }
     }
-    public void ChangeAnim()
+    public override void ChangeAnim(float time)
     {
         if (Character_Info.IsCharging == false && HasUsedCharge == false)
         {
-            Character_Info.CharacterSChanger.SetSprite(1, 7);
+            Character_Info.CharacterSChanger.SetSprite(time, 7);
         }
         if (HasUsedCharge == true && MoveDecison.IsDisplayingHappening == true)
         {
-            Character_Info.CharacterSChanger.SetSprite(1, 2);
+            Character_Info.CharacterSChanger.SetSprite(time, 2);
         }
     }
     public override void ActivateMove()

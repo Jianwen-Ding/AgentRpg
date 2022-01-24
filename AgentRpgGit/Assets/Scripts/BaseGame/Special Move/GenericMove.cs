@@ -5,6 +5,8 @@ using UnityEngine;
 public class GenericMove : MonoBehaviour
 {
     #region Varibles
+    [SerializeField]
+    public bool HasUsedCharge = false;
     // Start is called before the first frame update
     //Area That Can Be selected
     // double array uses [number] [x1,x2,width,height] 
@@ -680,13 +682,12 @@ public class GenericMove : MonoBehaviour
     }
         */
     }
-    public virtual void ChangeAnim()
+    public virtual void ChangeAnim(float time)
     {
-        Character_Info.CharacterSChanger.SetSprite(1, 2);
+        Character_Info.CharacterSChanger.SetSprite(time, 2);
     }
     public virtual void ActivateMove()
     {
-        Character_Info.CharacterSChanger.SetSprite(1, 2);
         EffectAmount = 0;
         gameObject.GetComponent<CharacterBase>().action = "inactive";
         Effects[0] = Instantiate(MoveSprite, new Vector3(Gridinfo.AllGrids[(int)Character_Info.CharacterLocationIndex.y][(int)Character_Info.CharacterLocationIndex.x].transform.position.x+AdjustSprite.x, Gridinfo.AllGrids[(int)Character_Info.CharacterLocationIndex.y][(int)Character_Info.CharacterLocationIndex.x].transform.position.y + AdjustSprite.y), Quaternion.identity.normalized);
