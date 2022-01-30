@@ -363,7 +363,7 @@ public class CharacterBase : MonoBehaviour
                 if (action == "Move" && Events.CheckQue(gameObject, 1))
                 {
                     Push((int)LocationAction.x, (int)LocationAction.y);
-                    CharacterSChanger.SetSprite(1, 1);
+                    CharacterSChanger.SetSprite(0.53333333333, 1);
                     action = "inactive";
                     if (IsEnemy == false)
                     {
@@ -380,7 +380,7 @@ public class CharacterBase : MonoBehaviour
                 {
                     if (action == "SPMove" + x && Events.CheckQue(gameObject, 1) && AboutToUseMove == false || action == "SPMoveCharge" + x && Events.CheckQue(gameObject, 1) && AboutToUseMove == false)
                     {
-                        if (MovesAllowed[x].WillBeUsedForCharging || IsCharging && MovesAllowed[x].HasUsedCharge)
+                        if (MovesAllowed[x].WillBeUsedForCharging == false|| IsCharging && MovesAllowed[x].HasUsedCharge)
                         {
                             AboutToUseMove = true;
                             MoveOn = x;

@@ -66,8 +66,10 @@ public class CharacterSpawner : MonoBehaviour
         SandmanCharacterBase.GetComponent<GunFunction>().Text = floatingTextPrefab;
         SandmanCharacterBase.TimeUntilShoot = (float)0.53333333333;
         SandmanCharacterBase.TimeUntilShootEnd = (float)1.4;
-        SandmanCharacterBase.TimeUseMove = (float)1.53333333333;
-        SandmanCharacterBase.TimeUntilMoveEnd = (float)0.8;
+        SandmanCharacterBase.TimeUseMove = (float)0.8;
+        SandmanCharacterBase.TimeUntilMoveEnd = (float)1.53333333333;
+        SandmanCharacterBase.TimeUntilChargeMoveEnd = (float)2.13333333333;
+        SandmanCharacterBase.TimeUseChargeMoveEnd = (float)0.6;
         Vector2 SandmanAdjustTrial = new Vector2(CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[0]].x, CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[0]].y);
         Vector2 SandmanAdjustHit = new Vector2(CharacterSave.GunEffectTrialAdjust[CharacterSave.GunFunctionIndex3[0]].x, CharacterSave.GunEffectHitAdjust[CharacterSave.GunFunctionIndex3[0]].y);
         SandmanCharacterBase.GetComponent<GunFunction>().EstablishGun(CharacterSave.GunRange[CharacterSave.GunFunctionIndex3[0]], CharacterSave.CanPierceObstacle[CharacterSave.GunFunctionIndex3[0]], CharacterSave.CanPierceCharacter[CharacterSave.GunFunctionIndex3[0]], CharacterSave.GunClassDamagePercentage[CharacterSave.GunFunctionIndex3[0]], CharacterSave.DamageFallOff[CharacterSave.GunFunctionIndex3[0]], CharacterSave.BulletsAdded[CharacterSave.GunFunctionIndex3[0]], CharacterSave.GunEffectTrial[CharacterSave.GunFunctionIndex3[0]], SandmanAdjustTrial, CharacterSave.GunEffectHit[CharacterSave.GunFunctionIndex3[0]], SandmanAdjustHit);
