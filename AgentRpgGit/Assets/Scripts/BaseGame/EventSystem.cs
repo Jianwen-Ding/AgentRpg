@@ -130,6 +130,7 @@ public class EventSystem : MonoBehaviour
         {
             if(HasClicked == false && TimeUntilSceneChangeLeft > TimeUntilSceneChangeMin && active == true)
             {
+                TimeUntilSceneChangeLeft = 0;
                 CurrentQue++; 
             }
             HasClicked = true;

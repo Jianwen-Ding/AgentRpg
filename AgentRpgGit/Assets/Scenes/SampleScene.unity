@@ -4342,7 +4342,7 @@ PrefabInstance:
     - target: {fileID: 2946815007361638585, guid: 3baa47be84ebd3f44ad78ef7e5b5fb81,
         type: 3}
       propertyPath: Speed.Array.data[0]
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2946815007361638585, guid: 3baa47be84ebd3f44ad78ef7e5b5fb81,
         type: 3}
@@ -4618,6 +4618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: FontSizeNormal
       value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766301997713019917, guid: 35eb9b645cfb4e54bb70afaeb4f8c261,
+        type: 3}
+      propertyPath: TimeUntilSceneChangeMin
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3766301997942629309, guid: 35eb9b645cfb4e54bb70afaeb4f8c261,
         type: 3}

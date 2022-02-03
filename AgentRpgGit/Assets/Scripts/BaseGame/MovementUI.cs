@@ -201,6 +201,10 @@ public class MovementUI : MonoBehaviour
         {
             if(CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().IsDead == false)
             {
+                if (CurrentCharacterBase.CharacterSChanger != null )
+                {
+                    CurrentCharacterBase.CharacterSChanger.SetSprite(-69, 6);
+                }
                 if (CurrentMoveOn != null)
                 {
                     for (int z = 0; z < MouseFollowingUI.AllowedSelected.Length; z++)
@@ -220,11 +224,6 @@ public class MovementUI : MonoBehaviour
                     MouseFollowingUI.WipeAllowedSelected();
                     CurrentMoveOn = null;
                 }
-                if(CurrentCharacterBase.CharacterSChanger != null)
-                {
-                    CurrentCharacterBase.CharacterSChanger.SetSprite(-69, 6);
-                }
-                
                 if (CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().IsCharging == true)
                 {
                     Scenes = "Charging";

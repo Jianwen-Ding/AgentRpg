@@ -20,10 +20,9 @@ public class SpriteChange : MonoBehaviour
     //6 = base highlight
     //7 = ChargeMove
     public double TimeLeftTillDissapear;
-    [SerializeField]
-    private int currentFunction = 0;
+    public int currentFunction = 0;
     public bool timed;
-    bool hasSet = true;
+    public bool hasSet = true;
     public Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -47,6 +46,7 @@ public class SpriteChange : MonoBehaviour
                 timed = false;
             }
             anim.SetInteger("CurrentState", functionChangeTo);
+            anim.SetInteger("TrueState", functionChangeTo);
             hasSet = false;
         }
         if(time != TimeLeftTillDissapear)
