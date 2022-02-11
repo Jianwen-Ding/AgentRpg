@@ -1,36 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1633342229
+--- !u!114 &881924240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5028751628017422297}
+  m_GameObject: {fileID: 9038222660091329612}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca6add2ccf48f7a478d9cf857297fa09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XMin: -1
-  XMax: 1
+  XMin: -0.6
+  XMax: 0.6
   YMin: -0.2
   YMax: 0.2
-  amount: 15
-  timeSpawn: 0
-  timeSpawnLeft: 0
-  spawnsOverTime: 0
+  amount: 20
   XSpeedMin: 1
   XSpeedMax: -1
-  YSpeedMin: 0.5
-  YSpeedMax: 0
-  RotationSpeedMin: 100
-  RotationSpeedMax: -100
+  YSpeedMin: 3
+  YSpeedMax: 1
+  RotationSpeedMin: 200
+  RotationSpeedMax: -200
   darkest: 200
   lightest: 250
-  nonWhite: 0
-  prefab: {fileID: 6605848493733437764, guid: e88291915e2434740a67d2e471acd1b3, type: 3}
---- !u!1001 &4391288895259864638
+  nonWhite: 1
+  prefab: {fileID: 9218344973592595238, guid: b77cc2aaaff7b954ca4ec5676c89897a, type: 3}
+--- !u!1001 &312855668989140395
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -40,12 +37,12 @@ PrefabInstance:
     - target: {fileID: 4311204953805110083, guid: db473454c6dc4c74a8285b4af885acb4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.87
+      value: -6.110345
       objectReference: {fileID: 0}
     - target: {fileID: 4311204953805110083, guid: db473454c6dc4c74a8285b4af885acb4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 4.4137936
       objectReference: {fileID: 0}
     - target: {fileID: 4311204953805110083, guid: db473454c6dc4c74a8285b4af885acb4,
         type: 3}
@@ -120,13 +117,13 @@ PrefabInstance:
     - target: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
         type: 3}
       propertyPath: m_Name
-      value: BaseSmoke Variant
+      value: BaseMoveParticle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db473454c6dc4c74a8285b4af885acb4, type: 3}
---- !u!1 &5028751628017422297 stripped
+--- !u!1 &9038222660091329612 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
     type: 3}
-  m_PrefabInstance: {fileID: 4391288895259864638}
+  m_PrefabInstance: {fileID: 312855668989140395}
   m_PrefabAsset: {fileID: 0}
