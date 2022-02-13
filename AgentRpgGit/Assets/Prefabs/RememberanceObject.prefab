@@ -56,17 +56,17 @@ MonoBehaviour:
   - 50
   - 50
   Speed:
-  - 3
-  - 2
+  - 0
+  - 1000
   - 1
   Defense:
   - 0
   - 0
   - 0
   PassiveIndex: 000000000000000000000000
-  MovesPutIn1: 01000000020000000300000000000000
-  MovesPutIn2: 00000000000000000000000000000000
-  MovesPutIn3: 00000000000000000000000000000000
+  MovesPutIn1: 01000000020000000300000017000000
+  MovesPutIn2: 01000000020000000300000000000000
+  MovesPutIn3: 03000000050000000100000002000000
   GunFunctionIndex3: 000000000000000000000000
   GunName:
   - Basic
@@ -120,7 +120,7 @@ MonoBehaviour:
   - 
   - 
   GunEffectTrial:
-  - {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4, type: 3}
+  - {fileID: 5028751628017422297, guid: 39b4cc0dd125bf54bafc06b821bb08e0, type: 3}
   - {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4, type: 3}
   - {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4, type: 3}
   - {fileID: 0}
@@ -171,7 +171,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   GunEffectTrialAdjust:
-  - {x: 0, y: 0}
+  - {x: 0, y: 0.5}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -222,9 +222,9 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   GunEffectHit:
-  - {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4, type: 3}
-  - {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4, type: 3}
-  - {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4, type: 3}
+  - {fileID: 3216882294416278307, guid: f52b7332f311c234caa630dfafdf6dea, type: 3}
+  - {fileID: 3216882294416278307, guid: f52b7332f311c234caa630dfafdf6dea, type: 3}
+  - {fileID: 3216882294416278307, guid: f52b7332f311c234caa630dfafdf6dea, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
