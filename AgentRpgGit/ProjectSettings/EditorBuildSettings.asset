@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JadeInfo.unity
     guid: a24dfd04bc51ebe4181c1cc6f1e18715
+  - enabled: 1
+    path: Assets/Scenes/Horror.unity
+    guid: 6244a7e7ab5107342b31b6dbd53071b6
   m_configObjects: {}

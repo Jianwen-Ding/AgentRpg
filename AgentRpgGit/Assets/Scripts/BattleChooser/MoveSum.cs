@@ -40,6 +40,9 @@ public class MoveSum : MonoBehaviour
             case "Leap":
                 SummaryFound = "Leap: Cripples movespeed for a long ranged omnidirectional jump";
                 break;
+            case "DEADMAN":
+                SummaryFound = "DEADMAN: kills an opponent instanly and teleports the user to a random spot";
+                break;
         }
         return SummaryFound;
     }

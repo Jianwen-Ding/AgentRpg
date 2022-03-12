@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2880131657889639293}
   - component: {fileID: 7269944299937114212}
   - component: {fileID: 466320178284045481}
+  - component: {fileID: 5555720037460781119}
   m_Layer: 0
   m_Name: Generic Enemy
   m_TagString: Untagged
@@ -143,6 +144,7 @@ MonoBehaviour:
   DistanceTillAtLocation: 0
   AnimationMoveSpeed: 0
   DistanceUp: 0.8
+  TimeUntilShootEnd: 0
   AboutToShoot: 0
   TimeUntilShoot: 0.5
   TimeUntilShootLeft: 0
@@ -150,6 +152,9 @@ MonoBehaviour:
   MoveOn: 0
   TimeUseMove: 0
   TimeUntilUseMoveLeft: 0
+  TimeUntilMoveEnd: 0
+  TimeUntilChargeMoveEnd: 0
+  TimeUseChargeMoveEnd: 0
 --- !u!114 &6121867395428745347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc18e93b5c66d3649b68c829193a9381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasUsedCharge: 0
   MouseFollowingUI: {fileID: 0}
   MoveSprite: {fileID: 0}
   MoveSpriteSecondary: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
@@ -170,6 +176,27 @@ MonoBehaviour:
   Gridinfo: {fileID: 0}
   Character_Info: {fileID: 0}
   HitUiSprite: {fileID: 0}
+  Effects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   EffectAmount: 0
   WillBeUsedForCharging: 0
   MoveDecison: {fileID: 0}
@@ -294,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875e2e10102a4754e965f68a2120e70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasUsedCharge: 0
   MouseFollowingUI: {fileID: 0}
   MoveSprite: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
     type: 3}
@@ -304,6 +332,27 @@ MonoBehaviour:
   Character_Info: {fileID: 0}
   HitUiSprite: {fileID: 3508090468383675265, guid: 98de24ec3510deb4f997f291cc1a5c80,
     type: 3}
+  Effects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   EffectAmount: 0
   WillBeUsedForCharging: 1
   MoveDecison: {fileID: 0}
@@ -416,7 +465,6 @@ MonoBehaviour:
   AllyMoveSquareY4: -69
   AllyMoveSquareWidth4: -69
   AllyMoveSquareHeight4: -69
-  HasUsedCharge: 0
 --- !u!114 &3760838664247069330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6277febd1349184f9bbe44155710f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasUsedCharge: 0
   MouseFollowingUI: {fileID: 0}
   MoveSprite: {fileID: 0}
   MoveSpriteSecondary: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
@@ -437,6 +486,27 @@ MonoBehaviour:
   Gridinfo: {fileID: 0}
   Character_Info: {fileID: 0}
   HitUiSprite: {fileID: 0}
+  Effects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   EffectAmount: 0
   WillBeUsedForCharging: 0
   MoveDecison: {fileID: 0}
@@ -561,6 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd81fe73ad7a1a45b8d558dcefdfe61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasUsedCharge: 0
   MouseFollowingUI: {fileID: 0}
   MoveSprite: {fileID: 0}
   MoveSpriteSecondary: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
@@ -569,6 +640,27 @@ MonoBehaviour:
   Gridinfo: {fileID: 0}
   Character_Info: {fileID: 0}
   HitUiSprite: {fileID: 0}
+  Effects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   EffectAmount: 0
   WillBeUsedForCharging: 0
   MoveDecison: {fileID: 0}
@@ -788,10 +880,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterRender: {fileID: 0}
+  activeClips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: eedcf2c4639da264b8b66423890d268e, type: 3}
+  - {fileID: 8300000, guid: dd522e381d10d104cadafffda3628999, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   TimeLeftTillDissapear: 0
   currentFunction: 0
   timed: 0
+  hasSet: 1
   anim: {fileID: 0}
+  aud: {fileID: 0}
 --- !u!95 &7269944299937114212
 Animator:
   serializedVersion: 3
@@ -828,3 +934,99 @@ MonoBehaviour:
   ShakeStart: 0
   ShakeIntensity: 0
   ShakeTimeLeft: 0
+--- !u!82 &5555720037460781119
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642210072915571999}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

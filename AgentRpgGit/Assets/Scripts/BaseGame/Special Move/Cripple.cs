@@ -35,7 +35,7 @@ public class Cripple : GenericMove
         WillUseForSquareY4 = -69;
         WillUseForSquareWidth4 = -69;
         WillUseForSquareHeight4 = -69;
-        PriorityAdd = 1;
+        PriorityAdd = 20;
     }
     
     // Update is called once per frame

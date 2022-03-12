@@ -549,7 +549,7 @@ public class BotAi : MonoBehaviour
                     case "SpecialMove":
                         for(int t = 0; t < SpecialMoves.Length; t++)
                         {
-                            int[] LocationSend = SpecialMoves[t].CheckIfConditionsApply();
+                            int[] LocationSend = SpecialMoves[t].CheckIfConditionsApply(new Vector2((int)CharacterInfo.CharacterLocationIndex.x, (int)CharacterInfo.CharacterLocationIndex.y));
                             if (LocationSend[0] != -69 && LocationSend[1] != -69 && LocationSend[2] != 69 && PriorityDeterationSheet[(int)CharacterInfo.CharacterLocationIndex.x][(int)CharacterInfo.CharacterLocationIndex.y] + StartPriorityDeduct + LocationSend[2] > SuggestedActionPriority[0])
                             {
                                 if (PriorityDeterationSheet[(int)CharacterInfo.CharacterLocationIndex.x][(int)CharacterInfo.CharacterLocationIndex.y] + StartPriorityDeduct + LocationSend[2] > SuggestedActionPriority[SuggestedActionPriority.Length - 1])
@@ -720,7 +720,7 @@ public class BotAi : MonoBehaviour
                                         case "SpecialMove":
                                             for (int t = 0; t < SpecialMoves.Length; t++)
                                             {
-                                                int[] LocationSend = SpecialMoves[t].CheckIfConditionsApply();
+                                                int[] LocationSend = SpecialMoves[t].CheckIfConditionsApply(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y));
                                                 if (LocationSend[0] != -69 && LocationSend[1] != -69 && LocationSend[2] != -69 && PriorityDeterationSheet[(int)PlaceAreaCurrent[i].x][(int)PlaceAreaCurrent[i].y] + PriorityDeductions + LocationSend[2] > SuggestedActionPriority[0])
                                                 {
                                                     if (PriorityDeterationSheet[(int)CharacterInfo.CharacterLocationIndex.x][(int)CharacterInfo.CharacterLocationIndex.y] + PriorityDeductions + LocationSend[2] > SuggestedActionPriority[SuggestedActionPriority.Length - 1])

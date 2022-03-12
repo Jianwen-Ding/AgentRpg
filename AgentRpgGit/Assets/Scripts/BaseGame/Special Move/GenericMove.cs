@@ -317,8 +317,12 @@ public class GenericMove : MonoBehaviour
     //[x,y,priorityAdd]
     // -69.-69 is default
     // Will use for grid effect is most useful/ default
-    public virtual int[] CheckIfConditionsApply()
+    public virtual int[] CheckIfConditionsApply(Vector2 areaCheckFrom)
     {
+        if(gameObject.name == "name")
+        {
+            print("wow");
+        }
         int[] DoesConditionsApply = new int[3];
         DoesConditionsApply[0] = -69;
         DoesConditionsApply[1] = -69;
@@ -329,7 +333,20 @@ public class GenericMove : MonoBehaviour
             {
                 if (BotAiCheckIfApply.Opponents[i].IsDead == false)
                 {
-                    Vector2 LocationSpot = CheckIfLocationCorrespondsToAction((int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.x, (int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.y, PlayerSpacesAllowedAdjust, AreaCanSelect);
+                    int[][] newAreaCanSelect = new int[5][];
+                    for (int z = 0; z < newAreaCanSelect.Length; z++)
+                    {
+                        newAreaCanSelect[z] = new int[4];
+                        //-69 is the signal to null out a SelectionSquare
+                        if (newAreaCanSelect[z][0] != -69 && newAreaCanSelect[z][1] != -69 && newAreaCanSelect[z][2] != -69 && newAreaCanSelect[z][3] != -69)
+                        {
+                            newAreaCanSelect[z][1] = (int)areaCheckFrom.y + AreaCanClick[z][1];
+                            newAreaCanSelect[z][2] = (int)areaCheckFrom.x + AreaCanClick[z][2];
+                            newAreaCanSelect[z][3] = (int)areaCheckFrom.y + AreaCanClick[z][3];
+                            newAreaCanSelect[z][0] = (int)areaCheckFrom.x + AreaCanClick[z][0];
+                        }
+                    }
+                    Vector2 LocationSpot = CheckIfLocationCorrespondsToAction((int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.x, (int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.y, PlayerSpacesAllowedAdjust, newAreaCanSelect);
                     if (BotAiCheckIfApply.Opponents[i] != null && Character_Info != null && LocationSpot.x != -69 && LocationSpot.y != -69)
                     {
                         DoesConditionsApply[2] = PriorityAdd;
@@ -601,6 +618,10 @@ public class GenericMove : MonoBehaviour
     */
     public virtual void Update()
     {
+        if (gameObject.name == "name1")
+        {
+            print("wow");
+        }
         //Purely for debug
         AreaSelection = AreaCanSelect[0];
         if(AreaCanClick != null)
@@ -671,13 +692,6 @@ public class GenericMove : MonoBehaviour
             {
                 AllyMoveSpacesAllowed = NewAreaEffectAdjust(AreaCanSelect , AllyMoveAllowedAdjust);
             }
-        if (Character_Info != null && Character_Info.CharacterLocationIndex != null)
-        {
-            AreaCanSelect[0][0] = (int)Character_Info.CharacterLocationIndex.x;
-            AreaCanSelect[0][1] = (int)Character_Info.CharacterLocationIndex.y;
-            AreaCanSelect[0][2] = (int)Character_Info.CharacterLocationIndex.x;
-            AreaCanSelect[0][3] = (int)Character_Info.CharacterLocationIndex.y;
-        }
         /*
     }
         */

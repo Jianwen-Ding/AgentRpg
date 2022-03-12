@@ -55,11 +55,11 @@ public class CharacterBase : MonoBehaviour
     public float ExpressedDefense;
     public GenericMove[] MovesAllowed = new GenericMove[4];
     [SerializeField]
-    GameObject GridSquare;
+    public GameObject GridSquare;
     [SerializeField]
     public GridLoad GridData;
     [SerializeField]
-    SpriteRenderer GameObjectSpriteRenderer;
+    public SpriteRenderer GameObjectSpriteRenderer;
     public bool IsActive;
     //Status Effects
     //find status effect controller for guide
@@ -169,7 +169,7 @@ public class CharacterBase : MonoBehaviour
         Health -= (float)(int)DamageTaken;
         return (float)(int)DamageTaken;
     }
-    public void PushAction(Vector2 ActionCoordinate, string Action, EventSystem EventCommunication)
+    public virtual void PushAction(Vector2 ActionCoordinate, string Action, EventSystem EventCommunication)
     {
         LocationAction = ActionCoordinate;
         action = Action;
@@ -305,7 +305,7 @@ public class CharacterBase : MonoBehaviour
 
     }
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if(Health < 0)
         {
@@ -398,7 +398,7 @@ public class CharacterBase : MonoBehaviour
                 }
             }
             //DebugFailsafe if Grid outside parameter
-            if (GridData.AllGrids[(int)CharacterLocationIndex.y][(int)CharacterLocationIndex.x] == null)
+            if (GridData != null && GridData.AllGrids[(int)CharacterLocationIndex.y][(int)CharacterLocationIndex.x] == null)
             {
                 print("Error- GridPlace does not exist");
                 print(gameObject.name + " Is the requesting character");
@@ -435,6 +435,10 @@ public class CharacterBase : MonoBehaviour
             CharacterSChanger.SetSprite(-69, 0);
         }
         if (!HasDied && IsDead)
+        {
+            CharacterSChanger.SetSprite(-69, 5);
+        }
+        if (IsDead)
         {
             CharacterSChanger.SetSprite(-69, 5);
         }

@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 8961973118777286951}
   - component: {fileID: 8961973118777286950}
   - component: {fileID: 8961973118777286953}
-  - component: {fileID: 8961973118777286952}
+  - component: {fileID: 3656621135941530638}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8961973118777286952}
+      - m_Target: {fileID: 3656621135941530638}
         m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
@@ -534,7 +534,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8961973118777286952
+--- !u!114 &3656621135941530638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -543,10 +543,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8961973118777286954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a836b2c23a29b24fa6fced0e765d3a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 89c24ef4964ebfa4baabf9520830be27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: SampleScene
 --- !u!1 &8961973118777808095
 GameObject:
   m_ObjectHideFlags: 0

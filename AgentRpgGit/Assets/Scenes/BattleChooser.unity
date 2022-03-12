@@ -1038,9 +1038,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Loads: 0
-  time: 200
+  time: 0
   prevTime: 21.17647
-  StartTime: 22.941177
+  StartTime: 21.17647
   EndTime: 207.84314
 --- !u!1 &911240742
 GameObject:
@@ -1692,7 +1692,7 @@ MonoBehaviour:
     type: 3}
   SliderText:
   - epq
-  - qe
+  - The Presence
   - vb
   SliderDifficultyRating: 040000000500000001000000
   SliderIsBoss: 000100
@@ -1715,15 +1715,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlideUIPrefabs:
   - {fileID: 84929755749893258, guid: dd50db98efd56074a957d600bb442e92, type: 3}
-  - {fileID: 84929755749893258, guid: dd50db98efd56074a957d600bb442e92, type: 3}
+  - {fileID: 1035232728720854101, guid: a3cf3297f207b5e448c2441b38c392d2, type: 3}
   - {fileID: 84929755749893258, guid: dd50db98efd56074a957d600bb442e92, type: 3}
   Enemies:
   - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
   - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
   - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
-  - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
-  - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
-  - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
+  - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
+  - {fileID: 8343104111313922231, guid: 721cfb01f3a53604aaed145faff2ff6c, type: 3}
+  - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
   - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
   - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
