@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1310627916154354699}
   - component: {fileID: 7311483583811846158}
-  - component: {fileID: 7973715601573326425}
   - component: {fileID: 7455767801574358979}
   - component: {fileID: 8609043569963763507}
   - component: {fileID: 3775485618813125674}
   - component: {fileID: 6267194577319676135}
   - component: {fileID: 2132698551062217841}
   - component: {fileID: 7450296204495374606}
+  - component: {fileID: 7314996569715806611}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Untagged
@@ -88,69 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7973715601573326425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7064605456285047121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95c496756887fed4c99d01c2383c1cd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveLeftOver: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
-    type: 3}
-  DamageShakeRatio: 0.003
-  CharacterSChanger: {fileID: 0}
-  HasDied: 0
-  PreviousHealth: 0
-  IsEnemy: 1
-  Health: 70
-  MaxHealth: 70
-  IsDead: 0
-  LocationAction: {x: 0, y: 0}
-  action: 
-  IsCharging: 0
-  Events: {fileID: 0}
-  lookingLeft: 0
-  NormalMove: 0
-  CharacterLocationIndex: {x: 0, y: 0}
-  Speed: 2
-  SpeedPriority: 0
-  SpeedMultiplier: 1
-  ExpressedSpeed: 0
-  Damage: 5
-  DamageMultiplier: 1
-  ExpressedDamage: 0
-  Defense: 50
-  DefenseMultiplier: 1
-  ExpressedDefense: 0
-  MovesAllowed:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  GridSquare: {fileID: 0}
-  GridData: {fileID: 0}
-  GameObjectSpriteRenderer: {fileID: 0}
-  IsActive: 0
-  StatusEffects: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  DistanceTillAtLocation: 0
-  AnimationMoveSpeed: 0
-  DistanceUp: 0.8
-  TimeUntilShootEnd: 0
-  AboutToShoot: 0
-  TimeUntilShoot: 0.5
-  TimeUntilShootLeft: 0
-  AboutToUseMove: 0
-  MoveOn: 0
-  TimeUseMove: 0
-  TimeUntilUseMoveLeft: 0
-  TimeUntilMoveEnd: 0
-  TimeUntilChargeMoveEnd: 0
-  TimeUseChargeMoveEnd: 0
 --- !u!114 &7455767801574358979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,18 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterRender: {fileID: 0}
-  activeClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: eedcf2c4639da264b8b66423890d268e, type: 3}
-  - {fileID: 8300000, guid: dd522e381d10d104cadafffda3628999, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  activeClips: []
   TimeLeftTillDissapear: 0
   currentFunction: 0
   timed: 0
@@ -377,3 +303,65 @@ MonoBehaviour:
   hasSet: 1
   anim: {fileID: 0}
   aud: {fileID: 0}
+--- !u!114 &7314996569715806611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064605456285047121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559b18b88d5b30f4d8e7a5f9e41d3fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveLeftOver: {fileID: 0}
+  DamageShakeRatio: 0
+  CharacterSChanger: {fileID: 0}
+  HasDied: 0
+  PreviousHealth: 0
+  IsEnemy: 0
+  Health: 0
+  MaxHealth: 0
+  IsDead: 0
+  LocationAction: {x: 0, y: 0}
+  action: 
+  IsCharging: 0
+  Events: {fileID: 0}
+  lookingLeft: 0
+  NormalMove: 0
+  CharacterLocationIndex: {x: 0, y: 0}
+  Speed: 0
+  SpeedPriority: 0
+  SpeedMultiplier: 1
+  ExpressedSpeed: 0
+  Damage: 0
+  DamageMultiplier: 1
+  ExpressedDamage: 0
+  Defense: 0
+  DefenseMultiplier: 1
+  ExpressedDefense: 0
+  MovesAllowed:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  GridSquare: {fileID: 0}
+  GridData: {fileID: 0}
+  GameObjectSpriteRenderer: {fileID: 0}
+  IsActive: 0
+  StatusEffects: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  DistanceTillAtLocation: 0
+  AnimationMoveSpeed: 0
+  DistanceUp: 0
+  TimeUntilShootEnd: 0
+  AboutToShoot: 0
+  TimeUntilShoot: 0
+  TimeUntilShootLeft: 0
+  AboutToUseMove: 0
+  MoveOn: 0
+  TimeUseMove: 0
+  TimeUntilUseMoveLeft: 0
+  TimeUntilMoveEnd: 0
+  TimeUntilChargeMoveEnd: 0
+  TimeUseChargeMoveEnd: 0

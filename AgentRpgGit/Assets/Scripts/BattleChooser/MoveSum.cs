@@ -78,9 +78,9 @@ public class MoveSum : MonoBehaviour
             {
                 SummaryDisplay[i].GetComponent<TextMeshPro>().text = MoveSummaryDispense(Enemies[EnemyCurrentMain].GetComponent<CharacterBase>().MovesAllowed[i]);
             }
-            else if (SummaryDisplay[i] != null)
+            else
             {
-                Destroy(SummaryDisplay[i]);
+                SummaryDisplay[i].GetComponent<TextMeshPro>().text = "";
             }
         }
         EnemyPassiveDescriber.GetComponent<TextMeshPro>().text = EnemyPassiveText[EnemyCurrentMain];

@@ -1694,7 +1694,7 @@ MonoBehaviour:
   - epq
   - The Presence
   - vb
-  SliderDifficultyRating: 040000000500000001000000
+  SliderDifficultyRating: 040000000300000001000000
   SliderIsBoss: 000100
   SliderObjects:
   - {fileID: 0}

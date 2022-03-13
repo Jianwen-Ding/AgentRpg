@@ -291,25 +291,29 @@ public class BotAi : MonoBehaviour
         }
         for(int i = 0; i < Opponents.Length; i++)
         {
-            GunFunction OpponentGun = Opponents[i].gameObject.GetComponent<GunFunction>();
-            if(CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 0, 1, OpponentGun) != -69)
+            if (Opponents[i].IsDead == false)
             {
-                HasBeenHitDmg[i] = (int)(DeductPerBulletDmg * (Math.Pow(OpponentGun.DamageFallOff, (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 0, 1, OpponentGun))) * Opponents[i].gameObject.GetComponent<CharacterBase>().ExpressedDamage * OpponentGun.DamageRatio));
-            }
-            else if(CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, -1, 0, OpponentGun) != -69 )
-            {
-                HasBeenHitDmg[i] = (int)(DeductPerBulletDmg * (Math.Pow(OpponentGun.DamageFallOff, (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, -1, 0, OpponentGun))) * Opponents[i].gameObject.GetComponent<CharacterBase>().ExpressedDamage * OpponentGun.DamageRatio));
-            }
-            else if ( CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 0, -1, OpponentGun) != -69 )
-            {
-                HasBeenHitDmg[i] = (int)(DeductPerBulletDmg * (Math.Pow(OpponentGun.DamageFallOff, (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 0, -1, OpponentGun))) * Opponents[i].gameObject.GetComponent<CharacterBase>().ExpressedDamage * OpponentGun.DamageRatio));
+                GunFunction OpponentGun = Opponents[i].gameObject.GetComponent<GunFunction>();
+                if (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 0, 1, OpponentGun) != -69)
+                {
+                    HasBeenHitDmg[i] = (int)(DeductPerBulletDmg * (Math.Pow(OpponentGun.DamageFallOff, (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 0, 1, OpponentGun))) * Opponents[i].gameObject.GetComponent<CharacterBase>().ExpressedDamage * OpponentGun.DamageRatio));
+                }
+                else if (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, -1, 0, OpponentGun) != -69)
+                {
+                    HasBeenHitDmg[i] = (int)(DeductPerBulletDmg * (Math.Pow(OpponentGun.DamageFallOff, (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, -1, 0, OpponentGun))) * Opponents[i].gameObject.GetComponent<CharacterBase>().ExpressedDamage * OpponentGun.DamageRatio));
+                }
+                else if (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 0, -1, OpponentGun) != -69)
+                {
+                    HasBeenHitDmg[i] = (int)(DeductPerBulletDmg * (Math.Pow(OpponentGun.DamageFallOff, (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 0, -1, OpponentGun))) * Opponents[i].gameObject.GetComponent<CharacterBase>().ExpressedDamage * OpponentGun.DamageRatio));
 
-            }
-            else if (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 1, 0, OpponentGun) != -69)
-            {
-                HasBeenHitDmg[i] = (int)(DeductPerBulletDmg * (Math.Pow(OpponentGun.DamageFallOff, (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 1, 0, OpponentGun))) * Opponents[i].gameObject.GetComponent<CharacterBase>().ExpressedDamage * OpponentGun.DamageRatio));
+                }
+                else if (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 1, 0, OpponentGun) != -69)
+                {
+                    HasBeenHitDmg[i] = (int)(DeductPerBulletDmg * (Math.Pow(OpponentGun.DamageFallOff, (CurrentAreaShot(Opponents[i].gameObject.GetComponent<CharacterBase>().CharacterLocationIndex, CurrentX, CurrentY, 1, 0, OpponentGun))) * Opponents[i].gameObject.GetComponent<CharacterBase>().ExpressedDamage * OpponentGun.DamageRatio));
 
+                }
             }
+            
         }
         return HasBeenHitDmg;
     }
@@ -337,7 +341,7 @@ public class BotAi : MonoBehaviour
                 AmountOfAllysAdded += 1;
                 
             }
-            else
+            else if(Opponents.Length > AmountOfOpponentsAdded)
             {
                 Opponents[AmountOfOpponentsAdded] = CurrentBase;
                 AmountOfOpponentsAdded += 1;
