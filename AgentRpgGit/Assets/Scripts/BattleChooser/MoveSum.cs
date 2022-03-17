@@ -7,6 +7,8 @@ public class MoveSum : MonoBehaviour
     [SerializeField ]
     Vector3 OwnStartingPosition;
     public GameObject[] Enemies = new GameObject[3];
+    [SerializeField]
+    public GameObject[] enemyHeaders;
     [SerializeField ]
     Sprite[] SpriteEnemyDisplay = new Sprite[3];
     Color[] ColorEnemyDisplay = new Color[3];
@@ -25,6 +27,7 @@ public class MoveSum : MonoBehaviour
     GameObject Button1;
     [SerializeField]
     GameObject Button2;
+    bool hasSet = false;
     // STORES ALL OF THE MOVE SUMMARIES
     public string MoveSummaryDispense(GenericMove MoveInput)
     {
@@ -49,6 +52,8 @@ public class MoveSum : MonoBehaviour
     void Start()
     {
         transform.position = OwnStartingPosition;
+        EnemyDisplayObject.GetComponent<SpriteRenderer>().sprite = SpriteEnemyDisplay[EnemyCurrentMain];
+        EnemyDisplayObject.GetComponent<SpriteRenderer>().color = ColorEnemyDisplay[EnemyCurrentMain];
         Button1.GetComponent<ButtonChange>().Main = gameObject.GetComponent<MoveSum>();
         Button2.GetComponent<ButtonChange>().Main = gameObject.GetComponent<MoveSum>();
         for (int i = 0; i < 3; i++)
@@ -64,6 +69,11 @@ public class MoveSum : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hasSet == false && GameObject.FindGameObjectsWithTag("CharacterRemeberance").Length == 1)
+        {
+            hasSet = true;
+            GameObject.FindGameObjectsWithTag("CharacterRemeberance")[0].gameObject.GetComponent<CharacterRememberance>().EnemyHeader = enemyHeaders;
+        }
         if (EnemyCurrentMain < 0)
         {
             EnemyCurrentMain = Enemies.Length - 1;
