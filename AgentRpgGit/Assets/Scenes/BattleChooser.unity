@@ -1693,10 +1693,10 @@ MonoBehaviour:
   SlidePrefab: {fileID: 7670706979327227412, guid: 5cd0a19a9b80d4447ad4efe2e14d0f5a,
     type: 3}
   SliderText:
-  - epq
+  - Starting Grounds
   - The Presence
   - vb
-  SliderDifficultyRating: 040000000300000001000000
+  SliderDifficultyRating: 010000000300000001000000
   SliderIsBoss: 000100
   SliderObjects:
   - {fileID: 0}
@@ -1716,7 +1716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlideUIPrefabs:
-  - {fileID: 84929755749893258, guid: dd50db98efd56074a957d600bb442e92, type: 3}
+  - {fileID: 1700336580831039171, guid: 8ed61136cf4337f4c9d96c8fc8da5df5, type: 3}
   - {fileID: 1035232728720854101, guid: a3cf3297f207b5e448c2441b38c392d2, type: 3}
   - {fileID: 84929755749893258, guid: dd50db98efd56074a957d600bb442e92, type: 3}
   Enemies:
