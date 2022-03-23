@@ -47,28 +47,6 @@ public class Splashstep : GenericMove
         WillUseForSquareWidth4 = -69;
         WillUseForSquareHeight4 = -69;
     }
-    public override void SelectionAdjustment()
-    {
-        MouseFollowingUI.GroupSelection[0][0] = -1;
-        MouseFollowingUI.GroupSelection[0][1] = -1;
-        MouseFollowingUI.GroupSelection[0][2] = 2;
-        MouseFollowingUI.GroupSelection[0][3] = 2;
-        MouseFollowingUI.IsSelecting = true;
-        MouseFollowingUI.ObstacleSelectAllowed = false;
-        MouseFollowingUI.CharacterSelectAllowed = false;
-        MouseFollowingUI.WillGroupSelect = true;
-        for (int i = 0; i < AreaCanClick.Length; i++)
-        {
-            //-69 is the signal to null out a SelectionSquare
-            if (AreaCanClick[i][0] != -69 && AreaCanClick[i][1] != -69 && AreaCanClick[i][2] != -69 && AreaCanClick[i][3] != -69)
-            {
-                MouseFollowingUI.AllowedSelected[i][1] = (int)gameObject.GetComponent<CharacterBase>().CharacterLocationIndex.y + AreaCanClick[i][1];
-                MouseFollowingUI.AllowedSelected[i][2] = (int)gameObject.GetComponent<CharacterBase>().CharacterLocationIndex.x + AreaCanClick[i][2];
-                MouseFollowingUI.AllowedSelected[i][3] = (int)gameObject.GetComponent<CharacterBase>().CharacterLocationIndex.y + AreaCanClick[i][3];
-                MouseFollowingUI.AllowedSelected[i][0] = (int)gameObject.GetComponent<CharacterBase>().CharacterLocationIndex.x + AreaCanClick[i][0];
-            }
-        }
-    }
     public override void ActivateMove()
     {
         EffectAmount = 0;

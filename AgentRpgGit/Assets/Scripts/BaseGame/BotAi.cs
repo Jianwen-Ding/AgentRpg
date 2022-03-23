@@ -479,13 +479,9 @@ public class BotAi : MonoBehaviour
                     case "Shoot":
                         for (int t = 0; t < Opponents.Length; t++)
                             {
-                            if (gameObject.name == "wow" && (int)CharacterInfo.CharacterLocationIndex.x == 6 && (int)CharacterInfo.CharacterLocationIndex.y == 4)
-                            {
-                                print("wow");
-                            }
                             CharacterBase OpponentInformation = Opponents[t].gameObject.GetComponent<CharacterBase>();
                                 GunFunction SelfGun = gameObject.GetComponent<GunFunction>();
-                                if (PriorityDeterationSheet[(int)CharacterInfo.CharacterLocationIndex.x][(int)CharacterInfo.CharacterLocationIndex.y] + StartPriorityDeduct + ShootAdd > SuggestedActionPriority[0])
+                                if (Opponents[t].IsDead == false && PriorityDeterationSheet[(int)CharacterInfo.CharacterLocationIndex.x][(int)CharacterInfo.CharacterLocationIndex.y] + StartPriorityDeduct + ShootAdd > SuggestedActionPriority[0])
                                 {
                                     if (CurrentAreaShot(new Vector2((int)CharacterInfo.CharacterLocationIndex.x, (int)CharacterInfo.CharacterLocationIndex.y), (int)OpponentInformation.CharacterLocationIndex.x, (int)OpponentInformation.CharacterLocationIndex.y, 0, 1, SelfGun) != -69)
                                     {
@@ -699,7 +695,7 @@ public class BotAi : MonoBehaviour
                                                     
                                                     CharacterBase OpponentInformation = Opponents[t].gameObject.GetComponent<CharacterBase>();
                                                     GunFunction SelfGun = gameObject.GetComponent<GunFunction>();
-                                                    if ( CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y),(int)OpponentInformation.CharacterLocationIndex.x, (int)OpponentInformation.CharacterLocationIndex.y, 0, 1, SelfGun) != -69|| CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y, -1, 0, SelfGun) != -69 || CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y, 0, -1, SelfGun) != -69 && CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y, 1, 0, SelfGun) != -69)
+                                                    if (Opponents[t].IsDead == false && CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y),(int)OpponentInformation.CharacterLocationIndex.x, (int)OpponentInformation.CharacterLocationIndex.y, 0, 1, SelfGun) != -69|| CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y, -1, 0, SelfGun) != -69 || CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y, 0, -1, SelfGun) != -69 && CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y, 1, 0, SelfGun) != -69)
                                                     {
                                                         if (PriorityDeterationSheet[(int)PlaceAreaCurrent[i].x][(int)PlaceAreaCurrent[i].y] + PriorityDeductions + ShootAdd > SuggestedActionPriority[0])
                                                         {

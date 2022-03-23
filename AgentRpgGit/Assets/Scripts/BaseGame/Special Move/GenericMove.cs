@@ -319,10 +319,6 @@ public class GenericMove : MonoBehaviour
     // Will use for grid effect is most useful/ default
     public virtual int[] CheckIfConditionsApply(Vector2 areaCheckFrom)
     {
-        if(gameObject.name == "name")
-        {
-            print("wow");
-        }
         int[] DoesConditionsApply = new int[3];
         DoesConditionsApply[0] = -69;
         DoesConditionsApply[1] = -69;

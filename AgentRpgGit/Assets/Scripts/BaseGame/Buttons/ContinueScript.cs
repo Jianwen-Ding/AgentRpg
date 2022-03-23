@@ -9,7 +9,7 @@ public class ContinueScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ButtonBaseThing.ButtonActivate)
+        if (ButtonBaseThing.ButtonActivate && ButtonBaseThing.UIBase.GetComponent<MovementUI>().CurrentCharactersInPlay.Length > ButtonBaseThing.UIBase.GetComponent<MovementUI>().CurrentCharacterInPlay)
         {
             MovementUI MovementInfo = ButtonBaseThing.UIBase.GetComponent<MovementUI>();
             MovementInfo.CurrentCharactersInPlay[MovementInfo.CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterSChanger.SetSprite(-69, 0);
