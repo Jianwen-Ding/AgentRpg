@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class Rythm : GenericMove
 {
+    [SerializeField]
+    float damageRatio;
     public override void SetAdjust()
     {
         AreaSelectionSquareX0 = -1;
-        AreaSelectionSquareY0 = -1;
+        AreaSelectionSquareY0 = 1;
         AreaSelectionSquareWidth0 = 1;
         AreaSelectionSquareHeight0 = 1;
-        AreaSelectionSquareX1 = -69;
-        AreaSelectionSquareY1 = -69;
-        AreaSelectionSquareWidth1 = -69;
-        AreaSelectionSquareHeight1 = -69;
-        AreaSelectionSquareX2 = -69;
-        AreaSelectionSquareY2 = -69;
-        AreaSelectionSquareWidth2 = -69;
-        AreaSelectionSquareHeight2 = -69;
-        AreaSelectionSquareX3 = -69;
-        AreaSelectionSquareY3 = -69;
-        AreaSelectionSquareWidth3 = -69;
-        AreaSelectionSquareHeight3 = -69;
+        AreaSelectionSquareX1 = -1;
+        AreaSelectionSquareY1 = -1;
+        AreaSelectionSquareWidth1 = 1;
+        AreaSelectionSquareHeight1 = -1;
+        AreaSelectionSquareX2 = -1;
+        AreaSelectionSquareY2 = 0;
+        AreaSelectionSquareWidth2 = -1;
+        AreaSelectionSquareHeight2 = 0;
+        AreaSelectionSquareX3 = 1;
+        AreaSelectionSquareY3 = 0;
+        AreaSelectionSquareWidth3 = 1;
+        AreaSelectionSquareHeight3 = 0;
         AreaSelectionSquareX4 = -69;
         AreaSelectionSquareY4 = -69;
         AreaSelectionSquareWidth4 = -69;
@@ -52,6 +54,7 @@ public class Rythm : GenericMove
         MouseFollowingUI.GroupSelection[0][3] = 0;
         willUseForGridEffect = true;
         PriorityAdd = 60;
+        damageRatio = 0.3f;
     }
     public override void SelectionAdjustment()
     {
@@ -97,7 +100,7 @@ public class Rythm : GenericMove
                         }
                     }
                     Vector2 LocationSpot = CheckIfLocationCorrespondsToAction((int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.x, (int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.y, PlayerSpacesAllowedAdjust, newAreaCanSelect);
-                    if (BotAiCheckIfApply.Opponents[i] != null && Character_Info != null && LocationSpot.x != -69 && LocationSpot.y != -69 && Gridinfo.AllGrids[(int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.y][(int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn == null && Gridinfo.AllGrids[(int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.y][ (int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.x].GetComponent<GridControl>().ObstacleIndex == 0 && LocationSpot.x != Character_Info.CharacterLocationIndex.x && LocationSpot.y != Character_Info.CharacterLocationIndex.y && LocationSpot.x != (int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.x && LocationSpot.y != (int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.y)
+                    if (BotAiCheckIfApply.Opponents[i] != null && Character_Info != null && LocationSpot.x != -69 && LocationSpot.y != -69 && Gridinfo.AllGrids[(int)LocationSpot.y][(int)LocationSpot.x].GetComponent<GridControl>().CharacterOn == null && Gridinfo.AllGrids[(int)LocationSpot.y][(int)LocationSpot.x].GetComponent<GridControl>().ObstacleIndex == 0)
                     {
                         DoesConditionsApply[2] = PriorityAdd;
                         Vector2 Location = LocationSpot;
@@ -130,9 +133,9 @@ public class Rythm : GenericMove
                 {
                     Character_Info.SpeedMultiplier += (float)0.1;
                     DoesHitEnemy = true;
-                    CheckedCharacterBase.Health -= CheckedCharacterBase.DefenseProcessedDamage(25);
+                    CheckedCharacterBase.Health -= CheckedCharacterBase.DefenseProcessedDamage(damageRatio * Character_Info.ExpressedDamage);
                     InWorldText = Instantiate(HitUiSprite, new Vector3(Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.x, Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.y), Quaternion.identity.normalized);
-                    InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, "" + CheckedCharacterBase.DefenseProcessedDamage(25), Color.black, new Vector2(5, 5));
+                    InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, "" + CheckedCharacterBase.DefenseProcessedDamage(damageRatio * Character_Info.ExpressedDamage), Color.black, new Vector2(5, 5));
                 }
             }
         }

@@ -12,17 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MoveChooser.unity
     guid: de712b517d9f7bb4cb90ec084f492a0f
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 0ae00de377050d4409625865b96f5dcc
-  - enabled: 1
     path: Assets/Scenes/PickMove.unity
     guid: 42f829ae06ca6194e9dc7086251629ce
   - enabled: 1
     path: Assets/Scenes/GunModChooser.unity
     guid: b602420fcbbc76446a120e25d001600c
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0ae00de377050d4409625865b96f5dcc
   - enabled: 1
     path: Assets/Scenes/AurthurInfo.unity
     guid: 347bc1ffb1d730e4593d22274da31bb5
@@ -30,11 +27,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SandmanInfo.unity
     guid: 092a047c9e250f1478982be8f9259088
   - enabled: 1
-    path: Assets/Scenes/JadeInfo.unity
-    guid: a24dfd04bc51ebe4181c1cc6f1e18715
-  - enabled: 1
     path: Assets/Scenes/Horror.unity
     guid: 6244a7e7ab5107342b31b6dbd53071b6
+  - enabled: 1
+    path: Assets/Scenes/JadeInfo.unity
+    guid: a24dfd04bc51ebe4181c1cc6f1e18715
   - enabled: 1
     path: Assets/Scenes/glossary.unity
     guid: f139d049a499e0749bcb86705a89314a

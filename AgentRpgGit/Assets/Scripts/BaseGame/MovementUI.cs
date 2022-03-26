@@ -139,7 +139,7 @@ public class MovementUI : MonoBehaviour
             EnemiesAi[2] = Enemies[2].GetComponent<BotAi>();
         }
         //print(EnemiesAi[0].IsMakingDecison + " // " + EnemiesAi[1].IsMakingDecison + " // " + EnemiesAi[2].IsMakingDecison);
-        if (CurrentCharacterInPlay > 2 || CurrentCharacterInPlay >= CurrentCharactersInPlay.Length)
+        if (CurrentCharacterInPlay > 2 || CurrentCharacterInPlay >= CurrentCharactersInPlay.Length || Scenes == "EnemyWait")
         {
             bool IsCurrentlyMakingDecison;
             IsCurrentlyMakingDecison = false;
@@ -199,7 +199,7 @@ public class MovementUI : MonoBehaviour
         }
         if (Scenes == "main")
         {
-            if(CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().IsDead == false)
+            if(CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>()!= null && CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().IsDead == false)
             {
                 if (CurrentCharacterBase.CharacterSChanger != null )
                 {
@@ -678,6 +678,7 @@ public class MovementUI : MonoBehaviour
                     break;
             }
             TextUI.GetComponent<TextMeshProUGUI>().text = "Wait For Enemies To make their decison" + waitDot;
+
         }
     }
 }

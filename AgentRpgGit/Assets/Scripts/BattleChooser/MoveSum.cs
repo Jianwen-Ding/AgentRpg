@@ -46,6 +46,15 @@ public class MoveSum : MonoBehaviour
             case "DEADMAN":
                 SummaryFound = "DEADMAN: kills an opponent instanly and teleports the user to a random spot";
                 break;
+            case "Staggerstep":
+                SummaryFound = "Staggerstep: cleanses all speed debuffs and moves foward after a turn";
+                break;
+            case "Lariat":
+                SummaryFound = "Lariat: moves toward and strikes at a opponent. Very powerful";
+                break;
+            case "Rythm":
+                SummaryFound = "Rythm: moves and launches a attack around the user.";
+                break;
         }
         return SummaryFound;
     }

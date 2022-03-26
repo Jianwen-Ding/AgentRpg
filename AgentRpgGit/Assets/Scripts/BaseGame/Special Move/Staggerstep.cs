@@ -4,6 +4,48 @@ using UnityEngine;
 
 public class Staggerstep : Artillery
 {
+    public float speedDownTimes;
+    public override int[] CheckIfConditionsApply(Vector2 areaCheckFrom)
+    {
+        int[] DoesConditionsApply = new int[3];
+        DoesConditionsApply[0] = -69;
+        DoesConditionsApply[1] = -69;
+        DoesConditionsApply[2] = -69;
+        if (willUseForGridEffect)
+        {
+            for (int x = -1; x <= 1; x++)
+            {
+                for(int y = -1; y <= 1; y++)
+                {
+                    int[][] newAreaCanSelect = new int[5][];
+                    for (int z = 0; z < newAreaCanSelect.Length; z++)
+                    {
+                        newAreaCanSelect[z] = new int[4];
+                        //-69 is the signal to null out a SelectionSquare
+                        if (newAreaCanSelect[z][0] != -69 && newAreaCanSelect[z][1] != -69 && newAreaCanSelect[z][2] != -69 && newAreaCanSelect[z][3] != -69)
+                        {
+                            newAreaCanSelect[z][1] = (int)areaCheckFrom.y + AreaCanClick[z][1];
+                            newAreaCanSelect[z][2] = (int)areaCheckFrom.x + AreaCanClick[z][2];
+                            newAreaCanSelect[z][3] = (int)areaCheckFrom.y + AreaCanClick[z][3];
+                            newAreaCanSelect[z][0] = (int)areaCheckFrom.x + AreaCanClick[z][0];
+                        }
+                    }
+                    Vector2 LocationSpot = new Vector2(areaCheckFrom.x + x , areaCheckFrom.y + y);
+                    if (LocationSpot.x >= 0 && LocationSpot.y >= 0&& LocationSpot.x < Gridinfo.XWidthPublic && LocationSpot.y < Gridinfo.YWidthPublic && Character_Info != null && LocationSpot.x != -69 && LocationSpot.y != -69 && Gridinfo.AllGrids[(int)LocationSpot.y][(int)LocationSpot.x].GetComponent<GridControl>().CharacterOn == null && Gridinfo.AllGrids[(int)LocationSpot.y][(int)LocationSpot.x].GetComponent<GridControl>().ObstacleIndex == 0)
+                    {
+                        DoesConditionsApply[2] = (int)(speedDownTimes * (-Character_Info.SpeedMultiplier + 1));
+                        Vector2 Location = LocationSpot;
+                        DoesConditionsApply[0] = (int)Location.x;
+                        DoesConditionsApply[1] = (int)Location.y;
+                    }
+                }
+               
+            }
+
+        }
+        return DoesConditionsApply;
+
+    }
     public override void SetAdjust()
     {
         AreaSelectionSquareX0 = -1;
@@ -50,6 +92,7 @@ public class Staggerstep : Artillery
         MouseFollowingUI.GroupSelection[0][1] = 0;
         MouseFollowingUI.GroupSelection[0][2] = 2;
         MouseFollowingUI.GroupSelection[0][3] = 0;
+        willUseForGridEffect = true;
     }
     public override void SelectionAdjustment()
     {

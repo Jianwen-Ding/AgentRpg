@@ -1694,12 +1694,10 @@ MonoBehaviour:
     type: 3}
   SliderText:
   - Starting Grounds
-  - The Presence
-  - vb
-  SliderDifficultyRating: 010000000300000001000000
-  SliderIsBoss: 000100
+  - '"Bugged out don''t select"'
+  SliderDifficultyRating: 0100000003000000
+  SliderIsBoss: 0101
   SliderObjects:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   WipeAllPlayerPrefs: 0
@@ -1718,17 +1716,13 @@ MonoBehaviour:
   SlideUIPrefabs:
   - {fileID: 1700336580831039171, guid: 8ed61136cf4337f4c9d96c8fc8da5df5, type: 3}
   - {fileID: 1035232728720854101, guid: a3cf3297f207b5e448c2441b38c392d2, type: 3}
-  - {fileID: 84929755749893258, guid: dd50db98efd56074a957d600bb442e92, type: 3}
   Enemies:
-  - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
-  - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
-  - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
+  - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
+  - {fileID: 4716509826077905511, guid: 43cee3635be86d24ba0a9afc567431a6, type: 3}
+  - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   - {fileID: 8343104111313922231, guid: 721cfb01f3a53604aaed145faff2ff6c, type: 3}
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
-  - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
-  - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
-  - {fileID: 3642210072915571999, guid: 4063f96e3fe669849a51e1ab59ffe113, type: 3}
 --- !u!1 &1264544396
 GameObject:
   m_ObjectHideFlags: 0

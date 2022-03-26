@@ -55,7 +55,7 @@ public class Cripple : GenericMove
                 if (CheckedCharacterBase.IsEnemy != Character_Info.IsEnemy)
                 {
                     CheckedCharacterBase.Health -= 10;
-                    CheckedCharacterBase.SpeedMultiplier -= (float)0.5;
+                    CheckedCharacterBase.SpeedMultiplier -= (float)0.2;
                     InWorldText = Instantiate(HitUiSprite, new Vector3(Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.x, Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.y), Quaternion.identity.normalized);
                     InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, "10", Color.black, new Vector2(5, 5));
                 }

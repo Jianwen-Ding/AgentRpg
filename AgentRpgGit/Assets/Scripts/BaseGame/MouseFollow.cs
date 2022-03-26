@@ -56,7 +56,7 @@ public class MouseFollow : MonoBehaviour
                         Vector2 CurrentArea = new Vector2(GridIn.GetComponent<GridControl>().GridCoordinate.y + YCurrent, GridIn.GetComponent<GridControl>().GridCoordinate.x + XCurrent);
                         if (CurrentArea.x >= 0 && CurrentArea.y >= 0 && CurrentArea.y < GridInfo.XWidthPublic && CurrentArea.x < GridInfo.YWidthPublic)
                         {
-                            GridInfo.AllGrids[(int)CurrentArea.x][(int)CurrentArea.y].GetComponent<SpriteRenderer>().color = GroupSelectionOriginalColors[(int)CurrentArea.x][(int)CurrentArea.y];
+                            GridInfo.AllGrids[(int)CurrentArea.x][(int)CurrentArea.y].GetComponent<SpriteRenderer>().color = Color.white;
                         }
                     }
                 }

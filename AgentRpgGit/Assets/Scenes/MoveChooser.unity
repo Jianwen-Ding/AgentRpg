@@ -2910,7 +2910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveDisplayChange: {fileID: 0}
   CharacterRemembered: {fileID: 0}
-  CharacterIndex: 0
+  CharacterIndex: 2
   MoveIndexInRemember: 3
   SceneName: PickMove
   OverallMoveIndex: -69
@@ -3250,7 +3250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveDisplayChange: {fileID: 0}
   CharacterRemembered: {fileID: 0}
-  CharacterIndex: 0
+  CharacterIndex: 2
   MoveIndexInRemember: 1
   SceneName: PickMove
   OverallMoveIndex: -69
@@ -3595,7 +3595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveDisplayChange: {fileID: 0}
   CharacterRemembered: {fileID: 0}
-  CharacterIndex: 2
+  CharacterIndex: 0
   MoveIndexInRemember: 1
   SceneName: PickMove
   OverallMoveIndex: -69
@@ -5509,7 +5509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveDisplayChange: {fileID: 0}
   CharacterRemembered: {fileID: 0}
-  CharacterIndex: 2
+  CharacterIndex: 0
   MoveIndexInRemember: 3
   SceneName: PickMove
   OverallMoveIndex: -69
@@ -8896,7 +8896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveDisplayChange: {fileID: 0}
   CharacterRemembered: {fileID: 0}
-  CharacterIndex: 2
+  CharacterIndex: 0
   MoveIndexInRemember: 2
   SceneName: PickMove
   OverallMoveIndex: -69
@@ -12813,7 +12813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveDisplayChange: {fileID: 0}
   CharacterRemembered: {fileID: 0}
-  CharacterIndex: 2
+  CharacterIndex: 0
   MoveIndexInRemember: 0
   SceneName: PickMove
   OverallMoveIndex: -69
@@ -13717,7 +13717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveDisplayChange: {fileID: 0}
   CharacterRemembered: {fileID: 0}
-  CharacterIndex: 0
+  CharacterIndex: 2
   MoveIndexInRemember: 2
   SceneName: PickMove
   OverallMoveIndex: -69
@@ -16422,6 +16422,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickMoveButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537891370340537251, guid: 0398729fce27084429d7787b48b65a37,
+        type: 3}
+      propertyPath: CharacterIndex
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7537891370340537254, guid: 0398729fce27084429d7787b48b65a37,
         type: 3}

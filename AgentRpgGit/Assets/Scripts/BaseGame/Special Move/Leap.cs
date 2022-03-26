@@ -26,10 +26,10 @@ public class Leap : GenericMove
             AreaSelectionSquareY4 = -69;
             AreaSelectionSquareWidth4 = -69;
             AreaSelectionSquareHeight4 = -69;
-            AreaSelectMoveSquareX0 = -69;
-            AreaSelectMoveSquareY0 = -69;
-            AreaSelectMoveSquareWidth0 = -69;
-            AreaSelectMoveSquareHeight0 = -69;
+            AreaSelectMoveSquareX0 = 0;
+            AreaSelectMoveSquareY0 = 0;
+            AreaSelectMoveSquareWidth0 = 0;
+            AreaSelectMoveSquareHeight0 = 0;
             AreaSelectMoveSquareX1 = -69;
             AreaSelectMoveSquareY1 = -69;
             AreaSelectMoveSquareWidth1 = -69;
