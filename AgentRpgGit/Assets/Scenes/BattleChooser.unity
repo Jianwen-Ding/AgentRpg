@@ -1694,7 +1694,7 @@ MonoBehaviour:
     type: 3}
   SliderText:
   - Starting Grounds
-  - '"Bugged out don''t select"'
+  - EYE
   SliderDifficultyRating: 0100000003000000
   SliderIsBoss: 0101
   SliderObjects:
