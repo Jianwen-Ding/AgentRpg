@@ -1693,11 +1693,13 @@ MonoBehaviour:
   SlidePrefab: {fileID: 7670706979327227412, guid: 5cd0a19a9b80d4447ad4efe2e14d0f5a,
     type: 3}
   SliderText:
-  - Starting Grounds
+  - Mr. Cooki
   - EYE
-  SliderDifficultyRating: 0100000003000000
-  SliderIsBoss: 0101
+  - Testing Grounds
+  SliderDifficultyRating: 020000000200000001000000
+  SliderIsBoss: 010100
   SliderObjects:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   WipeAllPlayerPrefs: 0
@@ -1716,6 +1718,7 @@ MonoBehaviour:
   SlideUIPrefabs:
   - {fileID: 1700336580831039171, guid: 8ed61136cf4337f4c9d96c8fc8da5df5, type: 3}
   - {fileID: 1035232728720854101, guid: a3cf3297f207b5e448c2441b38c392d2, type: 3}
+  - {fileID: 687650361611322359, guid: 318d0581f1413444297d00fc33491256, type: 3}
   Enemies:
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   - {fileID: 4716509826077905511, guid: 43cee3635be86d24ba0a9afc567431a6, type: 3}
@@ -1723,6 +1726,9 @@ MonoBehaviour:
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   - {fileID: 8343104111313922231, guid: 721cfb01f3a53604aaed145faff2ff6c, type: 3}
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
+  - {fileID: 2480266590966658050, guid: db03cb4999fe96241b7e4f59dfdf4ce1, type: 3}
+  - {fileID: 2480266590966658050, guid: db03cb4999fe96241b7e4f59dfdf4ce1, type: 3}
+  - {fileID: 2480266590966658050, guid: db03cb4999fe96241b7e4f59dfdf4ce1, type: 3}
 --- !u!1 &1264544396
 GameObject:
   m_ObjectHideFlags: 0
