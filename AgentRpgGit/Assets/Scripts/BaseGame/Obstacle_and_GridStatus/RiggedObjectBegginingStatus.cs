@@ -17,7 +17,7 @@ public class RiggedObjectBegginingStatus : BaseStatus
     }
     public override void ObjectTrigger()
     {
-        if(Grid_Info.CharacterOn != null)
+        if(Grid_Info.CharacterOn != null && Grid_Info.CharacterOn.GetComponent<CharacterBase>().IsEnemy == false)
         {
             CharacterBase Character_Info = Grid_Info.CharacterOn.GetComponent<CharacterBase>();
             Character_Info.Health -= Character_Info.DefenseProcessedDamage(3);

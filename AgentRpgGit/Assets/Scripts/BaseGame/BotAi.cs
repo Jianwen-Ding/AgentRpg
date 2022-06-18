@@ -81,7 +81,7 @@ public class BotAi : MonoBehaviour
     [SerializeField]
     int MovePriorityAdd;
     [SerializeField]
-    int ShootAdd;
+    public int ShootAdd;
     //Priorities Checks if certain things are checked
     //For loop checks priority based on level in the Array
     //"TooCloseToRange"

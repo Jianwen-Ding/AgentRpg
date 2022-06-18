@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Artillery : GenericMove
+public class Hostage : GenericMove
 {
-    //THIS IS THE BASE FOR ALL CHARGE MOVES
     public override void SetAdjust()
     {
-        AreaSelectionSquareX0 = -3;
-        AreaSelectionSquareY0 = -3;
-        AreaSelectionSquareWidth0 = 3;
-        AreaSelectionSquareHeight0 = 3;
+        willUseForGridEffect = true;
+        AreaSelectionSquareX0 = -2;
+        AreaSelectionSquareY0 = -2;
+        AreaSelectionSquareWidth0 = 2;
+        AreaSelectionSquareHeight0 = 2;
         AreaSelectionSquareX1 = -69;
         AreaSelectionSquareY1 = -69;
         AreaSelectionSquareWidth1 = -69;
@@ -28,9 +28,9 @@ public class Artillery : GenericMove
         AreaSelectionSquareWidth4 = -69;
         AreaSelectionSquareHeight4 = -69;
         WillUseForSquareX0 = -1;
-        WillUseForSquareY0 = 0;
+        WillUseForSquareY0 = -1;
         WillUseForSquareWidth0 = 1;
-        WillUseForSquareHeight0 = 0;
+        WillUseForSquareHeight0 = 1;
         WillUseForSquareX1 = -69;
         WillUseForSquareY1 = -69;
         WillUseForSquareWidth1 = -69;
@@ -48,17 +48,66 @@ public class Artillery : GenericMove
         WillUseForSquareWidth4 = -69;
         WillUseForSquareHeight4 = -69;
         MouseFollowingUI.GroupSelection[0][0] = -1;
-        MouseFollowingUI.GroupSelection[0][1] = 0;
+        MouseFollowingUI.GroupSelection[0][1] = -1;
         MouseFollowingUI.GroupSelection[0][2] = 2;
-        MouseFollowingUI.GroupSelection[0][3] = 0;
+        MouseFollowingUI.GroupSelection[0][3] = 2;
         PriorityAdd = 10;
+    }
+    public override int[] CheckIfConditionsApply(Vector2 areaCheckFrom)
+    {
+        int[] DoesConditionsApply = new int[3];
+        DoesConditionsApply[0] = -69;
+        DoesConditionsApply[1] = -69;
+        DoesConditionsApply[2] = -69;
+        if (willUseForGridEffect)
+        {
+            for (int i = 0; i < BotAiCheckIfApply.Opponents.Length; i++)
+            {
+                bool hasHostageStatus;
+                hasHostageStatus = false;
+                for(int z = 0; z < BotAiCheckIfApply.Opponents[i].StatusEffects.Length; z++)
+                {
+                    if (BotAiCheckIfApply.Opponents[i].StatusEffects[z] == 5)
+                    {
+                        hasHostageStatus = true;
+                    }
+                }
+                if (BotAiCheckIfApply.Opponents[i].IsDead == false && hasHostageStatus == false)
+                {
+                    int[][] newAreaCanSelect = new int[5][];
+                    for (int z = 0; z < newAreaCanSelect.Length; z++)
+                    {
+                        newAreaCanSelect[z] = new int[4];
+                        //-69 is the signal to null out a SelectionSquare
+                        if (newAreaCanSelect[z][0] != -69 && newAreaCanSelect[z][1] != -69 && newAreaCanSelect[z][2] != -69 && newAreaCanSelect[z][3] != -69)
+                        {
+                            newAreaCanSelect[z][1] = (int)areaCheckFrom.y + AreaCanClick[z][1];
+                            newAreaCanSelect[z][2] = (int)areaCheckFrom.x + AreaCanClick[z][2];
+                            newAreaCanSelect[z][3] = (int)areaCheckFrom.y + AreaCanClick[z][3];
+                            newAreaCanSelect[z][0] = (int)areaCheckFrom.x + AreaCanClick[z][0];
+                        }
+                    }
+                    Vector2 LocationSpot = CheckIfLocationCorrespondsToAction((int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.x, (int)BotAiCheckIfApply.Opponents[i].CharacterLocationIndex.y, PlayerSpacesAllowedAdjust, newAreaCanSelect);
+                    if (BotAiCheckIfApply.Opponents[i] != null && Character_Info != null && LocationSpot.x != -69 && LocationSpot.y != -69)
+                    {
+                        DoesConditionsApply[2] = PriorityAdd;
+                        Vector2 Location = LocationSpot;
+                        DoesConditionsApply[0] = (int)Location.x;
+                        DoesConditionsApply[1] = (int)Location.y;
+                    }
+                }
+            }
+
+        }
+        return DoesConditionsApply;
+
     }
     public override void SelectionAdjustment()
     {
         MouseFollowingUI.GroupSelection[0][0] = -1;
-        MouseFollowingUI.GroupSelection[0][1] = 0;
+        MouseFollowingUI.GroupSelection[0][1] = -1;
         MouseFollowingUI.GroupSelection[0][2] = 2;
-        MouseFollowingUI.GroupSelection[0][3] = 1;
+        MouseFollowingUI.GroupSelection[0][3] = 2;
         MouseFollowingUI.IsSelecting = true;
         MouseFollowingUI.ObstacleSelectAllowed = false;
         MouseFollowingUI.CharacterSelectAllowed = true;
@@ -109,11 +158,11 @@ public class Artillery : GenericMove
             }
         }
         //Purely Debug
+        /*
         if (willUseForMove && MoveSpacesAllowed != null)
         {
-            /*
-            print(Character_Info.LocationAction.x + " , " + Character_Info.LocationAction.y);'[
-            lp
+            print(Character_Info.LocationAction.x + " , " + Character_Info.LocationAction.y);
+           
             print(AreaCanSelect[0][0] + " , " + AreaCanSelect[0][1] + " , " + AreaCanSelect[0][2] + " , " + AreaCanSelect[0][3] + " // " + AreaCanSelect[1][0] + " , " + AreaCanSelect[1][1] + " , " + AreaCanSelect[1][2] + " , " + AreaCanSelect[1][3] + " // " + AreaCanSelect[2][0] + " , " + AreaCanSelect[2][1] + " , " + AreaCanSelect[2][2] + " , " + AreaCanSelect[2][3] + " // " + AreaCanSelect[3][0] + " , " + AreaCanSelect[3][1] + " , " + AreaCanSelect[3][2] + " , " + AreaCanSelect[3][3] + " // " + AreaCanSelect[4][0] + " , " + AreaCanSelect[4][1] + " , " + AreaCanSelect[4][2] + " , " + AreaCanSelect[4][3]);
             print(MoveSpacesAllowedAdjust[0][0] + " , " + MoveSpacesAllowedAdjust[0][1] + " , " + MoveSpacesAllowedAdjust[0][2] + " , " + MoveSpacesAllowedAdjust[0][3] + " // " + MoveSpacesAllowedAdjust[1][0] + " , " + MoveSpacesAllowedAdjust[1][1] + " , " + MoveSpacesAllowedAdjust[1][2] + " , " + MoveSpacesAllowedAdjust[1][3] + " // " + MoveSpacesAllowedAdjust[2][0] + " , " + MoveSpacesAllowedAdjust[2][1] + " , " + MoveSpacesAllowedAdjust[2][2] + " , " + MoveSpacesAllowedAdjust[2][3] + " // " + MoveSpacesAllowedAdjust[3][0] + " , " + MoveSpacesAllowedAdjust[3][1] + " , " + MoveSpacesAllowedAdjust[3][2] + " , " + MoveSpacesAllowedAdjust[3][3] + " // " + MoveSpacesAllowedAdjust[4][0] + " , " + MoveSpacesAllowedAdjust[4][1] + " , " + MoveSpacesAllowedAdjust[4][2] + " , " + MoveSpacesAllowedAdjust[4][3]);
             print(CheckIfLocationCorrespondsToAction(3, 0, MoveSpacesAllowedAdjust, AreaCanSelect));
@@ -123,9 +172,8 @@ public class Artillery : GenericMove
             print(MoveSpacesAllowed[i][0] + " , " + MoveSpacesAllowed[i][1] + " , " + MoveSpacesAllowed[i][2] + " , " + MoveSpacesAllowed[i][3] + " // ");
             }
             print("END________________________________________________________________________________________________________________");
-           */
         }
-
+        */
         /*if(Character_Info.IsEnemy == true)
         {
         */
@@ -170,7 +218,7 @@ public class Artillery : GenericMove
         }
     }
     public override void ActivateMove()
-        {
+    {
         if (Character_Info.IsCharging == false && HasUsedCharge == false)
         {
             int[][] NewSelectedArea;
@@ -186,26 +234,30 @@ public class Artillery : GenericMove
             Character_Info.IsCharging = false;
             AreaHighLightToggle(AreaSoonToEffect, Character_Info.IsEnemy, false);
             EffectAmount = 0;
-            AreaEffect((int)Character_Info.LocationAction.x - 1, (int)Character_Info.LocationAction.y, 3, 1);
+            AreaEffect((int)Character_Info.LocationAction.x - 1, (int)Character_Info.LocationAction.y -1, 3, 3);
             gameObject.GetComponent<CharacterBase>().action = "inactive";
             for (int x = 0; x < AreaCheck((int)Character_Info.LocationAction.x - 1, (int)Character_Info.LocationAction.y, 3, 1).Length; x++)
             {
-                GameObject[] AreaCharacters = AreaCheck((int)Character_Info.LocationAction.x - 1, (int)Character_Info.LocationAction.y, 3, 1);
+                GameObject[] AreaCharacters = AreaCheck((int)Character_Info.LocationAction.x - 1, (int)Character_Info.LocationAction.y - 1, 3, 3);
                 CharacterBase CheckedCharacterBase;
-                GameObject InWorldText;
                 if (AreaCharacters[x] != null)
                 {
                     CheckedCharacterBase = AreaCharacters[x].GetComponent<CharacterBase>();
                     if (CheckedCharacterBase.IsEnemy != Character_Info.IsEnemy)
                     {
 
-                        CheckedCharacterBase.Health -= CheckedCharacterBase.DefenseProcessedDamage(20);
-                        InWorldText = Instantiate(HitUiSprite, new Vector3(Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.x, Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.y), Quaternion.identity.normalized);
-                        InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, "" + CheckedCharacterBase.DefenseProcessedDamage(20), Color.black, new Vector2(5, 5));
+                        for (int i = 0; i < CheckedCharacterBase.StatusEffects.Length; i++)
+                        {
+                            if (CheckedCharacterBase.StatusEffects[i] == 0)
+                            {
+                                CheckedCharacterBase.StatusEffects[i] = 5;
+                                break;
+                            }
+                        }
                     }
                 }
             }
-            AreaEffect((int)Character_Info.LocationAction.x - 1, (int)Character_Info.LocationAction.y, 3, 1);
+            AreaEffect((int)Character_Info.LocationAction.x - 1, (int)Character_Info.LocationAction.y - 1, 3, 3);
             Character_Info.action = "inactive";
         }
     }

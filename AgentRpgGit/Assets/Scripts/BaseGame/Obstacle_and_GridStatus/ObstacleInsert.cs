@@ -95,6 +95,10 @@ public class ObstacleInsert : MonoBehaviour
                 Insert = (BaseStatus)GameObjectInsertIntoStatus.AddComponent(typeof(HealstationStatus));
                 StatusSpriteCurrent = Instantiate(StatusSprite[indexInsertStatus], new Vector3(gameObject.transform.position.x + StatusAdjust[indexInsertStatus].x, gameObject.transform.position.y + StatusAdjust[indexInsertStatus].y), Quaternion.identity.normalized);
                 break;
+            case 9:
+                Insert = (BaseStatus)GameObjectInsertIntoStatus.AddComponent(typeof(ShockwaveMain));
+                StatusSpriteCurrent = Instantiate(StatusSprite[indexInsertStatus], new Vector3(gameObject.transform.position.x + StatusAdjust[indexInsertStatus].x, gameObject.transform.position.y + StatusAdjust[indexInsertStatus].y), Quaternion.identity.normalized);
+                break;
         }
     }
     void Update()

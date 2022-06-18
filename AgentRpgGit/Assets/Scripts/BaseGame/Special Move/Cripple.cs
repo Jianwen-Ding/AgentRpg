@@ -15,6 +15,7 @@ public class Cripple : GenericMove
     }
     public override void SetAdjust()
     {
+        willUseForGridEffect = true;
         WillUseForSquareX0 = -1;
         WillUseForSquareY0 = -1;
         WillUseForSquareWidth0 = 1;

@@ -71,10 +71,13 @@ public class BaseCharacterStatusInsert : MonoBehaviour
                                 DisplayedStatus.ModifierDisplayBot[x].GetComponent<TextMeshPro>().text = "POI";
                                 break;
                             case 5:
+                                DisplayedStatus.ModifierDisplayBot[x].GetComponent<TextMeshPro>().text = "HOS";
+                                break;
+                            case 6:
                                 DisplayedStatus.ModifierDisplayBot[x].GetComponent<TextMeshPro>().text = "GEN";
                                 break;
 
-                        }
+                    }
                     
                 }
                 //Character Status type indexing
@@ -96,6 +99,8 @@ public class BaseCharacterStatusInsert : MonoBehaviour
                         StatusesInCharacter[x] = (BaseCharacterStatus)gameObject.AddComponent(typeof(DartshotPoision));
                         break;
                     case 5:
+                        StatusesInCharacter[x] = (BaseCharacterStatus)gameObject.AddComponent(typeof(HostageStatus));
+
                         break;
                 }
                 if(StatusSprite[indexInsertStatus[x]] != null)

@@ -154,7 +154,8 @@ public class MovementUI : MonoBehaviour
             {
                 for (int x = 0; x < CurrentCharactersInPlay.Length; x++)
                 {
-                    CurrentCharactersInPlay[x].GetComponent<CharacterBase>().PushAction(StoredTargetCoordinates[x], StoredActions[x], EventSystemCommunication);
+                        CurrentCharactersInPlay[x].GetComponent<CharacterBase>().PushAction(StoredTargetCoordinates[x], StoredActions[x], EventSystemCommunication);
+     
                 }
                 //We only need to make it active becuase it resets on its own
                 EventSystemCommunication.active = true;

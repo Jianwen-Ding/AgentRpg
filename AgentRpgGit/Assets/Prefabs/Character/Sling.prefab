@@ -112,7 +112,7 @@ MonoBehaviour:
   PreviousHealth: 0
   IsEnemy: 1
   Health: 70
-  MaxHealth: 200
+  MaxHealth: 70
   IsDead: 0
   LocationAction: {x: 0, y: 0}
   action: 
@@ -125,10 +125,10 @@ MonoBehaviour:
   SpeedPriority: 0
   SpeedMultiplier: 1
   ExpressedSpeed: 0
-  Damage: 5
+  Damage: 30
   DamageMultiplier: 1
   ExpressedDamage: 0
-  Defense: 50
+  Defense: 20
   DefenseMultiplier: 1
   ExpressedDefense: 0
   MovesAllowed:
@@ -144,6 +144,7 @@ MonoBehaviour:
   DistanceTillAtLocation: 0
   AnimationMoveSpeed: 0
   DistanceUp: 1.5
+  DistanceRight: 0.5
   TimeUntilShootEnd: 0.6666667
   AboutToShoot: 0
   TimeUntilShoot: 0.4
@@ -169,8 +170,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasUsedCharge: 0
   MouseFollowingUI: {fileID: 0}
-  MoveSprite: {fileID: 0}
-  MoveSpriteSecondary: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+  MoveSprite: {fileID: 9038222660091329612, guid: 2912055fb514e044795d2106b08391da,
+    type: 3}
+  MoveSpriteSecondary: {fileID: 9038222660091329612, guid: 2912055fb514e044795d2106b08391da,
     type: 3}
   AdjustSprite: {x: 0, y: 0}
   Gridinfo: {fileID: 0}
@@ -323,9 +325,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasUsedCharge: 0
   MouseFollowingUI: {fileID: 0}
-  MoveSprite: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+  MoveSprite: {fileID: 9038222660091329612, guid: 2912055fb514e044795d2106b08391da,
     type: 3}
-  MoveSpriteSecondary: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+  MoveSpriteSecondary: {fileID: 9038222660091329612, guid: 2912055fb514e044795d2106b08391da,
     type: 3}
   AdjustSprite: {x: 0, y: 0}
   Gridinfo: {fileID: 0}
@@ -633,13 +635,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasUsedCharge: 0
   MouseFollowingUI: {fileID: 0}
-  MoveSprite: {fileID: 0}
-  MoveSpriteSecondary: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+  MoveSprite: {fileID: 9038222660091329612, guid: 2912055fb514e044795d2106b08391da,
+    type: 3}
+  MoveSpriteSecondary: {fileID: 9038222660091329612, guid: 2912055fb514e044795d2106b08391da,
     type: 3}
   AdjustSprite: {x: 0, y: 0}
   Gridinfo: {fileID: 0}
   Character_Info: {fileID: 0}
-  HitUiSprite: {fileID: 0}
+  HitUiSprite: {fileID: 3508090468383675265, guid: 98de24ec3510deb4f997f291cc1a5c80,
+    type: 3}
   Effects:
   - {fileID: 0}
   - {fileID: 0}
@@ -665,7 +669,7 @@ MonoBehaviour:
   WillBeUsedForCharging: 0
   MoveDecison: {fileID: 0}
   BotAiCheckIfApply: {fileID: 0}
-  PriorityAdd: 0
+  PriorityAdd: 20
   IsForOpponent: 0
   AreaSelection: 00000000000000000000000000000000
   AreaSelectionSquareX0: 0
@@ -795,8 +799,8 @@ MonoBehaviour:
   DeconstrucionMoveLocation: {x: 0, y: 0}
   OldActionPriority: 0
   InitiateMoveMentDecison: 0
-  IdealDistanceCloseToOpponents: 5
-  IdealDistanceAwayFromOpponents: 1
+  IdealDistanceCloseToOpponents: 8
+  IdealDistanceAwayFromOpponents: 6
   SuggestedAction: []
   SuggestedActionPriority: 
   SuggestedActionLocation:
@@ -809,11 +813,11 @@ MonoBehaviour:
   WillMoveToFinal: 0
   MovementPriorityDown: 1
   TooCloseToPriorityDedeuct: 15
-  TooFarToPriorityDedeuct: 15
-  DeductPerBulletDmg: 2
+  TooFarToPriorityDedeuct: 0
+  DeductPerBulletDmg: 5
   ChargeMoveDedeuct: 10
   MovePriorityAdd: 0
-  ShootAdd: 15
+  ShootAdd: 40
   Priorities:
   - AdjustLocation
   - Shoot
@@ -847,10 +851,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275240ca7e861b149843b6367f38e9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EffectTrial: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+  EffectTrial: {fileID: 5028751628017422297, guid: 39b4cc0dd125bf54bafc06b821bb08e0,
     type: 3}
   EffectTrialAdjust: {x: 0, y: 0}
-  EffectHit: {fileID: 8735095474281882087, guid: db473454c6dc4c74a8285b4af885acb4,
+  EffectHit: {fileID: 3216882294416278307, guid: f52b7332f311c234caa630dfafdf6dea,
     type: 3}
   EffectHitAdjust: {x: 0, y: 0}
   Name: 

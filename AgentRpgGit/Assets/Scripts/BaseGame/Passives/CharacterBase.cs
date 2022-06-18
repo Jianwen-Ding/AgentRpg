@@ -70,6 +70,7 @@ public class CharacterBase : MonoBehaviour
     public float AnimationMoveSpeed;
     //Apearence
     public float DistanceUp;
+    public float DistanceRight;
     //Shoot 
     public float TimeUntilShootEnd;
     public bool AboutToShoot;
@@ -422,7 +423,7 @@ public class CharacterBase : MonoBehaviour
             }
             GridSquare = GridData.AllGrids[(int)CharacterLocationIndex.y][(int)CharacterLocationIndex.x];
             GridSquare.GetComponent<GridControl>().CharacterOn = gameObject;
-            gameObject.transform.position = new Vector3(GridSquare.transform.position.x, DistanceUp + GridSquare.transform.position.y, 0);
+            gameObject.transform.position = new Vector3(GridSquare.transform.position.x + DistanceRight, DistanceUp + GridSquare.transform.position.y, 0);
             GameObjectSpriteRenderer.sortingOrder = (int)CharacterLocationIndex.y;
         }
         if (PreviousHealth > Health)

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9218344973592595256}
   - component: {fileID: 9218344973592595257}
   - component: {fileID: 3375124646357612641}
+  - component: {fileID: 7057678972461670354}
   m_Layer: 0
   m_Name: Hit Particle
   m_TagString: Untagged
@@ -118,3 +119,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7057678972461670354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218344973592595238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb22074e17a417b4095ee6b2890f4c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeTillSelfDestruct: 5
+  TimeTillSelfDestructLeft: 0
