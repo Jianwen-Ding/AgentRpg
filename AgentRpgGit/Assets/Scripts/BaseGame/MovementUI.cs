@@ -321,6 +321,37 @@ public class MovementUI : MonoBehaviour
                 {
                     Destroy(Buttons[4]);
                 }
+                CurrentMoveOn = CurrentCharacterBase.MovesAllowed[0];
+                for (int x = -1; x <= 1; x++)
+                {
+                    for (int y = -1; y <= 1; y++)
+                    {
+                        if (x != y && (x == 0 || y == 0))
+                        {
+                            int XCurrent = x + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.x;
+                            int YCurrent = y + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y;
+                            if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
+                            {
+                                OrignialColor = CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color;
+                            }
+                        }
+                    }
+                }
+                for (int x = -1; x <= 1; x++)
+                {
+                    for (int y = -1; y <= 1; y++)
+                    {
+                        if (x != y && (x == 0 || y == 0))
+                        {
+                            int XCurrent = x + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.x;
+                            int YCurrent = y + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y;
+                            if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
+                            {
+                                CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = Color.green;
+                            }
+                        }
+                    }
+                }
                 Buttons[0] = Instantiate(ReturnButtonMove);
                 Buttons[0].GetComponent<ButtonBase>().UIBase = gameObject;
                 Buttons[0].transform.SetParent(gameObject.transform.parent);
@@ -351,8 +382,26 @@ public class MovementUI : MonoBehaviour
             {
                 if (MouseFollowingUI.OnGrid == true && HasClicked == false)
                 {
+                   
                     if (MouseFollowingUI.MousePositionGridChoose.x == (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.x || MouseFollowingUI.MousePositionGridChoose.y == (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y)
                     {
+                        for (int x = -1; x <= 1; x++)
+                        {
+                            for (int y = -1; y <= 1; y++)
+                            {
+                                if (x != y && (x == 0 || y == 0))
+                                {
+                                    int XCurrent = x + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.x;
+                                    int YCurrent = y + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y;
+                                    if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length && CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color == Color.green)
+                                    {
+                                        CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = OrignialColor;
+                                    }
+                                }
+
+                            }
+                        }
+                        MouseFollowingUI.OriginalColor = OrignialColor;
                         CurrentCharacterBase.CharacterSChanger.SetSprite(-69, 0);
                         StoredActions[CurrentCharacterInPlay] = "Shoot";
                         //StoredTargetCoordinates acts as velocity storer for the gun
@@ -363,7 +412,17 @@ public class MovementUI : MonoBehaviour
                         HasEstablishedScene = false;
                         MouseFollowingUI.WipeGroupSelect();
                         MouseFollowingUI.WipeAllowedSelected();
+                        for (int z = 0; z < MouseFollowingUI.GroupSelectionOriginalColors.Length; z++)
+                        {
+                            for (int u = 0; u < MouseFollowingUI.GroupSelectionOriginalColors[0].Length; u++)
+                            {
+                                MouseFollowingUI.GroupSelectionOriginalColors[z][u] = OrignialColor;
+                            }
+                        }
+                        MouseFollowingUI.WipeGroupSelect();
+                        MouseFollowingUI.WipeAllowedSelected();
                     }
+                   
                 }
                 HasClicked = true;
             }
@@ -397,6 +456,33 @@ public class MovementUI : MonoBehaviour
                 {
                     Destroy(Buttons[4]);
                 }
+                CurrentMoveOn = CurrentCharacterBase.MovesAllowed[0];
+                for (int x = -1; x <= 1; x++)
+                {
+                    for(int y = -1; y <= 1; y++)
+                    {
+                        int XCurrent = x + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.x;
+                        int YCurrent = y + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y;
+                        if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
+                        {
+                            OrignialColor = CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color;
+                        }
+    
+                    }
+                }
+                for (int x = -1; x <= 1; x++)
+                {
+                    for (int y = -1; y <= 1; y++)
+                    {
+                        int XCurrent = x + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.x;
+                        int YCurrent = y + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y;
+                        if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
+                        {
+                            CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = Color.green;
+                        }
+
+                    }
+                }
                 Buttons[0] = Instantiate(ReturnButtonMove);
                 Buttons[0].GetComponent<ButtonBase>().UIBase = gameObject;
                 Buttons[0].transform.SetParent(gameObject.transform.parent);
@@ -415,6 +501,20 @@ public class MovementUI : MonoBehaviour
             {
                 if (MouseFollowingUI.OnGrid == true && HasClicked == false)
                 {
+                    for (int x = -1; x <= 1; x++)
+                    {
+                        for (int y = -1; y <= 1; y++)
+                        {
+                            int XCurrent = x + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.x;
+                            int YCurrent = y + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y;
+                            if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length && CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color == Color.green)
+                            {
+                                CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = OrignialColor;
+                            }
+                            
+                        }
+                    }
+                    MouseFollowingUI.OriginalColor = OrignialColor;
                     CurrentCharacterBase.CharacterSChanger.SetSprite(-69, 0);
                     StoredActions[CurrentCharacterInPlay] = "Move";
                     StoredTargetCoordinates[CurrentCharacterInPlay] = MouseFollowingUI.MousePositionGridChoose;
@@ -433,6 +533,15 @@ public class MovementUI : MonoBehaviour
                     {
                         CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().GridData.AllGrids[(int)MouseFollowingUI.MousePositionGridChoose.y][(int)MouseFollowingUI.MousePositionGridChoose.x].GetComponent<GridControl>().IsTargeted = true;
                     }
+                    for (int z = 0; z < MouseFollowingUI.GroupSelectionOriginalColors.Length; z++)
+                    {
+                        for (int u = 0; u < MouseFollowingUI.GroupSelectionOriginalColors[0].Length; u++)
+                        {
+                            MouseFollowingUI.GroupSelectionOriginalColors[z][u] = OrignialColor;
+                        }
+                    }
+                    MouseFollowingUI.WipeGroupSelect();
+                    MouseFollowingUI.WipeAllowedSelected();
                 }
                 HasClicked = true;
             }
