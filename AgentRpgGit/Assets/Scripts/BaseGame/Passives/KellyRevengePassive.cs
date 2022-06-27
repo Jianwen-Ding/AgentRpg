@@ -40,7 +40,8 @@ public class KellyRevengePassive : MonoBehaviour
             }
             if (restDead && selfRef.IsDead == false)
             {
-
+                Refrence.Priorities = new string[1];
+                Refrence.Priorities[0] = "Shoot";
                 Refrence.RangeOfRandomness = new int[1];
                 Refrence.RangeOfRandomness[0] = 0;
                 Refrence.ShootAdd = 10000;

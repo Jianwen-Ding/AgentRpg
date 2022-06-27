@@ -49,7 +49,7 @@ public class Rage : GenericMove
         WillUseForSquareWidth4 = -69;
         WillUseForSquareHeight4 = -69;
         willUseForGridEffect = true;
-        PriorityAdd = 25;
+        PriorityAdd = 30;
         damageRatio = 0.5f;
     }
     public override void SelectionAdjustment()

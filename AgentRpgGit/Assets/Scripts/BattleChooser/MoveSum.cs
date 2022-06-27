@@ -43,6 +43,24 @@ public class MoveSum : MonoBehaviour
             case "Leap":
                 SummaryFound = "Leap: Cripples movespeed for a long ranged omnidirectional jump";
                 break;
+            case "Vigor":
+                SummaryFound = "Vigor: Heals the user for a large chunk of its health";
+                break;
+            case "Hostage":
+                SummaryFound = "Hostage: Causes enemies in a area to gain the hostage status effect after a turn, this status effect reflects all damage taken by the user on to the affected enemy";
+                break;
+            case "Shockwave":
+                SummaryFound = "Shockwave: Causes the grid under the user to become shocked, the shock spreads afflicting speed and defense debuffs to enemies that stand on shocked grids";
+                break;
+            case "Rage":
+                SummaryFound = "Rage: Does a small amount of damage to all enemies around the user, it debuffs the speed and damage of the debuffed enemies and increases the speed and damage of the user";
+                break;
+            case "Artillery":
+                SummaryFound = "Artillery: A long range move that deals a small amount of damage after a turn";
+                break;
+            case "Cripple":
+                SummaryFound = "Cripple: Does a small amount of damage around the user and reduces the speed of enemies hit";
+                break;
             case "DEADMAN":
                 SummaryFound = "DEADMAN: kills an opponent instanly and teleports the user to a random spot";
                 break;

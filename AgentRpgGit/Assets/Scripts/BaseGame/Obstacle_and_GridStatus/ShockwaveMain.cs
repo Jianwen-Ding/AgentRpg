@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShockwaveMain : BaseStatus
 {
+    public static int totalLeft = 0;
+    public static bool hasIncreasedTotal = true;
     GridLoad GridAll;
     public override void Start()
     {
@@ -32,7 +34,7 @@ public class ShockwaveMain : BaseStatus
         {
             Grid_Info = gameObject.GetComponent<GridControl>();
         }
-        if (TurnsTillDissapearLeft <= 0)
+        if (TurnsTillDissapearLeft <= 0 || totalLeft < 0)
         {
             gameObject.GetComponent<GridControl>().StatusIndex = 0;
             gameObject.GetComponent<ObstacleInsert>().WipeStatus();
@@ -67,6 +69,14 @@ public class ShockwaveMain : BaseStatus
             TurnsTillDissapearLeft -= 1;
             HasTriggered = false;
             HasSetUp = false;
+            if(hasIncreasedTotal == false && totalLeft > 0)
+            {
+                totalLeft -= 1;
+            }
+        }
+        else
+        {
+            hasIncreasedTotal = false;
         }
         PreviouslyActiveEvent = EventAcsess.active;
         if (EventAcsess.CheckQue(gameObject, 0) && HasTriggered == false)

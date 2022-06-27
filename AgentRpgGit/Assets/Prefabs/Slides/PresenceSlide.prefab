@@ -67,10 +67,10 @@ MonoBehaviour:
   EnemyDisplayObject: {fileID: 148805789548215910}
   EnemyPassiveDescriber: {fileID: 6309595609723875486}
   EnemyPassiveText:
-  - nonexistent
+  - Click the right arrow
   - 'Presence: The Presence is invisible and dangerous, coming close to it will result
     in certain death'
-  - nonexistent
+  - Click the left arrow
   EnemyCurrentMain: 0
   SummaryDisplay:
   - {fileID: 8794550794475805901}

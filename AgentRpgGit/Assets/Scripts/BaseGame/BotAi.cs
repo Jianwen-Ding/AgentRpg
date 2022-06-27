@@ -84,14 +84,11 @@ public class BotAi : MonoBehaviour
     public int ShootAdd;
     //Priorities Checks if certain things are checked
     //For loop checks priority based on level in the Array
-    //"TooCloseToRange"
-    //"MoveOutOfTooCloseRange"
-    //"MoveOutOfTooFarRange"
-    //"InGunRange"
-    //"InQuickSpecialRange"
-    //"InChargeSpecialRange"
+    //"Shoot"
+    //"AdjustLocation"
+    //"SpecialMove"
     [SerializeField]
-    string[] Priorities;
+    public string[] Priorities;
     #endregion
     //Set Get Components
     [SerializeField]
@@ -127,6 +124,8 @@ public class BotAi : MonoBehaviour
     string GoingToShowString;
     //Outputs ==
     //Inserts into list
+    //Debug
+    public int RandomDraw;
     public void InsertIntoList(string InsertActionType, int InsertPriority, Vector2 insertLocation, bool WillMove)
     {
         //Inserts then sorts everything
@@ -388,7 +387,7 @@ public class BotAi : MonoBehaviour
             }
         }
         //Intiates the decisonMaking process
-        if (MoveSystemInfo.IsDisplayingHappening == false && HasStartedMakingDecison == false)
+        if (MoveSystemInfo.IsDisplayingHappening == false && HasStartedMakingDecison == false && CharacterInfo.IsDead == false)
         {
             int PriorityAdd = 0;
             CurrentMoveGridCreation = 1;
@@ -553,6 +552,7 @@ public class BotAi : MonoBehaviour
                             if (LocationSend[0] != -69 && LocationSend[1] != -69 && LocationSend[2] != 69 && PriorityDeterationSheet[(int)CharacterInfo.CharacterLocationIndex.x][(int)CharacterInfo.CharacterLocationIndex.y] + StartPriorityDeduct + LocationSend[2] > SuggestedActionPriority[0])
                             {
                                 if (PriorityDeterationSheet[(int)CharacterInfo.CharacterLocationIndex.x][(int)CharacterInfo.CharacterLocationIndex.y] + StartPriorityDeduct + LocationSend[2] > SuggestedActionPriority[SuggestedActionPriority.Length - 1])
+
                                 {
                                     PriorityAdd = LocationSend[2];
                                 }
@@ -616,7 +616,7 @@ public class BotAi : MonoBehaviour
                 {
                     for (int i = 0; i < PlaceAreaCurrent.Length; i++)
                     {
-                        if(PlaceAreaCurrent[i].x != -69 && PlaceAreaCurrent[i].y != -69)
+                        if(PlaceAreaCurrent[i].x != -69 && PlaceAreaCurrent[i].y != -69 && GridInfo.AllGrids[(int)PlaceAreaCurrent[i].y][(int)PlaceAreaCurrent[i].x].GetComponent<GridControl>().CharacterOn != gameObject.GetComponent<CharacterBase>())
                         {
                             int PriorityAdd = 0;
                             int PriorityDeductions = 0;
@@ -672,7 +672,7 @@ public class BotAi : MonoBehaviour
                                                 if (PriorityDeterationSheet[(int)PlaceAreaCurrent[i].x][(int)PlaceAreaCurrent[i].y] + PriorityDeductions + MovePriorityAdd > SuggestedActionPriority[0])
                                                 {
                                                     InsertIntoList("Move", -((CurrentMoveGridCreation - 1) * MovementPriorityDown) + PriorityDeductions + MovePriorityAdd, new Vector2(PlaceAreaCurrent[i].x, PlaceAreaCurrent[i].y), true);
-                                                    if (PriorityDeterationSheet[(int)CharacterInfo.CharacterLocationIndex.x][(int)CharacterInfo.CharacterLocationIndex.y] + PriorityDeductions + MovePriorityAdd > SuggestedActionPriority[SuggestedActionPriority.Length - 1])
+                                                    if (PriorityDeterationSheet[(int)PlaceAreaCurrent[i].x][(int)PlaceAreaCurrent[i].y] + PriorityDeductions + MovePriorityAdd > SuggestedActionPriority[SuggestedActionPriority.Length - 1])
                                                     {
                                                         PriorityAdd = MovePriorityAdd;
                                                     }
@@ -695,12 +695,12 @@ public class BotAi : MonoBehaviour
                                                     
                                                     CharacterBase OpponentInformation = Opponents[t].gameObject.GetComponent<CharacterBase>();
                                                     GunFunction SelfGun = gameObject.GetComponent<GunFunction>();
-                                                    if (Opponents[t].IsDead == false && CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y),(int)OpponentInformation.CharacterLocationIndex.x, (int)OpponentInformation.CharacterLocationIndex.y, 0, 1, SelfGun) != -69|| CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y, -1, 0, SelfGun) != -69 || CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y, 0, -1, SelfGun) != -69 && CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y, 1, 0, SelfGun) != -69)
+                                                    if (Opponents[t].IsDead == false && (CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y),(int)OpponentInformation.CharacterLocationIndex.x, (int)OpponentInformation.CharacterLocationIndex.y, 0, 1, SelfGun) != -69|| CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)OpponentInformation.CharacterLocationIndex.x, (int)OpponentInformation.CharacterLocationIndex.y, -1, 0, SelfGun) != -69 || CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)OpponentInformation.CharacterLocationIndex.x, (int)OpponentInformation.CharacterLocationIndex.y, 0, -1, SelfGun) != -69 && CurrentAreaShot(new Vector2((int)PlaceAreaCurrent[i].x, (int)PlaceAreaCurrent[i].y), (int)OpponentInformation.CharacterLocationIndex.x, (int)OpponentInformation.CharacterLocationIndex.y, 1, 0, SelfGun) != -69))
                                                     {
                                                         if (PriorityDeterationSheet[(int)PlaceAreaCurrent[i].x][(int)PlaceAreaCurrent[i].y] + PriorityDeductions + ShootAdd > SuggestedActionPriority[0])
                                                         {
                                                             InsertIntoList("Shoot", -((CurrentMoveGridCreation - 1) * MovementPriorityDown) + PriorityDeductions + ShootAdd, new Vector2(PlaceAreaCurrent[i].x, PlaceAreaCurrent[i].y), true);
-                                                            if (PriorityDeterationSheet[(int)CharacterInfo.CharacterLocationIndex.x][(int)CharacterInfo.CharacterLocationIndex.y] + PriorityDeductions + ShootAdd > SuggestedActionPriority[SuggestedActionPriority.Length - 1])
+                                                            if (PriorityDeterationSheet[(int)PlaceAreaCurrent[i].x][(int)PlaceAreaCurrent[i].y] + PriorityDeductions + ShootAdd > SuggestedActionPriority[SuggestedActionPriority.Length - 1])
                                                             {
                                                                 PriorityAdd = ShootAdd;
                                                             }
@@ -797,8 +797,9 @@ public class BotAi : MonoBehaviour
                 {
                     InitiateMoveGridCreation = false;
                     bool HasUsedRandomGrid = false;
-                    int RandomDraw = UnityEngine.Random.Range(0, 101);
-                    for(int z = RangeOfRandomness.Length - 1; z < 0 ; z++)
+                    bool hasUsedOffMainMove = false;
+                    RandomDraw = UnityEngine.Random.Range(0, 101);
+                    for(int z = RangeOfRandomness.Length - 1; z >= 0 ; z--)
                     {
                         if(RandomDraw < RangeOfRandomness[z]&& HasUsedRandomGrid == false && SuggestedAction[z] != "inactive")
                         {
@@ -807,10 +808,10 @@ public class BotAi : MonoBehaviour
                             SuggestedActionLocationFinal = SuggestedActionLocation[z];
                             SuggestedActionPriorityFinal = SuggestedActionPriority[z];
                             WillMoveToFinal = WillMoveTo[z];
-                            
+                            hasUsedOffMainMove = true;
                         }
                     }
-                    if (HasUsedRandomGrid == false && SuggestedAction[SuggestedAction.Length-1] != "inactive")
+                    if (hasUsedOffMainMove == false && HasUsedRandomGrid == false)
                     {
                         HasUsedRandomGrid = true;
                         SuggestedActionFinal = SuggestedAction[SuggestedAction.Length - 1];

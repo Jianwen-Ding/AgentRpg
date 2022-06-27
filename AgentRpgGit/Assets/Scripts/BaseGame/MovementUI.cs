@@ -106,6 +106,9 @@ public class MovementUI : MonoBehaviour
         AmountOfDots = 1;
         CharacterSpawnerInfo = Camera.main.gameObject.GetComponent<CharacterSpawner>();
         MoveSystemCommunication = Camera.main.gameObject.GetComponent<MoveSystem>();
+        CurrentCharactersInPlay[0] = MoveSystemCommunication.CharacterOnField[0];
+        CurrentCharactersInPlay[1] = MoveSystemCommunication.CharacterOnField[1];
+        CurrentCharactersInPlay[2] = MoveSystemCommunication.CharacterOnField[2];
         Enemies[0] = MoveSystemCommunication.CharacterOnField[3];
         Enemies[1] = MoveSystemCommunication.CharacterOnField[4];
         Enemies[2] = MoveSystemCommunication.CharacterOnField[5];

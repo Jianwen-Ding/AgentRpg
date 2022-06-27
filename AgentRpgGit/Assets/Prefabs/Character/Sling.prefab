@@ -814,10 +814,10 @@ MonoBehaviour:
   MovementPriorityDown: 1
   TooCloseToPriorityDedeuct: 15
   TooFarToPriorityDedeuct: 0
-  DeductPerBulletDmg: 5
+  DeductPerBulletDmg: 2
   ChargeMoveDedeuct: 10
   MovePriorityAdd: 0
-  ShootAdd: 40
+  ShootAdd: 50
   Priorities:
   - AdjustLocation
   - Shoot
@@ -839,6 +839,7 @@ MonoBehaviour:
   RangeIn: 
   InHitDistance: 0
   ThresholdPriorty: 10
+  RandomDraw: 0
 --- !u!114 &3149338353124200713
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class HostageStatus : BaseCharacterStatus
         GridInfo = Camera.main.gameObject.GetComponent<GridLoad>();
         EventAcsess = Camera.main.gameObject.GetComponent<MoveSystem>().EventDisplayer.GetComponent<EventSystem>();
         PreviouslyActiveEvent = false;
-        TurnsTillDissapearLeft = 4;
+        TurnsTillDissapearLeft = 10;
         HasTriggered = false;
         HasSetUp = false;
         beforeHealth = characterCaughtBy.Health;

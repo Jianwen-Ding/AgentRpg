@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 319fb93b7f028e8459eb9e7df3a5a10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RangeOfRandomness: 050000000a0000001400000028000000
+  RangeOfRandomness: 0100000003000000050000000a000000
   CurrentPriorityQue: 0
   IsMakingDecison: 0
   HasStartedMakingDecison: 0
@@ -813,7 +813,7 @@ MonoBehaviour:
   SuggestedActionLocationFinal: {x: 0, y: 0}
   WillMoveToFinal: 0
   MovementPriorityDown: 1
-  TooCloseToPriorityDedeuct: -15
+  TooCloseToPriorityDedeuct: 0
   TooFarToPriorityDedeuct: 30
   DeductPerBulletDmg: 1
   ChargeMoveDedeuct: 10
@@ -840,6 +840,7 @@ MonoBehaviour:
   RangeIn: 
   InHitDistance: 0
   ThresholdPriorty: 10
+  RandomDraw: 0
 --- !u!114 &4181178470095656322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,7 +869,7 @@ MonoBehaviour:
   ShootForEnemy: 0
   Text: {fileID: 3508090468383675265, guid: 98de24ec3510deb4f997f291cc1a5c80, type: 3}
   InWorldText: {fileID: 0}
-  DamageRatio: 10
+  DamageRatio: 20
   DamageFallOff: 1
   CharacterCode: {fileID: 0}
   Effect: {fileID: 0}

@@ -71,12 +71,12 @@ public class SliderChange : MonoBehaviour
         if (Mathf.Abs(DestinationYPosition - SliderObject.transform.position.y) < 0.15)
         {
             SliderObjects[CurrentSlide].GetComponent<SliderModify>().IsSelected = true;
-            if (Input.GetAxisRaw("Vertical") > 0 && CurrentSlide + 1 < SliderObjects.Length)
+            if (Input.GetAxisRaw("Vertical") < 0 && CurrentSlide + 1 < SliderObjects.Length)
             {
                 SliderObjects[CurrentSlide].GetComponent<SliderModify>().IsSelected = false;
                 CurrentSlide++;
             }
-            if (Input.GetAxisRaw("Vertical") < 0 && CurrentSlide > 0)
+            if (Input.GetAxisRaw("Vertical") > 0 && CurrentSlide > 0)
             {
                 SliderObjects[CurrentSlide].GetComponent<SliderModify>().IsSelected = false;
                 CurrentSlide--;

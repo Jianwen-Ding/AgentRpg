@@ -57,9 +57,9 @@ MonoBehaviour:
   - {fileID: 4716509826077905511, guid: 43cee3635be86d24ba0a9afc567431a6, type: 3}
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   enemyHeaders:
-  - {fileID: 7030413298744756837, guid: 170d1dc81f9077d43b402431399d9d30, type: 3}
-  - {fileID: 7030413298744756837, guid: 170d1dc81f9077d43b402431399d9d30, type: 3}
-  - {fileID: 7030413298744756837, guid: 170d1dc81f9077d43b402431399d9d30, type: 3}
+  - {fileID: 8074482645965849036, guid: 204e1fdeb1cad1d4bb6306df46cc5b21, type: 3}
+  - {fileID: 2159930219686903132, guid: 21f31d02b9514e94e85b5333273c7258, type: 3}
+  - {fileID: 8074482645965849036, guid: 204e1fdeb1cad1d4bb6306df46cc5b21, type: 3}
   SpriteEnemyDisplay:
   - {fileID: 0}
   - {fileID: 0}
