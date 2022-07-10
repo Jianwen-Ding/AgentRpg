@@ -64,13 +64,15 @@ public class CharacterBase : MonoBehaviour
     //Status Effects
     //find status effect controller for guide
     public int[] StatusEffects = new int[10];
-
+    
     //Movement
     public float DistanceTillAtLocation;
     public float AnimationMoveSpeed;
     //Apearence
     public float DistanceUp;
     public float DistanceRight;
+    //Hurt
+    public float hurtAnimTimer;
     //Shoot 
     public float TimeUntilShootEnd;
     public bool AboutToShoot;
@@ -429,7 +431,14 @@ public class CharacterBase : MonoBehaviour
         if (PreviousHealth > Health)
         {
             gameObject.GetComponent<ShakeObject>().StartShake((float)DamageShakeRatio * (PreviousHealth - Health), (float)0.1);
-            CharacterSChanger.SetSprite(0.5, 4);
+            if(hurtAnimTimer == 0)
+            {
+                CharacterSChanger.SetSprite(0.5, 4);
+            }
+            else
+            {
+                CharacterSChanger.SetSprite(hurtAnimTimer, 4);
+            }
         }
         if (HasDied && !IsDead)
         {

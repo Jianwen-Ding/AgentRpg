@@ -74,6 +74,9 @@ public class BaseCharacterStatusInsert : MonoBehaviour
                                 DisplayedStatus.ModifierDisplayBot[x].GetComponent<TextMeshPro>().text = "HOS";
                                 break;
                             case 6:
+                                DisplayedStatus.ModifierDisplayBot[x].GetComponent<TextMeshPro>().text = "MIS";
+                                break;
+                            case 7:
                                 DisplayedStatus.ModifierDisplayBot[x].GetComponent<TextMeshPro>().text = "GEN";
                                 break;
 
@@ -101,6 +104,9 @@ public class BaseCharacterStatusInsert : MonoBehaviour
                     case 5:
                         StatusesInCharacter[x] = (BaseCharacterStatus)gameObject.AddComponent(typeof(HostageStatus));
 
+                        break;
+                    case 6:
+                        StatusesInCharacter[x] = (BaseCharacterStatus)gameObject.AddComponent(typeof(Miasma));
                         break;
                 }
                 if(StatusSprite[indexInsertStatus[x]] != null)
