@@ -73,6 +73,36 @@ public class MoveSum : MonoBehaviour
             case "Rythm":
                 SummaryFound = "Rythm: moves and launches a attack around the user.";
                 break;
+            case "Escapist":
+                SummaryFound = "Escapist: teleports user to diffrent location on low health";
+                break;
+            case "Melonlob":
+                SummaryFound = "Melonlob: a long range move that does a bit of damage after a turn";
+                break;
+            case "SpiritOfOrange":
+                SummaryFound = "SpiritOfOrange: sends a swarm of ghostly oranges that slowly spread out in all directions";
+                break;
+            case "BileJockey":
+                SummaryFound = "BileJockey: A ranged move with splash that does minimal damage that inflicts a status effect that doubles in damage every single time it hits";
+                break;
+            case "SpineSting":
+                SummaryFound = "SpineSting: A ranged move that does massive damage onto a single targe";
+                break;
+            case "SelfDestruct":
+                SummaryFound = "SelfDestruct: A move that does massive damage to anything within its range and kills the user";
+                break;
+            case "LizardBreath":
+                SummaryFound = "LizardBreath: pushes all opponents back 1 grid";
+                break;
+            case "LizardCry":
+                SummaryFound = "LizardCry: heals user for each ally in range";
+                break;
+            case "LizardLaserEyes":
+                SummaryFound = "LizardLaserEyes: Does large amount of damage to opponents close to user";
+                break;
+            case "LizardQuake":
+                SummaryFound = "LizardQuake: Damages opponents and heals user for each opponent damaged, heals allys";
+                break;
         }
         return SummaryFound;
     }

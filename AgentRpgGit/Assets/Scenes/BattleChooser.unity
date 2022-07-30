@@ -1251,9 +1251,11 @@ MonoBehaviour:
   - EYE
   - Testing Grounds
   - Kelly
-  SliderDifficultyRating: 02000000020000000100000002000000
-  SliderIsBoss: 01010001
+  - The Face Gatherers
+  SliderDifficultyRating: 0200000002000000010000000200000004000000
+  SliderIsBoss: 0101000101
   SliderObjects:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -1276,6 +1278,7 @@ MonoBehaviour:
   - {fileID: 1035232728720854101, guid: a3cf3297f207b5e448c2441b38c392d2, type: 3}
   - {fileID: 687650361611322359, guid: 318d0581f1413444297d00fc33491256, type: 3}
   - {fileID: 4074424980971472627, guid: 9688e3c4a6004b146a096395616c8b98, type: 3}
+  - {fileID: 1491551972966297486, guid: d8cd16507bbe4f947a4d211eb578677b, type: 3}
   Enemies:
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   - {fileID: 4716509826077905511, guid: 43cee3635be86d24ba0a9afc567431a6, type: 3}
@@ -1289,6 +1292,9 @@ MonoBehaviour:
   - {fileID: 3370384534241621915, guid: 2c1e7128f8842e146a07aba6b9eb5939, type: 3}
   - {fileID: 4572340827180397328, guid: d75711a4174a20f4b8901c902a522711, type: 3}
   - {fileID: 3370384534241621915, guid: 2c1e7128f8842e146a07aba6b9eb5939, type: 3}
+  - {fileID: 7562590147421537335, guid: 2b3b038cd53b2884aaa06f86894ed728, type: 3}
+  - {fileID: 5482623977675464544, guid: 41d6eea05215ae540a71ba06911408fe, type: 3}
+  - {fileID: 1192180855984037204, guid: 35301c98565ddcf419ad4f608791b604, type: 3}
 --- !u!1 &1264544396
 GameObject:
   m_ObjectHideFlags: 0

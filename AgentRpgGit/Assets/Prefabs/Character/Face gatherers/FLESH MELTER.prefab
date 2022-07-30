@@ -125,17 +125,17 @@ MonoBehaviour:
   SpeedPriority: 0
   SpeedMultiplier: 1
   ExpressedSpeed: 0
-  Damage: 30
+  Damage: 13
   DamageMultiplier: 1
   ExpressedDamage: 0
   Defense: 30
   DefenseMultiplier: 1
   ExpressedDefense: 0
   MovesAllowed:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2083270427818139000}
+  - {fileID: 8965152549945447782}
+  - {fileID: 6938692752630873655}
+  - {fileID: 5285270886189200532}
   GridSquare: {fileID: 0}
   GridData: {fileID: 0}
   GameObjectSpriteRenderer: {fileID: 0}

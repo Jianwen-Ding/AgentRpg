@@ -111,8 +111,8 @@ MonoBehaviour:
   HasDied: 0
   PreviousHealth: 0
   IsEnemy: 1
-  Health: 200
-  MaxHealth: 200
+  Health: 100
+  MaxHealth: 100
   IsDead: 0
   LocationAction: {x: 0, y: 0}
   action: 
@@ -125,17 +125,17 @@ MonoBehaviour:
   SpeedPriority: 0
   SpeedMultiplier: 1
   ExpressedSpeed: 0
-  Damage: 30
+  Damage: 20
   DamageMultiplier: 1
   ExpressedDamage: 0
   Defense: 20
   DefenseMultiplier: 1
   ExpressedDefense: 0
   MovesAllowed:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2376746015511990812}
+  - {fileID: 1280461525110853895}
+  - {fileID: 3577506242507153039}
+  - {fileID: 493154122244434655}
   GridSquare: {fileID: 0}
   GridData: {fileID: 0}
   GameObjectSpriteRenderer: {fileID: 0}
@@ -569,6 +569,7 @@ MonoBehaviour:
   AllyMoveSquareY4: -69
   AllyMoveSquareWidth4: -69
   AllyMoveSquareHeight4: -69
+  TurnsHad: 4
 --- !u!114 &1280461525110853895
 MonoBehaviour:
   m_ObjectHideFlags: 0

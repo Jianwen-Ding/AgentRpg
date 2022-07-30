@@ -6,6 +6,7 @@ public class GenericMove : MonoBehaviour
 {
     #region Varibles
     [SerializeField]
+    //used to find index of move if a bot
     public bool HasUsedCharge = false;
     // Start is called before the first frame update
     //Area That Can Be selected
@@ -482,7 +483,7 @@ public class GenericMove : MonoBehaviour
             {
                 for (int y = 0; y < YLength; y++)
                 {
-                    if (x + XStart >= 0 && y + YStart >= 0 && x + XStart < Gridinfo.XWidthPublic && y + YStart < Gridinfo.YWidthPublic)
+                    if (x + XStart >= 0 && y + YStart >= 0 && x + XStart < Gridinfo.XWidthPublic && y + YStart < Gridinfo.YWidthPublic && Effects.Length > EffectAmount)
                     {
                         Effects[EffectAmount] = Instantiate(MoveSprite, new Vector3(Gridinfo.AllGrids[YStart + y][XStart + x].transform.position.x + AdjustSprite.x, Gridinfo.AllGrids[YStart + y][XStart + x].transform.position.y + AdjustSprite.y), Quaternion.identity.normalized);
                         Effects[EffectAmount].GetComponent<EffectsLifeTime>().TimeTillSelfDestruct = (float)0.5;

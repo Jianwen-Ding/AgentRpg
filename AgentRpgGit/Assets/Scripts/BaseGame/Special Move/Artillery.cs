@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Artillery : GenericMove
 {
+    //find index of move on BotAi script
+    public int moveBot;
     //THIS IS THE BASE FOR ALL CHARGE MOVES
     public override void SetAdjust()
     {
+        moveBot = -69;
         AreaSelectionSquareX0 = -3;
         AreaSelectionSquareY0 = -3;
         AreaSelectionSquareWidth0 = 3;
@@ -78,13 +81,28 @@ public class Artillery : GenericMove
     // Update is called once per frame
     public override void Update()
     {
+        if(moveBot == -69 && BotAiCheckIfApply != null)
+        {
+            for(int x = 0; x < BotAiCheckIfApply.SpecialMoves.Length; x++)
+            {
+                if (BotAiCheckIfApply.SpecialMoves[x] == this)
+                {
+                    moveBot = x;
+                }
+            }
+        }
         if (Character_Info.IsCharging == true && BotAiCheckIfApply == null && MoveDecison.IsDisplayingHappening == false)
         {
             HasUsedCharge = true;
         }
-        if (Character_Info.IsCharging == true && BotAiCheckIfApply != null && BotAiCheckIfApply.IsMakingDecison == true)
+        
+        if (moveBot != -69 && Character_Info.IsCharging == true && BotAiCheckIfApply != null && BotAiCheckIfApply.IsMakingDecison == true)
         {
-            HasUsedCharge = true;
+            if(BotAiCheckIfApply.SuggestedActionFinal.Substring(BotAiCheckIfApply.SuggestedActionFinal.Length - 1) == moveBot + "")
+            {
+                HasUsedCharge = true;
+            }
+            
         }
         if (AreaCanClick != null)
         {

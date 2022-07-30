@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class LizardBreath : GenericMove
 {
+    [SerializeField]
+    int TurnsHad = 2;
+    bool WasActiveBefore;
+    MoveSystem MoveTally;
     public override void SetAdjust()
     {
+        MoveTally = Camera.main.GetComponent<MoveSystem>();
         AreaSelectionSquareX0 = 0;
         AreaSelectionSquareY0 = 0;
         AreaSelectionSquareWidth0 = 0;
@@ -49,16 +54,34 @@ public class LizardBreath : GenericMove
         willUseForGridEffect = true;
         PriorityAdd = 15;
     }
+    public override void Update()
+    {
+        if (MoveTally.IsDisplayingHappening == false && WasActiveBefore == true)
+        {
+            TurnsHad++;
+        }
+        WasActiveBefore = MoveTally.IsDisplayingHappening;
+    }
     public override int[] CheckIfConditionsApply(Vector2 areaCheckFrom)
     {
         int[] DoesConditionsApply = new int[3];
-        DoesConditionsApply[0] = (int)areaCheckFrom.x;
-        DoesConditionsApply[1] = (int)areaCheckFrom.y;
-        DoesConditionsApply[2] = PriorityAdd;
+        if(TurnsHad > 4)
+        {
+            DoesConditionsApply[0] = (int)areaCheckFrom.x;
+            DoesConditionsApply[1] = (int)areaCheckFrom.y;
+            DoesConditionsApply[2] = PriorityAdd;
+        }
+        else
+        {
+            DoesConditionsApply[0] = -69;
+            DoesConditionsApply[1] = -69;
+            DoesConditionsApply[2] = -69;
+        }
         return DoesConditionsApply;
     }
     public override void ActivateMove()
     {
+        TurnsHad = 1;
         EffectAmount = 0;
         gameObject.GetComponent<CharacterBase>().action = "inactive";
         for (int i = 0; i < BotAiCheckIfApply.Opponents.Length; i++)

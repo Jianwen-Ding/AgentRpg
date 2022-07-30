@@ -80,23 +80,24 @@ public class LizardQuake : GenericMove
             GameObject[] AreaCharacters = AreaCheck((int)Character_Info.CharacterLocationIndex.x - 2, (int)Character_Info.CharacterLocationIndex.y - 2, 5, 5);
             CharacterBase CheckedCharacterBase;
             GameObject InWorldText;
-            if (AreaCharacters[x] != null)
+            if (AreaCharacters[x] != null && AreaCharacters[x].GetComponent<CharacterBase>().IsDead == false)
             {
                 CheckedCharacterBase = AreaCharacters[x].GetComponent<CharacterBase>();
                 if (CheckedCharacterBase.IsEnemy != Character_Info.IsEnemy)
                 {
-                    CheckedCharacterBase.Health -= damageRatio * Character_Info.ExpressedDamage;
+                    float damage = CheckedCharacterBase.DefenseProcessedDamage(damageRatio * Character_Info.ExpressedDamage);
+                    CheckedCharacterBase.Health -= damage;
                     InWorldText = Instantiate(HitUiSprite, new Vector3(Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.x, Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.y), Quaternion.identity.normalized);
-                    InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, (damageRatio * Character_Info.ExpressedDamage) + "", Color.black, new Vector2(5, 5));
-                    Character_Info.Health += 40;
+                    InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, damage + "", Color.black, new Vector2(5, 5));
+                    Character_Info.Health += 20;
                     InWorldText = Instantiate(HitUiSprite, new Vector3(Gridinfo.AllGrids[(int)Character_Info.CharacterLocationIndex.y][(int)Character_Info.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.x, Gridinfo.AllGrids[(int)Character_Info.CharacterLocationIndex.y][(int)Character_Info.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.y), Quaternion.identity.normalized);
-                    InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, "40", Color.black, new Vector2(5, 5));
+                    InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, "20", Color.black, new Vector2(5, 5));
                 }
                 else
                 {
-                    CheckedCharacterBase.Health += 40;
+                    CheckedCharacterBase.Health += 20;
                     InWorldText = Instantiate(HitUiSprite, new Vector3(Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.x, Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.y), Quaternion.identity.normalized);
-                    InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, "40", Color.black, new Vector2(5, 5));
+                    InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, "20", Color.black, new Vector2(5, 5));
                 }
             }
         }

@@ -10,10 +10,10 @@ public class SpineSting : GenericMove
     int miasmaAdd;
     public override void SetAdjust()
     {
-        AreaSelectionSquareX0 = -3;
-        AreaSelectionSquareY0 = -3;
-        AreaSelectionSquareWidth0 = 3;
-        AreaSelectionSquareHeight0 = 3;
+        AreaSelectionSquareX0 = -2;
+        AreaSelectionSquareY0 = -2;
+        AreaSelectionSquareWidth0 = 2;
+        AreaSelectionSquareHeight0 = 2;
         AreaSelectionSquareX1 = -69;
         AreaSelectionSquareY1 = -69;
         AreaSelectionSquareWidth1 = -69;
@@ -51,7 +51,7 @@ public class SpineSting : GenericMove
         WillUseForSquareWidth4 = -69;
         WillUseForSquareHeight4 = -69;
         willUseForGridEffect = true;
-        PriorityAdd = 51;
+        PriorityAdd = 50;
         damageRatio = 5;
     }
     public override void SelectionAdjustment()

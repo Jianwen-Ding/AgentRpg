@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Melonlob : GenericMove
 {
+    public int moveBot;
     public override void SetAdjust()
     {
+        moveBot = -69;
         AreaSelectionSquareX0 = -10;
         AreaSelectionSquareY0 = -10;
         AreaSelectionSquareWidth0 = 10;
@@ -78,13 +80,27 @@ public class Melonlob : GenericMove
     // Update is called once per frame
     public override void Update()
     {
+        if (moveBot == -69 && BotAiCheckIfApply != null)
+        {
+            for (int x = 0; x < BotAiCheckIfApply.SpecialMoves.Length; x++)
+            {
+                if (BotAiCheckIfApply.SpecialMoves[x] == this)
+                {
+                    moveBot = x;
+                }
+            }
+        }
         if (Character_Info.IsCharging == true && BotAiCheckIfApply == null && MoveDecison.IsDisplayingHappening == false)
         {
             HasUsedCharge = true;
         }
-        if (Character_Info.IsCharging == true && BotAiCheckIfApply != null && BotAiCheckIfApply.IsMakingDecison == true)
+        if (moveBot != -69 && Character_Info.IsCharging == true && BotAiCheckIfApply != null && BotAiCheckIfApply.IsMakingDecison == true)
         {
-            HasUsedCharge = true;
+            if (BotAiCheckIfApply.SuggestedActionFinal.Substring(BotAiCheckIfApply.SuggestedActionFinal.Length - 1) == moveBot + "")
+            {
+                HasUsedCharge = true;
+            }
+
         }
         if (AreaCanClick != null)
         {
@@ -199,9 +215,9 @@ public class Melonlob : GenericMove
                     if (CheckedCharacterBase.IsEnemy != Character_Info.IsEnemy)
                     {
 
-                        CheckedCharacterBase.Health -= CheckedCharacterBase.DefenseProcessedDamage(30);
+                        CheckedCharacterBase.Health -= CheckedCharacterBase.DefenseProcessedDamage(20);
                         InWorldText = Instantiate(HitUiSprite, new Vector3(Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.x, Gridinfo.AllGrids[(int)CheckedCharacterBase.CharacterLocationIndex.y][(int)CheckedCharacterBase.CharacterLocationIndex.x].GetComponent<GridControl>().CharacterOn.transform.position.y), Quaternion.identity.normalized);
-                        InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, "" + CheckedCharacterBase.DefenseProcessedDamage(30), Color.black, new Vector2(5, 5));
+                        InWorldText.GetComponent<FadeOutText>().BeginInitiate(1, "" + CheckedCharacterBase.DefenseProcessedDamage(20), Color.black, new Vector2(5, 5));
                     }
                 }
             }

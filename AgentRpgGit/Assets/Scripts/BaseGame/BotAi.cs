@@ -97,8 +97,7 @@ public class BotAi : MonoBehaviour
     GridLoad GridInfo;
     [SerializeField]
     GridControl[][] GridControlInfo;
-    [SerializeField]
-    GenericMove[] SpecialMoves= new GenericMove[4];
+    public GenericMove[] SpecialMoves= new GenericMove[4];
     [SerializeField]
     MoveSystem MoveSystemInfo;
     public CharacterBase[] Opponents = new CharacterBase[3];    
