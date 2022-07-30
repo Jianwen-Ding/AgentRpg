@@ -4,6 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CharacterRememberance : MonoBehaviour
 {
+    //BackGround
+    public GameObject backGround;
+    //Music
+    public AudioClip music;
+    public float replayStart;
+    public float replayEnd;
+    //1 is max
+    public float volume;
     //1 = Sandman - Caster 
     //2 = Jade    - Carry
     //3 = Aurthur - Tank

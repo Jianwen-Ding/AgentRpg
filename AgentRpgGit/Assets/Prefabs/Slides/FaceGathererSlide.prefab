@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a836b2c23a29b24fa6fced0e765d3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Face Gatherers
+  SceneName: BattleScene
 --- !u!1 &1491551972966297486
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,6 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c53f4913b0972e46997275b3024ce95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backGround: {fileID: 0}
+  music: {fileID: 0}
+  timeStartLoop: 0
+  timeEndLoop: 0
   OwnStartingPosition: {x: -2.6, y: 0, z: 0}
   Enemies:
   - {fileID: 7562590147421537335, guid: 2b3b038cd53b2884aaa06f86894ed728, type: 3}

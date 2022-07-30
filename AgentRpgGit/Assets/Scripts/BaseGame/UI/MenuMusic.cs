@@ -7,13 +7,13 @@ public class MenuMusic : MonoBehaviour
     [SerializeField]
     bool Loads;
     [SerializeField]
-    float time;
+    public float time;
     [SerializeField]
-    float prevTime;
+    public float prevTime;
     [SerializeField]
-    float StartTime;
+    public float StartTime;
     [SerializeField]
-    float EndTime;
+    public float EndTime;
     // Start is called before the first frame update
     void Start()
     {

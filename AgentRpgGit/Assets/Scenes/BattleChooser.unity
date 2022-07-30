@@ -1279,6 +1279,36 @@ MonoBehaviour:
   - {fileID: 687650361611322359, guid: 318d0581f1413444297d00fc33491256, type: 3}
   - {fileID: 4074424980971472627, guid: 9688e3c4a6004b146a096395616c8b98, type: 3}
   - {fileID: 1491551972966297486, guid: d8cd16507bbe4f947a4d211eb578677b, type: 3}
+  backGrounds:
+  - {fileID: 885023608139804964, guid: b9cd45ecd9b6aab47b0702ddc7c30950, type: 3}
+  - {fileID: 168300112011908397, guid: b9f6801fafe61ab4481be854b1a2ddb0, type: 3}
+  - {fileID: 885023608139804964, guid: b9cd45ecd9b6aab47b0702ddc7c30950, type: 3}
+  - {fileID: 8035854953892354036, guid: baef40e93341fcb4297bb664b4342e1b, type: 3}
+  - {fileID: 885023608139804964, guid: b9cd45ecd9b6aab47b0702ddc7c30950, type: 3}
+  music:
+  - {fileID: 8300000, guid: b1c206659fe60ec458c63df8d12687c6, type: 3}
+  - {fileID: 8300000, guid: 181ae028857b6324d9f447f27a03052f, type: 3}
+  - {fileID: 8300000, guid: b1c206659fe60ec458c63df8d12687c6, type: 3}
+  - {fileID: 8300000, guid: b01e7551070aa8c48a842e5769c92548, type: 3}
+  - {fileID: 8300000, guid: 72809872797423846a67948d82a012d8, type: 3}
+  startTime:
+  - 12
+  - 0
+  - 12
+  - 0
+  - 0
+  endTime:
+  - 189.65
+  - 228
+  - 189.65
+  - 240
+  - 240
+  volume:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
   Enemies:
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   - {fileID: 4716509826077905511, guid: 43cee3635be86d24ba0a9afc567431a6, type: 3}

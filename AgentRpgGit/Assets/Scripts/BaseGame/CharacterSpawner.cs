@@ -43,7 +43,6 @@ public class CharacterSpawner : MonoBehaviour
         GridLoad GridData;
         GridData = Camera.main.gameObject.GetComponent<GridLoad>();
         CharacterSave = GameObject.FindWithTag("CharacterRemeberance").GetComponent<CharacterRememberance>();
-
         //Sandman
         SandmanPrefab = Instantiate(SandmanPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         CharacterPassiveInsert.InsertCharacterPassive(CharacterSave.PassiveIndex[CharacterSave.GunFunctionIndex3[0]], SandmanPrefab);
@@ -156,6 +155,15 @@ public class CharacterSpawner : MonoBehaviour
                 Script.StatusSprite = StatusSprite;
             }
         }
+        //Background
+        Instantiate(CharacterSave.backGround);
+        MenuMusic music = gameObject.GetComponent<MenuMusic>();
+        AudioSource audio = gameObject.GetComponent<AudioSource>();
+        audio.clip = CharacterSave.music;
+        music.StartTime = CharacterSave.replayStart;
+        music.StartTime = CharacterSave.replayEnd;
+        audio.volume = CharacterSave.volume;
+        audio.Play();
     }
 
 }

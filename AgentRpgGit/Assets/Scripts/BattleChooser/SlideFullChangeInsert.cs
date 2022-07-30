@@ -9,6 +9,11 @@ public class SlideFullChangeInsert : MonoBehaviour
     SliderChange MainSlideChange;
     [SerializeField]
     GameObject[] SlideUIPrefabs;
+    public GameObject[] backGrounds;
+    public AudioClip[] music;
+    public float[] startTime;
+    public float[] endTime;
+    public float[] volume;
     CharacterRememberance CarryOverIntoScene;
     //[E1,E1,E1,E2,E2,E2,E3...]
     [SerializeField]
@@ -23,6 +28,11 @@ public class SlideFullChangeInsert : MonoBehaviour
         CurrentSlideUI.GetComponent<MoveSum>().Enemies[1] = Enemies[MainSlideChange.CurrentSlide * 3 + 1];
         CurrentSlideUI.GetComponent<MoveSum>().Enemies[2] = Enemies[MainSlideChange.CurrentSlide * 3 + 2];
         CarryOverIntoScene.Enemies = CurrentSlideUI.GetComponent<MoveSum>().Enemies;
+        CarryOverIntoScene.music = music[MainSlideChange.CurrentSlide];
+        CarryOverIntoScene.volume = volume[MainSlideChange.CurrentSlide];
+        CarryOverIntoScene.backGround = backGrounds[MainSlideChange.CurrentSlide];
+        CarryOverIntoScene.replayStart = endTime[MainSlideChange.CurrentSlide];
+        CarryOverIntoScene.replayEnd = startTime[MainSlideChange.CurrentSlide];
         PreviousSlide = MainSlideChange.CurrentSlide;
     }
 
@@ -37,6 +47,11 @@ public class SlideFullChangeInsert : MonoBehaviour
             CurrentSlideUI.GetComponent<MoveSum>().Enemies[1] = Enemies[MainSlideChange.CurrentSlide * 3+1];
             CurrentSlideUI.GetComponent<MoveSum>().Enemies[2] = Enemies[MainSlideChange.CurrentSlide * 3+2];
             CarryOverIntoScene.Enemies = CurrentSlideUI.GetComponent<MoveSum>().Enemies;
+            CarryOverIntoScene.music = music[MainSlideChange.CurrentSlide];
+            CarryOverIntoScene.volume = volume[MainSlideChange.CurrentSlide];
+            CarryOverIntoScene.backGround = backGrounds[MainSlideChange.CurrentSlide];
+            CarryOverIntoScene.replayStart = endTime[MainSlideChange.CurrentSlide];
+            CarryOverIntoScene.replayEnd = startTime[MainSlideChange.CurrentSlide];
         }
         PreviousSlide = MainSlideChange.CurrentSlide;
     }

@@ -4,7 +4,11 @@ using UnityEngine;
 using TMPro; 
 public class MoveSum : MonoBehaviour
 {
-    [SerializeField ]
+    public GameObject backGround;
+    public AudioClip music;
+    public float timeStartLoop;
+    public float timeEndLoop;
+    [SerializeField]
     Vector3 OwnStartingPosition;
     public GameObject[] Enemies = new GameObject[3];
     [SerializeField]
