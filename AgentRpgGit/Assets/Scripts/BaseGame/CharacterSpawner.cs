@@ -161,7 +161,7 @@ public class CharacterSpawner : MonoBehaviour
         AudioSource audio = gameObject.GetComponent<AudioSource>();
         audio.clip = CharacterSave.music;
         music.StartTime = CharacterSave.replayStart;
-        music.StartTime = CharacterSave.replayEnd;
+        music.EndTime = CharacterSave.replayEnd;
         audio.volume = CharacterSave.volume;
         audio.Play();
     }
