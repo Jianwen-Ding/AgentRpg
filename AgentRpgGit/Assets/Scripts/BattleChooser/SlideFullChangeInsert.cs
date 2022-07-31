@@ -31,8 +31,8 @@ public class SlideFullChangeInsert : MonoBehaviour
         CarryOverIntoScene.music = music[MainSlideChange.CurrentSlide];
         CarryOverIntoScene.volume = volume[MainSlideChange.CurrentSlide];
         CarryOverIntoScene.backGround = backGrounds[MainSlideChange.CurrentSlide];
-        CarryOverIntoScene.replayStart = endTime[MainSlideChange.CurrentSlide];
-        CarryOverIntoScene.replayEnd = startTime[MainSlideChange.CurrentSlide];
+        CarryOverIntoScene.replayStart = startTime[MainSlideChange.CurrentSlide];
+        CarryOverIntoScene.replayEnd = endTime[MainSlideChange.CurrentSlide];
         PreviousSlide = MainSlideChange.CurrentSlide;
     }
 

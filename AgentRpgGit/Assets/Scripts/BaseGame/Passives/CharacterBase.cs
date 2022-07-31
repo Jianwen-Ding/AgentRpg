@@ -168,7 +168,7 @@ public class CharacterBase : MonoBehaviour
     }
     public virtual float DefenseProcessedDamage (float Damages)
     {
-        float DamageTaken = Damages * ((100-Defense)/100 );
+        float DamageTaken = Damages * ((100-ExpressedDefense)/100 );
         Health -= (float)(int)DamageTaken;
         return (float)(int)DamageTaken;
     }

@@ -143,6 +143,7 @@ public class MoveSystem : MonoBehaviour
             HaveWon = false;
             TimeTillLoadNewSceneTimeLeft = TimeTillLoadNewSceneTime;
             Instantiate(GameOverScreenBlackout);
+            Camera.main.gameObject.GetComponent<AudioSource>().Pause();
         }
         if (CompletedCharacterBasesOnField == true && CharacterBasesOnField[3].IsDead == true && CharacterBasesOnField[4].IsDead == true && CharacterBasesOnField[5].IsDead == true && TimeTillLoadNewSceneTimeLeft == 0)
         {

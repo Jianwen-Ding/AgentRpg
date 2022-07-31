@@ -43,14 +43,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0f1ba0621732d42b24324d62580e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backGround: {fileID: 0}
+  music: {fileID: 0}
+  replayStart: 0
+  replayEnd: 0
+  volume: 0
   Health:
-  - 100
-  - 100
-  - 150
+  - 160
+  - 140
+  - 190
   MaxHealth:
-  - 100
-  - 100
-  - 150
+  - 160
+  - 140
+  - 190
   Damage:
   - 50
   - 50
@@ -60,9 +65,9 @@ MonoBehaviour:
   - 4
   - 2
   Defense:
-  - 50
   - 30
-  - 50
+  - 20
+  - 30
   PassiveIndex: 000000000000000000000000
   MovesPutIn1: 01000000020000000300000017000000
   MovesPutIn2: 01000000020000000300000000000000

@@ -1252,9 +1252,11 @@ MonoBehaviour:
   - Testing Grounds
   - Kelly
   - The Face Gatherers
-  SliderDifficultyRating: 0200000002000000010000000200000004000000
-  SliderIsBoss: 0101000101
+  - Octopus Knights
+  SliderDifficultyRating: 020000000200000001000000020000000400000003000000
+  SliderIsBoss: 010100010101
   SliderObjects:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -1279,22 +1281,26 @@ MonoBehaviour:
   - {fileID: 687650361611322359, guid: 318d0581f1413444297d00fc33491256, type: 3}
   - {fileID: 4074424980971472627, guid: 9688e3c4a6004b146a096395616c8b98, type: 3}
   - {fileID: 1491551972966297486, guid: d8cd16507bbe4f947a4d211eb578677b, type: 3}
+  - {fileID: 7760101485857737584, guid: ec91f62d4a5ca11479606ec871c6b12d, type: 3}
   backGrounds:
   - {fileID: 885023608139804964, guid: b9cd45ecd9b6aab47b0702ddc7c30950, type: 3}
   - {fileID: 168300112011908397, guid: b9f6801fafe61ab4481be854b1a2ddb0, type: 3}
   - {fileID: 885023608139804964, guid: b9cd45ecd9b6aab47b0702ddc7c30950, type: 3}
   - {fileID: 8035854953892354036, guid: baef40e93341fcb4297bb664b4342e1b, type: 3}
   - {fileID: 885023608139804964, guid: b9cd45ecd9b6aab47b0702ddc7c30950, type: 3}
+  - {fileID: 2752608951558662500, guid: e7f24b605cbf70143804189be04634dc, type: 3}
   music:
   - {fileID: 8300000, guid: b1c206659fe60ec458c63df8d12687c6, type: 3}
   - {fileID: 8300000, guid: 181ae028857b6324d9f447f27a03052f, type: 3}
   - {fileID: 8300000, guid: b1c206659fe60ec458c63df8d12687c6, type: 3}
   - {fileID: 8300000, guid: b01e7551070aa8c48a842e5769c92548, type: 3}
   - {fileID: 8300000, guid: 72809872797423846a67948d82a012d8, type: 3}
+  - {fileID: 8300000, guid: 6449b8063334e3347ae445f01dc3da6f, type: 3}
   startTime:
   - 12
   - 0
   - 12
+  - 0
   - 0
   - 0
   endTime:
@@ -1303,12 +1309,14 @@ MonoBehaviour:
   - 189.65
   - 240
   - 240
+  - 120
   volume:
   - 1
   - 1
   - 1
   - 1
   - 1
+  - 0.8
   Enemies:
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   - {fileID: 4716509826077905511, guid: 43cee3635be86d24ba0a9afc567431a6, type: 3}
@@ -1325,6 +1333,9 @@ MonoBehaviour:
   - {fileID: 7562590147421537335, guid: 2b3b038cd53b2884aaa06f86894ed728, type: 3}
   - {fileID: 5482623977675464544, guid: 41d6eea05215ae540a71ba06911408fe, type: 3}
   - {fileID: 1192180855984037204, guid: 35301c98565ddcf419ad4f608791b604, type: 3}
+  - {fileID: 2688657213887495653, guid: 848a490ec2093d14d95c4e06f8229195, type: 3}
+  - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
+  - {fileID: 2688657213887495653, guid: 848a490ec2093d14d95c4e06f8229195, type: 3}
 --- !u!1 &1264544396
 GameObject:
   m_ObjectHideFlags: 0

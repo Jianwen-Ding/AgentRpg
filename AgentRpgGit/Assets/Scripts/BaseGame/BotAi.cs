@@ -17,7 +17,7 @@ public class BotAi : MonoBehaviour
     [SerializeField]
     public bool IsMakingDecison;
     [SerializeField]
-    bool HasStartedMakingDecison;
+    public bool HasStartedMakingDecison;
     #region MovementGridThings
     //Grid Spread Sheet Shows the arearas from move steps
     public bool InitiateMoveGridCreation;
@@ -27,21 +27,21 @@ public class BotAi : MonoBehaviour
     public Vector2 DeconstrucionMoveLocation;
     // Finds the order of movments
     [SerializeField]
-    int OldActionPriority;
+    public int OldActionPriority;
     [SerializeField]
-    int[][] GridSpreadSheet;
+    public int[][] GridSpreadSheet;
     [SerializeField]
-    int[][] PriorityDeterationSheet;
+    public int[][] PriorityDeterationSheet;
     [SerializeField]
-    bool InitiateMoveMentDecison;
+    public bool InitiateMoveMentDecison;
     [SerializeField]
-    int[][] AbilityToMoveAdjust;
+    public int[][] AbilityToMoveAdjust;
     [SerializeField]
-    int IdealDistanceCloseToOpponents;
+    public int IdealDistanceCloseToOpponents;
     [SerializeField]
-    int IdealDistanceAwayFromOpponents;
+    public int IdealDistanceAwayFromOpponents;
     [SerializeField]
-    int[][] AllowedMoveArea;
+    public int[][] AllowedMoveArea;
     #endregion
     #region DecisonMaking
     //Sorting Decisons
@@ -79,7 +79,7 @@ public class BotAi : MonoBehaviour
     public int ChargeMoveDedeuct;
     //This is the Priority add to diffrent actions
     [SerializeField]
-    int MovePriorityAdd;
+    public int MovePriorityAdd;
     [SerializeField]
     public int ShootAdd;
     //Priorities Checks if certain things are checked
@@ -92,35 +92,35 @@ public class BotAi : MonoBehaviour
     #endregion
     //Set Get Components
     [SerializeField]
-    CharacterBase CharacterInfo;
+    public CharacterBase CharacterInfo;
     [SerializeField]
-    GridLoad GridInfo;
+    public GridLoad GridInfo;
     [SerializeField]
-    GridControl[][] GridControlInfo;
+    public GridControl[][] GridControlInfo;
     public GenericMove[] SpecialMoves= new GenericMove[4];
     [SerializeField]
-    MoveSystem MoveSystemInfo;
+    public MoveSystem MoveSystemInfo;
     public CharacterBase[] Opponents = new CharacterBase[3];    
     public CharacterBase[] Allys = new CharacterBase[3];
     //To Find allys and Opponents
     [SerializeField]
-    int AmountOfAllysAdded;
+    public int AmountOfAllysAdded;
     [SerializeField]
-    int AmountOfOpponentsAdded;
+    public int AmountOfOpponentsAdded;
     // Debug
     [SerializeField]
-    string RangeIn;
+    public string RangeIn;
     [SerializeField]
-    bool InHitDistance;
+    public bool InHitDistance;
     //Threshold To allow
     // When moving between points there might be places where they have to go through less advantagous positions to get to an advantageous position. The threshold priority tells the bot how much less can it be until it refuses to take a path. 
     [SerializeField]
-    int ThresholdPriorty;
+    public int ThresholdPriorty;
     //Strings
     //InIdealRange
     //TooFar
     //TooClose
-    string GoingToShowString;
+    public string GoingToShowString;
     //Outputs ==
     //Inserts into list
     //Debug
@@ -316,7 +316,7 @@ public class BotAi : MonoBehaviour
         return HasBeenHitDmg;
     }
     
-    void Start()
+    public virtual void Start()
     {
         SuggestedActionPriority = new int[RangeOfRandomness.Length + 1];
         SuggestedAction = new string[RangeOfRandomness.Length + 1];
@@ -362,7 +362,7 @@ public class BotAi : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         RangeIn = InOpponentRange((int)CharacterInfo.CharacterLocationIndex.x, (int)CharacterInfo.CharacterLocationIndex.y);
         /*InHitDistance = false;

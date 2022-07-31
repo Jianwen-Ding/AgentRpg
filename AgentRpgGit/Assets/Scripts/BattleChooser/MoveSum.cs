@@ -107,6 +107,12 @@ public class MoveSum : MonoBehaviour
             case "LizardQuake":
                 SummaryFound = "LizardQuake: Damages opponents and heals user for each opponent damaged, heals allys";
                 break;
+            case "KnightMove":
+                SummaryFound = "KnightMove: moves in a L shape, can move to eight diffrent places. It sometimes collides with another user and only moves one space";
+                break;
+            case "KnightStrike":
+                SummaryFound = "KnightStrike: strikes one of eight possible spots, moves towards struck location";
+                break;
         }
         return SummaryFound;
     }
