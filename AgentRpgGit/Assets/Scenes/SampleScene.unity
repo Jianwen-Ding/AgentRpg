@@ -823,6 +823,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: RememberanceObject
       objectReference: {fileID: 0}
+    - target: {fileID: 2946815007361638585, guid: 3baa47be84ebd3f44ad78ef7e5b5fb81,
+        type: 3}
+      propertyPath: Enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 4696003078524534645, guid: 6aa7b9a53e04f4a45bbe753754dbe134,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3baa47be84ebd3f44ad78ef7e5b5fb81, type: 3}
 --- !u!1001 &3766301997861410744
