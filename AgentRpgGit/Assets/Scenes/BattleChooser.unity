@@ -1253,9 +1253,11 @@ MonoBehaviour:
   - Kelly
   - The Face Gatherers
   - Octopus Knights
-  SliderDifficultyRating: 020000000200000001000000020000000400000003000000
-  SliderIsBoss: 010100010101
+  - Heaven Maker
+  SliderDifficultyRating: 02000000020000000100000002000000040000000300000001000000
+  SliderIsBoss: 01010001010101
   SliderObjects:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -1282,6 +1284,7 @@ MonoBehaviour:
   - {fileID: 4074424980971472627, guid: 9688e3c4a6004b146a096395616c8b98, type: 3}
   - {fileID: 1491551972966297486, guid: d8cd16507bbe4f947a4d211eb578677b, type: 3}
   - {fileID: 7760101485857737584, guid: ec91f62d4a5ca11479606ec871c6b12d, type: 3}
+  - {fileID: 1597246415080996868, guid: c7b0974710eb3814d89a3d92767c3799, type: 3}
   backGrounds:
   - {fileID: 885023608139804964, guid: b9cd45ecd9b6aab47b0702ddc7c30950, type: 3}
   - {fileID: 168300112011908397, guid: b9f6801fafe61ab4481be854b1a2ddb0, type: 3}
@@ -1289,6 +1292,7 @@ MonoBehaviour:
   - {fileID: 8035854953892354036, guid: baef40e93341fcb4297bb664b4342e1b, type: 3}
   - {fileID: 885023608139804964, guid: b9cd45ecd9b6aab47b0702ddc7c30950, type: 3}
   - {fileID: 2752608951558662500, guid: e7f24b605cbf70143804189be04634dc, type: 3}
+  - {fileID: 885023608139804964, guid: b9cd45ecd9b6aab47b0702ddc7c30950, type: 3}
   music:
   - {fileID: 8300000, guid: b1c206659fe60ec458c63df8d12687c6, type: 3}
   - {fileID: 8300000, guid: 181ae028857b6324d9f447f27a03052f, type: 3}
@@ -1296,10 +1300,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b01e7551070aa8c48a842e5769c92548, type: 3}
   - {fileID: 8300000, guid: 72809872797423846a67948d82a012d8, type: 3}
   - {fileID: 8300000, guid: 6449b8063334e3347ae445f01dc3da6f, type: 3}
+  - {fileID: 8300000, guid: 12702bfa7c73db543a8e7ff111f1853e, type: 3}
   startTime:
   - 12
   - 0
   - 12
+  - 0
   - 0
   - 0
   - 0
@@ -1310,6 +1316,7 @@ MonoBehaviour:
   - 240
   - 240
   - 120
+  - 111.3043
   volume:
   - 1
   - 1
@@ -1317,6 +1324,7 @@ MonoBehaviour:
   - 1
   - 1
   - 0.8
+  - 1
   Enemies:
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   - {fileID: 4716509826077905511, guid: 43cee3635be86d24ba0a9afc567431a6, type: 3}
@@ -1336,6 +1344,9 @@ MonoBehaviour:
   - {fileID: 2688657213887495653, guid: 848a490ec2093d14d95c4e06f8229195, type: 3}
   - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
   - {fileID: 2688657213887495653, guid: 848a490ec2093d14d95c4e06f8229195, type: 3}
+  - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
+  - {fileID: 4696003078524534645, guid: 6aa7b9a53e04f4a45bbe753754dbe134, type: 3}
+  - {fileID: 7064605456285047121, guid: deed74ce9b3269d408856a8be65aac6b, type: 3}
 --- !u!1 &1264544396
 GameObject:
   m_ObjectHideFlags: 0

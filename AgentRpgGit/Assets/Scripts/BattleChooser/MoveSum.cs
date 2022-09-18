@@ -113,6 +113,18 @@ public class MoveSum : MonoBehaviour
             case "KnightStrike":
                 SummaryFound = "KnightStrike: strikes one of eight possible spots, moves towards struck location";
                 break;
+            case "Anima":
+                SummaryFound = "Anima: Moves two spaces away, damaging all enemies near user and speeding up character per player hit";
+                break;
+            case "Witches":
+                SummaryFound = "Witches: Charges for a turn then dramatically decreases the speed of all enemies in an area";
+                break;
+            case "Rain":
+                SummaryFound = "Rain: Charges for a turn then teleports to an area, doing massive damage to everything around the area";
+                break;
+            case "Midway":
+                SummaryFound = "Midway: Attacks a single tile three to four tiles away from the user";
+                break;
         }
         return SummaryFound;
     }

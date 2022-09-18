@@ -58,7 +58,7 @@ public class CharacterSpawner : MonoBehaviour
         SandmanCharacterBase.Speed = CharacterSave.Speed[0];
         SandmanCharacterBase.ExpressedSpeed = CharacterSave.Speed[0];
         CharacterMoveInsert.InsertCharacterPassive(CharacterSave.MovesPutIn1[0], CharacterSave.MovesPutIn1[1], CharacterSave.MovesPutIn1[2], CharacterSave.MovesPutIn1[3], SandmanPrefab);
-        SandmanCharacterBase.DistanceUp = (float)0.8;
+        SandmanCharacterBase.DistanceUp = (float)0.85;
         SandmanCharacterBase.CharacterLocationIndex = new Vector2(0, 0);
         SandmanCharacterBase.gameObject.AddComponent(typeof(GunFunction));
         SandmanCharacterBase.gameObject.AddComponent(typeof(ShakeObject));
@@ -86,7 +86,7 @@ public class CharacterSpawner : MonoBehaviour
         JadeCharacterBase.Speed = CharacterSave.Speed[1];
         JadeCharacterBase.ExpressedSpeed = CharacterSave.Speed[1];
         CharacterMoveInsert.InsertCharacterPassive(CharacterSave.MovesPutIn2[0], CharacterSave.MovesPutIn2[1], CharacterSave.MovesPutIn2[2], CharacterSave.MovesPutIn2[3], JadePrefab);
-        JadeCharacterBase.DistanceUp = (float)0.8;
+        JadeCharacterBase.DistanceUp = (float)0.85;
         JadeCharacterBase.CharacterLocationIndex = new Vector2(0, Mathf.RoundToInt((GridData.YWidthPublic-1) / 2));
         JadeCharacterBase.gameObject.AddComponent(typeof (GunFunction));
         JadeCharacterBase.gameObject.AddComponent(typeof(ShakeObject));
@@ -114,7 +114,7 @@ public class CharacterSpawner : MonoBehaviour
         AurthurCharacterBase.Speed = CharacterSave.Speed[2];
         AurthurCharacterBase.ExpressedSpeed = CharacterSave.Speed[2];
         CharacterMoveInsert.InsertCharacterPassive(CharacterSave.MovesPutIn3[0], CharacterSave.MovesPutIn3[1], CharacterSave.MovesPutIn3[2], CharacterSave.MovesPutIn3[3], AurthurPrefab);
-        AurthurCharacterBase.DistanceUp = (float)0.8;
+        AurthurCharacterBase.DistanceUp = (float)0.85;
         AurthurCharacterBase.CharacterLocationIndex = new Vector2(0, Mathf.RoundToInt(GridData.YWidthPublic - 1));
         AurthurCharacterBase.gameObject.AddComponent(typeof(GunFunction));
         AurthurCharacterBase.gameObject.AddComponent(typeof(ShakeObject));
