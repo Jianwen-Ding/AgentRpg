@@ -13,6 +13,9 @@ public class MoveSum : MonoBehaviour
     public GameObject[] Enemies = new GameObject[3];
     [SerializeField]
     public GameObject[] enemyHeaders;
+    public Vector2[] displayAdjust = new Vector2[3];
+    Vector2 originalPosition;
+    public Vector2[] scaleAdjust = new Vector2[3];
     [SerializeField ]
     Sprite[] SpriteEnemyDisplay = new Sprite[3];
     Color[] ColorEnemyDisplay = new Color[3];
@@ -133,6 +136,9 @@ public class MoveSum : MonoBehaviour
         transform.position = OwnStartingPosition;
         EnemyDisplayObject.GetComponent<SpriteRenderer>().sprite = SpriteEnemyDisplay[EnemyCurrentMain];
         EnemyDisplayObject.GetComponent<SpriteRenderer>().color = ColorEnemyDisplay[EnemyCurrentMain];
+        originalPosition = EnemyDisplayObject.transform.position;
+        EnemyDisplayObject.transform.position = new Vector3(originalPosition.x + displayAdjust[EnemyCurrentMain].x, originalPosition.y + displayAdjust[EnemyCurrentMain].y, 0);
+        EnemyDisplayObject.transform.localScale = scaleAdjust[EnemyCurrentMain];
         Button1.GetComponent<ButtonChange>().Main = gameObject.GetComponent<MoveSum>();
         Button2.GetComponent<ButtonChange>().Main = gameObject.GetComponent<MoveSum>();
         for (int i = 0; i < 3; i++)
@@ -177,8 +183,10 @@ public class MoveSum : MonoBehaviour
         {
             EnemyDisplayObject.GetComponent<SpriteRenderer>().sprite = SpriteEnemyDisplay[EnemyCurrentMain];
             EnemyDisplayObject.GetComponent<SpriteRenderer>().color = ColorEnemyDisplay[EnemyCurrentMain];
+            EnemyDisplayObject.transform.position = originalPosition;
+            EnemyDisplayObject.transform.position = new Vector3(originalPosition.x + displayAdjust[EnemyCurrentMain].x, originalPosition.y + displayAdjust[EnemyCurrentMain].y, 0);
+            EnemyDisplayObject.transform.localScale = scaleAdjust[EnemyCurrentMain];
             EnemyDisplayObject.transform.rotation = TransformEnemyDisplay[EnemyCurrentMain].rotation;
-            EnemyDisplayObject.transform.localScale = TransformEnemyDisplay[EnemyCurrentMain].localScale;
             
         }
            

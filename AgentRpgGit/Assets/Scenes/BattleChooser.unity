@@ -1255,7 +1255,7 @@ MonoBehaviour:
   - Octopus Knights
   - Heaven Maker
   SliderDifficultyRating: 02000000020000000100000002000000040000000300000001000000
-  SliderIsBoss: 01010001010101
+  SliderIsBoss: 01010001010001
   SliderObjects:
   - {fileID: 0}
   - {fileID: 0}

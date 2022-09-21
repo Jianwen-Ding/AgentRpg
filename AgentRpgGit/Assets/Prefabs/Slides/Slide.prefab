@@ -145,6 +145,14 @@ MonoBehaviour:
   - {fileID: 7030413298744756837, guid: 170d1dc81f9077d43b402431399d9d30, type: 3}
   - {fileID: 7030413298744756837, guid: 170d1dc81f9077d43b402431399d9d30, type: 3}
   - {fileID: 7030413298744756837, guid: 170d1dc81f9077d43b402431399d9d30, type: 3}
+  displayAdjust:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  scaleAdjust:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
   SpriteEnemyDisplay:
   - {fileID: 0}
   - {fileID: 0}
