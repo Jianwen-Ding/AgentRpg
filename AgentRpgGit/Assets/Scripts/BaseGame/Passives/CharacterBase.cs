@@ -456,6 +456,13 @@ public class CharacterBase : MonoBehaviour
         PreviousHealth = Health;
         if (AboutToShoot == true)
         {
+            if(Events.CheckQue(gameObject, 1) == false)
+            {
+                CharacterSChanger.SetSprite(-69, 0);
+                AboutToShoot = false;
+                gameObject.GetComponent<GunFunction>().ShootMain(LocationAction, !IsEnemy);
+                action = "inactive";
+            }
             if (TimeUntilShootLeft < 0)
             {
                 AboutToShoot = false;
@@ -470,6 +477,12 @@ public class CharacterBase : MonoBehaviour
         }
         if (AboutToUseMove == true)
         {
+            if (Events.CheckQue(gameObject, 1) == false)
+            {
+                CharacterSChanger.SetSprite(-69, 0);
+                AboutToUseMove = false;
+                MovesAllowed[MoveOn].ActivateMove();
+            }
             if (TimeUntilUseMoveLeft < 0)
             {
                 AboutToUseMove = false;

@@ -70,7 +70,6 @@ public class Roll : GenericMove
     // Update is called once per frame
     public override void ActivateMove()
     {
-        Character_Info.CharacterSChanger.SetSprite(1, 2);
         EffectAmount = 0;
         Character_Info.action = "inactive";
         Character_Info.Push((int)Character_Info.LocationAction.x, (int)Character_Info.LocationAction.y);

@@ -251,7 +251,6 @@ public class Rain : GenericMove
                     }
                 }
             }
-            Character_Info.CharacterSChanger.SetSprite(1, 2);
             AreaEffect((int)Character_Info.LocationAction.x - 1, (int)Character_Info.LocationAction.y - 1, 3, 3);
             Character_Info.action = "inactive";
             Character_Info.Push((int)Character_Info.LocationAction.x, (int)Character_Info.LocationAction.y);

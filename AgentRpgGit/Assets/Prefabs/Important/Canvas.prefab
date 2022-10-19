@@ -4140,7 +4140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HasClicked: 0
-  TimeUntilSceneChangeMin: 1
+  TimeUntilSceneChangeMin: 0.25
   TimeUntilSceneChangeLeft: 0
   active: 0
   FontSizeNormal: 28

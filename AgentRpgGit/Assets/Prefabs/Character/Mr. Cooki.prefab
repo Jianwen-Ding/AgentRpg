@@ -110,8 +110,8 @@ MonoBehaviour:
   HasDied: 0
   PreviousHealth: 0
   IsEnemy: 1
-  Health: 90
-  MaxHealth: 90
+  Health: 80
+  MaxHealth: 80
   IsDead: 0
   LocationAction: {x: 0, y: 0}
   action: 
@@ -124,7 +124,7 @@ MonoBehaviour:
   SpeedPriority: 0
   SpeedMultiplier: 1
   ExpressedSpeed: 0
-  Damage: 200
+  Damage: 100
   DamageMultiplier: 1
   ExpressedDamage: 0
   Defense: 60
@@ -143,6 +143,8 @@ MonoBehaviour:
   DistanceTillAtLocation: 0
   AnimationMoveSpeed: 0
   DistanceUp: 2.2
+  DistanceRight: 0
+  hurtAnimTimer: 0
   TimeUntilShootEnd: 0.8
   AboutToShoot: 0
   TimeUntilShoot: 0.4
@@ -628,6 +630,7 @@ MonoBehaviour:
   AllyMoveSquareY4: -69
   AllyMoveSquareWidth4: -69
   AllyMoveSquareHeight4: -69
+  moveBot: 0
   speedDownTimes: 200
 --- !u!114 &3550949075340327985
 MonoBehaviour:
@@ -691,6 +694,8 @@ MonoBehaviour:
   RangeIn: 
   InHitDistance: 0
   ThresholdPriorty: 30
+  GoingToShowString: 
+  RandomDraw: 0
 --- !u!114 &4901843671957714165
 MonoBehaviour:
   m_ObjectHideFlags: 0

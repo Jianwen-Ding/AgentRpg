@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GridStartingPoint: {x: -5.75, y: -2}
-  XDiffriential: 1.5
+  XDiffriential: 1.95
   YDiffriential: -0.5
   DiagonalHorizontalLength: 0.5
   XWidthPublic: 0

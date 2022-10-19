@@ -876,7 +876,7 @@ MonoBehaviour:
   MaxAmountOfMoves: 24
   TypesOfMovesAllowed: 010101010101010101010101010101010101010101010101
   SandmanMoveAllow: 010101010101010101010101010101010101010101010101
-  JadeMoveAllow: 010100010000010100000100010100000000000101010101
+  JadeMoveAllow: 010101010101010101010101010101010101010101010101
   AurthurAllow: 010101010101010101010101010101010101010101010101
   GridStartx: -6.2
   GridStarty: 4
@@ -1061,6 +1061,7 @@ MonoBehaviour:
     that lasts 4 moves.
   - Has user move an small distance and unloads a small AoE attack at the destination.
     If nothing is hit the user loses a significant amount of speed.
+  - Switches user and an ally
   - Creates a tile effect that heals character's inside of it for a base percentage
     of the character's max health. It turns off after 6 turns.
   ImageDiscription: []

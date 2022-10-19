@@ -126,7 +126,7 @@ MonoBehaviour:
   SpeedPriority: 0
   SpeedMultiplier: 1
   ExpressedSpeed: 0
-  Damage: 8
+  Damage: 7
   DamageMultiplier: 1
   ExpressedDamage: 0
   Defense: 35
@@ -146,6 +146,7 @@ MonoBehaviour:
   AnimationMoveSpeed: 0
   DistanceUp: 1.25
   DistanceRight: 0.7
+  hurtAnimTimer: 0
   TimeUntilShootEnd: 1.6
   AboutToShoot: 0
   TimeUntilShoot: 0.8
@@ -840,6 +841,7 @@ MonoBehaviour:
   RangeIn: 
   InHitDistance: 0
   ThresholdPriorty: 10
+  GoingToShowString: 
   RandomDraw: 0
 --- !u!114 &4181178470095656322
 MonoBehaviour:
@@ -864,12 +866,12 @@ MonoBehaviour:
   YChangePerSquare: 0
   CanPenentrateObstacle: 0
   CanPenentrateCharacters: 1
-  bulletAddition: 1
-  DistanceSquaresAllowed: 4
+  bulletAddition: 2
+  DistanceSquaresAllowed: 6
   ShootForEnemy: 0
   Text: {fileID: 3508090468383675265, guid: 98de24ec3510deb4f997f291cc1a5c80, type: 3}
   InWorldText: {fileID: 0}
-  DamageRatio: 20
+  DamageRatio: 15
   DamageFallOff: 1
   CharacterCode: {fileID: 0}
   Effect: {fileID: 0}

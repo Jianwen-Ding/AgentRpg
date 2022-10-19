@@ -8,12 +8,12 @@ public class GridLoad : MonoBehaviour
     [SerializeField]
     Vector2 GridStartingPoint = new Vector2((float)-6.5, -1);
     [SerializeField]
-    float XDiffriential = (float)1.25;
+    float XDiffriential = (float)1.95;
     [SerializeField]
     float YDiffriential = -(float)0.5;
     [SerializeField]
     float DiagonalHorizontalLength = (float)0.25;
-    static int XWidth = 10;
+    static int XWidth = 8;
     static int YWidth = 5;
     public int XWidthPublic;
     public int YWidthPublic;
