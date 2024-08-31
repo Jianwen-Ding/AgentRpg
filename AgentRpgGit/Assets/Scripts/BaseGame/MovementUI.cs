@@ -217,9 +217,9 @@ public class MovementUI : MonoBehaviour
                         {
                             for (int YCurrent = MouseFollowingUI.AllowedSelected[z][1]; YCurrent <= MouseFollowingUI.AllowedSelected[z][3]; YCurrent++)
                             {
-                                if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length && CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color == Color.green)
+                                if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
                                 {
-                                    CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = OrignialColor;
+                                    CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<GridControl>().removeColorAlt("allowed" + CurrentCharacterInPlay);
                                 }
                             }
                         }
@@ -347,7 +347,7 @@ public class MovementUI : MonoBehaviour
                             int YCurrent = y + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y;
                             if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
                             {
-                                CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = Color.green;
+                                CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<GridControl>().addColorAlt("allowed" + CurrentCharacterInPlay, 3, Color.green);
                             }
                         }
                     }
@@ -393,9 +393,9 @@ public class MovementUI : MonoBehaviour
                                 {
                                     int XCurrent = x + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.x;
                                     int YCurrent = y + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y;
-                                    if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length && CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color == Color.green)
+                                    if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
                                     {
-                                        CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = OrignialColor;
+                                        CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<GridControl>().removeColorAlt("allowed" + CurrentCharacterInPlay);
                                     }
                                 }
 
@@ -478,7 +478,7 @@ public class MovementUI : MonoBehaviour
                         int YCurrent = y + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y;
                         if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
                         {
-                            CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = Color.green;
+                            CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<GridControl>().addColorAlt("allowed" + CurrentCharacterInPlay, 3, Color.green);
                         }
 
                     }
@@ -507,9 +507,9 @@ public class MovementUI : MonoBehaviour
                         {
                             int XCurrent = x + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.x;
                             int YCurrent = y + (int)CurrentCharactersInPlay[CurrentCharacterInPlay].GetComponent<CharacterBase>().CharacterLocationIndex.y;
-                            if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length && CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color == Color.green)
+                            if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
                             {
-                                CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = OrignialColor;
+                                CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<GridControl>().removeColorAlt("allowed" + CurrentCharacterInPlay);
                             }
                             
                         }
@@ -657,7 +657,7 @@ public class MovementUI : MonoBehaviour
                             {
                                 if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
                                 {
-                                    CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = Color.green;
+                                    CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<GridControl>().addColorAlt("allowed" + CurrentCharacterInPlay, 3, Color.green);
                                 }
                             }
                         }
@@ -674,9 +674,9 @@ public class MovementUI : MonoBehaviour
                             {
                                 for (int YCurrent = MouseFollowingUI.AllowedSelected[z][1]; YCurrent <= MouseFollowingUI.AllowedSelected[z][3]; YCurrent++)
                                 {
-                                    if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length && CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color == Color.green)
+                                    if (XCurrent >= 0 && XCurrent < CurrentMoveOn.Gridinfo.AllGrids[0].Length && YCurrent >= 0 && YCurrent < CurrentMoveOn.Gridinfo.AllGrids.Length)
                                     {
-                                        CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<SpriteRenderer>().color = OrignialColor;
+                                        CurrentMoveOn.Gridinfo.AllGrids[YCurrent][XCurrent].GetComponent<GridControl>().removeColorAlt("allowed" + CurrentCharacterInPlay);
                                     }
                                 }
                             }

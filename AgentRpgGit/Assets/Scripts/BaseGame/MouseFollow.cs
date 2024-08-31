@@ -56,7 +56,7 @@ public class MouseFollow : MonoBehaviour
                         Vector2 CurrentArea = new Vector2(GridIn.GetComponent<GridControl>().GridCoordinate.y + YCurrent, GridIn.GetComponent<GridControl>().GridCoordinate.x + XCurrent);
                         if (CurrentArea.x >= 0 && CurrentArea.y >= 0 && CurrentArea.y < GridInfo.XWidthPublic && CurrentArea.x < GridInfo.YWidthPublic)
                         {
-                            GridInfo.AllGrids[(int)CurrentArea.x][(int)CurrentArea.y].GetComponent<SpriteRenderer>().color = Color.white;
+                            GridInfo.AllGrids[(int)CurrentArea.x][(int)CurrentArea.y].GetComponent<GridControl>().removeColorAlt("mouseAdjust");
                         }
                     }
                 }
@@ -152,7 +152,7 @@ public class MouseFollow : MonoBehaviour
                                 {
                                     GridControl CurrentGridInfo = GridInfo.AllGrids[(int)CurrentArea.x][(int)CurrentArea.y].GetComponent<GridControl>();
                                     GroupSelectionOriginalColors[(int)CurrentArea.x][(int)CurrentArea.y] = GridInfo.AllGrids[(int)CurrentArea.x][(int)CurrentArea.y].GetComponent<SpriteRenderer>().color;
-                                    GridInfo.AllGrids[(int)CurrentArea.x][(int)CurrentArea.y].GetComponent<SpriteRenderer>().color = GroupColor;
+                                    GridInfo.AllGrids[(int)CurrentArea.x][(int)CurrentArea.y].GetComponent<GridControl>().addColorAlt("mouseAdjust", 5, GroupColor);
                                 }
                             }
                         }
@@ -172,7 +172,7 @@ public class MouseFollow : MonoBehaviour
                 {
                     OnGrid = true;
                     MousePositionGridChoose = ColGridInfo.GridCoordinate;
-                    col.gameObject.GetComponent<SpriteRenderer>().color = HighLightColor;
+                    col.GetComponent<GridControl>().addColorAlt("highLight", 6, HighLightColor);
                 }
             }
         }
@@ -182,6 +182,7 @@ public class MouseFollow : MonoBehaviour
         GridIn = col.gameObject;
         GridControl ColGridInfo;
         ColGridInfo = col.gameObject.GetComponent<GridControl>();
+        col.GetComponent<GridControl>().removeColorAlt("highLight");
         for (int x = 0; x < AllowedSelected.Length; x++)
         {
             if (col.gameObject.tag == "Grid" && IsSelecting && ColGridInfo.GridCoordinate.x >= (float)AllowedSelected[x][0] && ColGridInfo.GridCoordinate.y >= (float)AllowedSelected[x][1] && ColGridInfo.GridCoordinate.x <= (float)AllowedSelected[x][2] && ColGridInfo.GridCoordinate.y <= (float)AllowedSelected[x][3])
@@ -199,7 +200,7 @@ public class MouseFollow : MonoBehaviour
                                 Vector2 CurrentArea = new Vector2(ColGridInfo.GridCoordinate.y + YCurrent, ColGridInfo.GridCoordinate.x + XCurrent);
                                 if (CurrentArea.x >= 0 && CurrentArea.y >= 0 && CurrentArea.y < GridInfo.XWidthPublic && CurrentArea.x < GridInfo.YWidthPublic)
                                 {
-                                    GridInfo.AllGrids[(int)CurrentArea.x][(int)CurrentArea.y].GetComponent<SpriteRenderer>().color = GroupSelectionOriginalColors[(int)CurrentArea.x][(int)CurrentArea.y];
+                                    GridInfo.AllGrids[(int)CurrentArea.x][(int)CurrentArea.y].GetComponent<GridControl>().removeColorAlt("mouseAdjust");
                                 }
                             }
                         }
@@ -207,7 +208,7 @@ public class MouseFollow : MonoBehaviour
                 }
             }
         }
-        col.gameObject.GetComponent<SpriteRenderer>().color = OriginalColor;
+        col.gameObject.GetComponent<GridControl>().removeColorAlt("mouseAdjust");
         for (int x = 0; x < AllowedSelected.Length; x++)
         {
             if (col.gameObject.tag == "Grid" && IsSelecting && col.gameObject.GetComponent<GridControl>().GridCoordinate.x >= (float)AllowedSelected[x][0] && col.gameObject.GetComponent<GridControl>().GridCoordinate.y >= (float)AllowedSelected[x][1] && col.gameObject.GetComponent<GridControl>().GridCoordinate.x <= (float)AllowedSelected[x][2] && col.gameObject.GetComponent<GridControl>().GridCoordinate.y <= (float)AllowedSelected[x][3])
@@ -227,7 +228,8 @@ public class MouseFollow : MonoBehaviour
         gameObject.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,0)).x, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)).y,0);
         if(IsSelecting == false && OnGrid == true)
         { 
-            GridIn.GetComponent<SpriteRenderer>().color = OriginalColor;
+            GridIn.GetComponent<GridControl>().removeColorAlt("mouseAdjust");
+            GridIn.GetComponent<GridControl>().removeColorAlt("highLight");
             OnGrid = false;
         }
     }
