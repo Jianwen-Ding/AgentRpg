@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Deathray : GenericMove
 {
-    public bool HasUsedCharge = false;
     public override void SetAdjust()
     {
         AreaSelectionSquareX0 = -6;

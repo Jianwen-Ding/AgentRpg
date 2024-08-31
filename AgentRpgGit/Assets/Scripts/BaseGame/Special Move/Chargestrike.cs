@@ -5,8 +5,6 @@ using UnityEngine;
 public class Chargestrike : GenericMove
 {
     private static float ChargestrikeExponentialChange = (float)0.1;
-    [SerializeField]
-    public bool HasUsedCharge = false;
     public override void SetAdjust()
     {
         AreaSelectionSquareX0 = -1;

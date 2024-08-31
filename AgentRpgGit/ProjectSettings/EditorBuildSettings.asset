@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0ae00de377050d4409625865b96f5dcc
+  - enabled: 1
     path: Assets/Scenes/BattleChooser.unity
     guid: 7c98b7c3173d31f499d33126c6c452d4
   - enabled: 1
@@ -17,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GunModChooser.unity
     guid: b602420fcbbc76446a120e25d001600c
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 0ae00de377050d4409625865b96f5dcc
   - enabled: 1
     path: Assets/Scenes/AurthurInfo.unity
     guid: 347bc1ffb1d730e4593d22274da31bb5
