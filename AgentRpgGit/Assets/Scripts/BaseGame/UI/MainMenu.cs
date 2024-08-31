@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Jump") != 0)
+        if (Input.anyKeyDown)
         {
             SceneManager.LoadScene("BattleChooser");
         }
